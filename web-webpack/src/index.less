@@ -1,0 +1,33 @@
+html, body {
+  height: 100%;
+}
+html {
+  overflow: hidden;
+}
+body {
+  overflow: auto!important;
+  -webkit-overflow-scrolling: touch;
+}
+.container {
+}
+.body {
+  position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+  overflow: scroll;
+}
+.fixed-bottom {
+  position: fixed; bottom: 0; left: 0;
+  width: 100%; height: 70px;
+  background-color: #ddd;
+}
+hr {
+  margin: 70px 10px;
+}
+
+// fix style
+.am-modal-content {
+  height: auto;
+  min-height: 100%;
+}
+// .am-popup-mask, .am-popup-wrap, .am-popup {
+//   position: absolute;
+// }
