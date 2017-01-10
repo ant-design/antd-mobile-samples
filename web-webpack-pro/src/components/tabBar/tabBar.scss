@@ -1,0 +1,88 @@
+.tabBar {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    transition: height .5s;
+    text-align: center;
+    background-color: #FFF;
+    border-top: 2px solid #ddd;
+    &.hidden {
+        height: 0;
+        .item {
+            visibility: hidden;
+        }
+    }
+    // 改变PNG图片颜色
+    // 方案1:使用filter
+    .item {
+        flex: 1;
+        font-size: 20px;
+        visibility: visible;
+        transition: visibility .2s;
+        line-height: 1;
+        filter: grayscale(100%);
+        transform: translateZ(0);
+        transition: filter .2s;
+        &.selected {
+            filter: initial;
+            span {
+                color: #108EE9;
+            }
+        }
+        span {
+            margin-top: 6px;
+            display: block;
+            color: #949494;
+        }
+        .icon {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto;
+            display: block;
+            // background: url(./images/account-filter.png) center no-repeat;
+            background-size: contain !important;
+        }
+    }
+    // 方案2使用drop-shadow投影实现改变PNG图片颜色
+    // .item {
+    //     flex: 1;
+    //     font-size: 20px;
+    //     visibility: visible;
+    //     transition: visibility .2s;
+    //     line-height: 1;
+    //     color: #949494;
+    //     &.selected {
+    //         .icon {
+    //             >i {
+    //                 filter: drop-shadow(#108EE9 44px 0px);
+    //             }
+    //         }
+    //         span {
+    //             color: #108EE9;
+    //         }
+    //     }
+    //     span {
+    //         margin-top: 6px;
+    //         display: block;
+    //     }
+    //     .icon {
+    //         width: 44px;
+    //         height: 44px;
+    //         margin: 0 auto;
+    //         display: block;
+    //         overflow: hidden;
+    //         >i {
+    //             display: block;
+    //             width: 44px;
+    //             height: 44px;
+    //             overflow: hidden;
+    //             position: relative;
+    //             left: -44px;
+    //             outline: 44px solid transparent;
+    //             filter: drop-shadow(44px 0);
+    //             background: url(./images/account-drop-shadow.png) no-repeat center;
+    //             background-size: contain;
+    //         }
+    //     }
+    // }
+}
