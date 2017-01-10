@@ -7,18 +7,17 @@
 >
 > 参考示例 https://github.com/Microsoft/TypeScriptSamples/blob/master/react-flux-babel-karma/webpack.config.js
 
-### First build sample
+### Install & Start
 
 ```shell
-npm install
-npm run build
-
-自己起 server 访问 index.html 文件
-```
-### Then start
-
-```shell
+npm i
 npm start
 ```
 
-open 
+open http://localhost:8000/
+
+### Build
+
+```
+npm run build
+```
