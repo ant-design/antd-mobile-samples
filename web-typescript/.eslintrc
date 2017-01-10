@@ -1,0 +1,10 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint-config-airbnb",
+  "rules": {
+    "import/no-unresolved": [2, { "ignore": ["antd-mobile"] }]
+  },
+  "ecmaFeatures": {
+    "experimentalObjectRestSpread": true
+  }
+}

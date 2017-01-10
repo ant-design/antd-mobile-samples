@@ -1,0 +1,85 @@
+.am-demo-page {
+  .am-demo-hd {
+    height: 293px;
+    position: relative;
+    overflow: hidden;
+    .logo {
+      background-image: url(https://zos.alipayobjects.com/rmsportal/HAYkxaWqFJXyOEq.png);
+      position: absolute;
+      right: 10px;
+      bottom: -77px;
+      width: 302px;
+      height: 293px;
+      background-size: 302px 293px;
+      opacity: 0.1;
+    }
+    .am-demo-title,
+    .am-demo-subtitle {
+      text-align: left;
+      padding-left: 53px;
+    }
+    .am-demo-title {
+      color: #108ee9;
+      padding-top: 80px;
+      font-size: 60px;
+      font-weight: normal;
+    }
+    .am-demo-subtitle {
+      font-size: 26px;
+      color: #999;
+      font-weight: normal;
+    }
+  }
+  .am-demo-bd {
+    background: #fff;
+    .am-list {
+      .am-list-header {
+        padding: 0;
+        padding-left: 30px;
+        height: 182px;
+        line-height: 182px;
+        color: #888;
+        font-size: 34px;
+      }
+      &.category-closed {
+        .am-list-header {
+          position: relative;
+          &:after {
+            display: block;
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            right: auto;
+            top: auto;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+          }
+        }
+        .am-list-body {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.hide {
+  display: none!important;
+}
+.show {
+  display: block!important;
+}
+.demo-preview-item {
+  * {
+    box-sizing: invalid;
+  }
+}
+
+html, body {
+  font-family: "PingFang SC","Helvetica Neue","Hiragino Sans GB",Helvetica,"Microsoft YaHei",Arial;
+}
+
+.nav-arrow-down {
+  transform: scale(0.6);
+}

@@ -1,0 +1,43 @@
+{
+  "name": "antd-mobile-ts",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack-dev-server --host 0.0.0.0 --port 8000",
+    "build": "webpack"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "antd-mobile": "~0.9.12",
+    "babel-runtime": "^6.20.0"
+  },
+  "devDependencies": {
+    "@types/react": "~0.14.55",
+    "@types/react-dom": "~0.14.19",
+    "autoprefixer": "~6.5.4",
+    "babel-core": "~6.20.0",
+    "babel-loader": "~6.2.9",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-import": "~1.1.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "~6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "css-loader": "~0.26.1",
+    "extract-text-webpack-plugin": "~1.0.1",
+    "file-loader": "~0.9.0",
+    "json-loader": "~0.5.4",
+    "less": "~2.7.1",
+    "less-loader": "~2.2.3",
+    "postcss": "~5.2.6",
+    "postcss-loader": "~1.2.1",
+    "postcss-pxtorem": "~3.3.1",
+    "react": "~15.4.1",
+    "react-dom": "~15.4.1",
+    "source-map-loader": "~0.1.5",
+    "ts-loader": "^1.3.2",
+    "typescript": "~2.1.4",
+    "url-loader": "~0.5.7",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

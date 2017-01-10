@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1137942adeb03984c1311b662363dd38fc238fd3">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/classes-e64405d2b44dfdf36128bfb8b5e920ce5c2e6f8a.jar" />
+    </item>
+    <item
+        jar="/Applications/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.1-e7b883ea3ad91f079ed24ed37f2d6801ecbcd8d5.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.34.0/jars/libs/infer-annotations-1.5.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="556b9e3c9e1695ceb107102139dfe6346f4721c5">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/infer-annotations-1.5-11019402affb864a8ba33c4029ed4c372c0f6a05.jar" />
+    </item>
+    <item
+        jar="/Users/hua/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1-51d5746680e1ca09dae56b9ad4e148575030a647.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.34.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fde7c0ad7606dc25ae2c1fa11b8a48199ea3adc9">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/classes-bfd66de361879786c154be1ac577b499f1434985.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3341b66c54367e777a0647e2db96c045329bfeab">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/classes-d2ca5bfca525a75c80192593fd1f33f7dd42792c.jar" />
+    </item>
+    <item
+        jar="/Users/hua/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0-b1873972b4b322a7c4a87ed1d14d2166e2ea68de.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.1-f82bf91978a58c251222feac5ad834f579652366.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/classes-2d01fc61c3fb4c0e8e02b700b5f6e8b7c6eeaef9.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/classes-5255c297c643e7b8f8946a500d381b8ac2ed7929.jar" />
+    </item>
+    <item
+        jar="/Users/hua/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1-b405e5964c7d6c66e1a0400388867f7810c891ec.jar" />
+    </item>
+    <item
+        jar="/Users/hua/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/javax.inject-1-4d4cd422b91ed963bedf7225ee1bf35ba2135ac0.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/classes-b92d00558555b77164994c1459ff57ab45d7766b.jar" />
+    </item>
+    <item
+        jar="/Users/hua/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0-e3ebd60babda0994b50ad74eed54484818617e27.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="98786c1770b531b9194fb6448b2a2692c64074b6">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/classes-31516634def23e5d80f8082f4b38fbc6e844b343.jar" />
+    </item>
+    <item
+        jar="/Users/hua/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/okio-1.9.0-a097db1236fa724ae65fa41ae89d3c8d1d66a465.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ca63c521b5745ae9a09629d7ca67ff6bc2a967fe">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/classes-29ce1271e9d5800689f7fb192bebac9c51353cf1.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d31aadf33187c37a7cd63dc1b769f8c6e33f78c3">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/classes-51893e972e0fee845eb832920cd5d186bc3229a2.jar" />
+    </item>
+    <item
+        jar="/Users/hua/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1-1ac046a9bf2c5819fedfe755585065e97074a97f.jar" />
+    </item>
+    <item
+        jar="/Users/hua/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/library-2.4.0-5c1a89dfe80ccdb5bf3382ba8336896bc76cfa8f.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/classes-d3eb4c9e2ef0220246db6470bf7bc11d7fd2a581.jar" />
+    </item>
+    <item
+        jar="/Users/hua/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.3/1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14/jackson-core-2.2.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1a0113da2cab5f4c216b4e5e7c1dbfaa67087e14">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/jackson-core-2.2.3-4b7ee358c04b1aea9334efa14fc839e4fc916ba2.jar" />
+    </item>
+    <item
+        jar="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2b8a01ad9da5d26d0067894c22e87597bca2c500">
+        <dex dex="/Users/hua/inner/antd-init/boilerplates/MobileDemo/android/app/build/intermediates/pre-dexed/debug/classes-b7ab0a07d042ca2a72ed83a203980faa9d4c1047.jar" />
+    </item>
+
+</items>

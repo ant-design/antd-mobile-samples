@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Executors/RCTJSCExecutor.mm \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Executors/RCTJSCExecutor.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTJavaScriptExecutor.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Modules/RCTDevMenu.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Profiler/RCTJSCProfiler.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Modules/RCTRedBox.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Base/RCTErrorCustomizer.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Modules/RCTSourceCode.h \
+  /Users/hua/inner/antd-init/boilerplates/MobileDemo/node_modules/react-native/React/Executors/RCTJSCWrapper.h
