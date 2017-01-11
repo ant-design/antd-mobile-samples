@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit">
+    <base href="<%= htmlWebpackPlugin.options.baseUrl %>" />
+    <!--忽略页面中的数字识别为电话号码-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--UC强制全屏-->
+    <meta name="full-screen" content="yes">
+    <!--QQ强制全屏-->
+    <meta name="x5-fullscreen" content="true">
+    <!--UC应用模式-->
+    <meta name="browsermode" content="application">
+    <!--QQ应用模式-->
+    <meta name="x5-page-mode" content="app">
+    <!--删除默认的苹果工具栏和菜单栏，开启全屏显示-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--设置桌面图标的标题-->
+    <meta name="apple-mobile-web-app-title" content="小管家">
+    <!--改变顶部状态条的颜色-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>小管家</title>
+    <script>
+        (function() {
+            if (('serviceWorker' in navigator) && (location.protocol == 'https:') || (location.protocol == 'http:' && location.hostname == 'localhost')) {
+                navigator.serviceWorker.register('service-worker.js');
+            }
+        })();
+    </script>
+    <script>
+        (function() {
+            function setCookie(name, value, type) {
+                var Days = 30;
+                var exp = new Date();
+                exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+                var tmp = getCookie(type, type)
+                if (!tmp) {
+                    tmp = {}
+                }
+                tmp[name] = value
+                document.cookie = type + "=" + JSON.stringify(tmp) + ";expires=" + exp.toGMTString();
+            }
+
+            function getCookie(name, type) {
+                var arr, reg;
+                reg = new RegExp("(^| )" + type + "=([^;]*)(;|$)");
+                arr = document.cookie.match(reg)
+                if (arr) {
+                    if (name != type) {
+                        return JSON.parse(arr[2] || '{}')[name] || '{}';
+                    } else {
+                        return arr[2].toString() || '{}';
+                    }
+                } else
+                    return null;
+            }
+
+            function delCookie(name, type) {
+                var exp = new Date();
+                exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+                var tmp = {}
+                if (name != type) {
+                    tmp = getCookie(type, type);
+                    delete tmp[name]
+                }
+                document.cookie = type + "=" + JSON.stringify(tmp) + ";expires=" + exp.toGMTString();
+            }
+            if (!window.localStorage) {
+                if (navigator.cookieEnabled) {
+                    (function(window) {
+                        window.localStorage.setItem = function(key, value) {
+                            return setCookie(key, value, 'localStorage');
+                        }
+                        window.localStorage.getItem = function(key) {
+                            return getCookie(key, 'localStorage');
+                        }
+                        window.localStorage.removeItem = function(key) {
+                            return delCookie(key, 'localStorage');
+                        }
+                        window.localStorage.clear = function() {
+                            return delCookie('localStorage', 'localStorage');
+                        }
+                    })(window)
+                } else {
+                    (function(window) {
+                        var _data = {};
+                        window.localStorage.setItem = function(key, value) {
+                            return _data[id] = String(val);
+                        }
+                        window.localStorage.getItem = function(key) {
+                            return _data.hasOwnProperty(id) ? _data[id] : undefined;
+                        }
+                        window.localStorage.removeItem = function(key) {
+                            return delete _data[id];
+                        }
+                        window.localStorage.clear = function() {
+                            return _data = {};
+                        }
+                    })(window)
+                }
+            } else {
+                try {
+                    window.localStorage.setItem('_localStorage_test', 'test')
+                    window.localStorage.removeItem('_localStorage_test')
+                } catch (e) {
+                    if (navigator.cookieEnabled) {
+                        (function(window) {
+                            window.localStorage.setItem = function(key, value) {
+                                return setCookie(key, value, 'localStorage');
+                            }
+                            window.localStorage.getItem = function(key) {
+                                return getCookie(key, 'localStorage');
+                            }
+                            window.localStorage.removeItem = function(key) {
+                                return delCookie(key, 'localStorage');
+                            }
+                            window.localStorage.clear = function() {
+                                return delCookie('localStorage', 'localStorage');
+                            }
+                        })(window)
+                    } else {
+                        (function(window) {
+                            var _data = {};
+                            window.localStorage.setItem = function(key, value) {
+                                return _data[id] = String(val);
+                            }
+                            window.localStorage.getItem = function(key) {
+                                return _data.hasOwnProperty(id) ? _data[id] : undefined;
+                            }
+                            window.localStorage.removeItem = function(key) {
+                                return delete _data[id];
+                            }
+                            window.localStorage.clear = function() {
+                                return _data = {};
+                            }
+                        })(window)
+                    }
+                }
+            }
+            if (!window.sessionStorage) {
+                if (navigator.cookieEnabled) {
+                    (function(window) {
+                        window.sessionStorage.setItem = function(key, value) {
+                            return setCookie(key, value, 'sessionStorage');
+                        }
+                        window.sessionStorage.getItem = function(key) {
+                            return getCookie(key, 'sessionStorage');
+                        }
+                        window.sessionStorage.removeItem = function(key) {
+                            return delCookie(key, 'sessionStorage');
+                        }
+                        window.sessionStorage.clear = function() {
+                            return delCookie('sessionStorage', 'sessionStorage');
+                        }
+                    })(window)
+                } else {
+                    (function(window) {
+                        var _data = {};
+                        window.sessionStorage.setItem = function(key, value) {
+                            return _data[id] = String(val);
+                        }
+                        window.sessionStorage.getItem = function(key) {
+                            return _data.hasOwnProperty(id) ? _data[id] : undefined;
+                        }
+                        window.sessionStorage.removeItem = function(key) {
+                            return delete _data[id];
+                        }
+                        window.sessionStorage.clear = function() {
+                            return _data = {};
+                        }
+                    })(window)
+                }
+            } else {
+                try {
+                    window.sessionStorage.setItem('_sessionStorage_test', 'test')
+                    window.sessionStorage.removeItem('_sessionStorage_test')
+                } catch (e) {
+                    if (navigator.cookieEnabled) {
+                        (function(window) {
+                            window.sessionStorage.setItem = function(key, value) {
+                                return setCookie(key, value, 'sessionStorage');
+                            }
+                            window.sessionStorage.getItem = function(key) {
+                                return getCookie(key, 'sessionStorage');
+                            }
+                            window.sessionStorage.removeItem = function(key) {
+                                return delCookie(key, 'sessionStorage');
+                            }
+                            window.sessionStorage.clear = function() {
+                                return delCookie('sessionStorage', 'sessionStorage');
+                            }
+                        })(window)
+                    } else {
+                        (function(window) {
+                            var _data = {};
+                            window.sessionStorage.setItem = function(key, value) {
+                                return _data[id] = String(val);
+                            }
+                            window.sessionStorage.getItem = function(key) {
+                                return _data.hasOwnProperty(id) ? _data[id] : undefined;
+                            }
+                            window.sessionStorage.removeItem = function(key) {
+                                return delete _data[id];
+                            }
+                            window.sessionStorage.clear = function() {
+                                return _data = {};
+                            }
+                        })(window)
+                    }
+                }
+            }
+        })(window)
+    </script>
+    <script>
+        ! function(e) {
+            function t(a) {
+                if (i[a]) return i[a].exports;
+                var n = i[a] = {
+                    exports: {},
+                    id: a,
+                    loaded: !1
+                };
+                return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+            }
+            var i = {};
+            return t.m = e, t.c = i, t.p = "", t(0)
+        }([function(e, t) {
+            "use strict";
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            var i = window;
+            t["default"] = i.flex = function(e, t) {
+                var a = e || 100,
+                    n = t || 1,
+                    r = i.document,
+                    o = navigator.userAgent,
+                    d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+                    l = o.match(/U3\/((\d+|\.){5,})/i),
+                    c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+                    p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+                    s = i.devicePixelRatio || 1;
+                p || d && d[1] > 534 || c || (s = 1);
+                var u = 1 / s,
+                    m = r.querySelector('meta[name="viewport"]');
+                m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m.setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" + u + ",minimum-scale=" + u), r.documentElement.style.fontSize = a / 2 * s * n + "px"
+            }, e.exports = t["default"]
+        }]);
+        flex(100, 1);
+    </script>
+</head>
+
+<body>
+    <div id="content">
+    </div>
+    <script src="js/vendor.dll.js"></script>
+</body>
+
+</html>
