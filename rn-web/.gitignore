@@ -1,0 +1,17 @@
+.idea
+.DS_Store
+tmp
+node_modules
+*.log
+yarn.lock
+
+ios/build
+ios/bundle
+android/bundle
+android/.gradle
+android/app/build
+android/build
+android/local.properties
+android/app/src/main/assets
+android/app/src/main/res/drawable*
+xcuserdata

@@ -4,22 +4,10 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var pxtorem = require('postcss-pxtorem');
 
-var babelQuery = {
-  plugins: [
-    ["external-helpers"],
-    ["babel-plugin-transform-runtime", { polyfill: false }],
-    ["transform-runtime", { polyfill: false }],
-    ["import", [{ "style": "css", "libraryName": "antd-mobile" }]]
-  ],
-  presets: ['es2015', 'stage-0', 'react']
-};
-
 module.exports = {
   devtool: 'source-map', // or 'inline-source-map'
 
-  entry: {
-    "index": path.resolve(__dirname, 'src/index'),
-  },
+  entry: { "index": path.resolve(__dirname, 'src/index') },
 
   output: {
     filename: '[name].js',
@@ -32,11 +20,22 @@ module.exports = {
     modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],
     extensions: ['', '.web.js', '.jsx', '.js', '.json'],
   },
-  babel: babelQuery,
+
   module: {
     noParse: [/moment.js/],
     loaders: [
-      { test: /\.jsx$/, exclude: /node_modules/, loader: 'babel', query: babelQuery },
+      {
+        test: /\.jsx$/, exclude: /node_modules/, loader: 'babel',
+        query: {
+          plugins: [
+            ["external-helpers"],
+            ["babel-plugin-transform-runtime", { polyfill: false }],
+            ["transform-runtime", { polyfill: false }],
+            ["import", [{ "style": "css", "libraryName": "antd-mobile" }]]
+          ],
+          presets: ['es2015', 'stage-0', 'react']
+        }
+      },
       { test: /\.(jpg|png|svg)$/, loader: "url?limit=8192" },
       // { test: /\.css$/, loader: 'style!css' }, // 把css处理成内联style，动态插入到页面
       { test: /\.less$/i, loader: ExtractTextPlugin.extract('style', 'css!postcss!less') },
