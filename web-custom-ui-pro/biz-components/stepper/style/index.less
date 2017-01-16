@@ -1,0 +1,74 @@
+// @import '../../style/base/mixins';
+@import '../../style/theme.less';
+
+@stepperPrefixCls: am-stepper;
+
+.@{stepperPrefixCls} {
+
+  color: @brand-primary;
+
+  &-handler-wrap {
+    position: relative;
+  }
+
+  &-handler {
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: currentColor;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: #fff;
+      position: absolute;
+      left: 12px;
+      top: 30px;
+    }
+  }
+
+  &-handler-down {
+    left: 0;
+    top: 0;
+  }
+
+  &-handler-up {
+    right: 0;
+    top: 0;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 40px;
+      background: #fff;
+      position: absolute;
+      left: 30px;
+      top: 12px;
+    }
+  }
+
+  &-input-wrap {
+    padding: 0 64px;
+  }
+
+  &-input {
+    width: 100%;
+    line-height: 64px;
+    font-size: @font-size-heading;
+    color: @color-text-base;
+    text-align: center;
+    border: 0;
+  }
+}
+
+.@{stepperPrefixCls}-disabled {
+  color: @fill-disabled;
+
+  .@{stepperPrefixCls}-input {
+    color: @fill-disabled;
+  }
+}

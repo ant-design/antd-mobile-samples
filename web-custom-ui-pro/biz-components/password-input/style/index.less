@@ -1,0 +1,66 @@
+.password-input {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #ccc;
+  position: relative;
+  // top: 50%;
+  // left: 50%;
+  // margin-left: -100px;
+  // margin-top: -25px;
+  margin: 10px 0;
+  overflow: hidden;
+
+  &.active {
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  input {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1px;
+  }
+
+  .password-input-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  li {
+    flex: 1;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    position: relative;
+
+    &:last-child {
+      border-right: 0px;
+    }
+
+    &.password {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background-color: black;
+        left: 50%;
+        top: 50%;
+        margin-left: -10px;
+        margin-top: -10px;
+      }
+    }
+  }
+}

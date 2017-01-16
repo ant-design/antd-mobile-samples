@@ -1,0 +1,5 @@
+before_deploy:
+options:
+  branch: 'site'
+  dist: '_site'
+cname: 'wealth.antm.alipay.net'

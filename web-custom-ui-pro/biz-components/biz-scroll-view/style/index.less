@@ -1,0 +1,44 @@
+@import '~antd-mobile/lib/badge/style/index.less';
+
+@bizScrollView : biz-scroll-view;
+
+.@{bizScrollView} {
+  position: relative;
+  height: 145px;
+  background-color: #fff;
+
+  &-list {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 20px;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &-item {
+      flex: none;
+      text-align: center;
+      font-size: @font-size-subhead;
+    }
+  }
+
+  &-indicator {
+    position: relative;
+    bottom: -10px;
+    margin: 0 auto;
+    width: 280px;
+    height: 10px;
+    background-color: #d8d8d8;
+
+    &-scroller {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #00a7f3;
+    }
+  }
+}

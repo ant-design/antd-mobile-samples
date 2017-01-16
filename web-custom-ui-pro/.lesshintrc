@@ -1,0 +1,18 @@
+{
+  "propertyOrdering": false,
+  "hexLength": "short",
+  "stringQuotes": false,
+  "decimalZero": false,
+  "importantRule": false,
+  "zeroUnit": "no_unit",
+  "qualifyingElement": false,
+  "duplicateProperty": false,
+  "importPath": false,
+  "finalNewline": false,
+  "spaceAroundOperator": false,
+  "excludedFiles": [
+    "components/style/base/mixins.less",
+    "components/style/base/reset.less",
+    "components/style/base/smooth.less"
+  ]
+}
