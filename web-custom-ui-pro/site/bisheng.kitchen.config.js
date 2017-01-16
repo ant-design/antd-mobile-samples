@@ -1,6 +1,7 @@
 const path = require('path');
 const pxtorem = require('postcss-pxtorem');
 const commonConfig = require('../ant-design-mobile/site/bisheng.kitchen.config');
+const configSvg = require('../svg.config');
 
 module.exports = Object.assign({}, commonConfig, {
   theme: './ant-design-mobile/site/mobile',
@@ -11,6 +12,8 @@ module.exports = Object.assign({}, commonConfig, {
       selectorBlackList: [/^html$/, /^\.ant-/, /^\.github-/, /^\.gh-/],
     }));
 
+    configSvg(config, true);
+
     config.module.noParse = [/moment.js/];
     config.resolve.alias = {
       'antd_custom_ui': process.cwd(),
@@ -18,7 +21,7 @@ module.exports = Object.assign({}, commonConfig, {
     };
 
     // 修改extensions
-    config.resolve.extensions = ['', '.alipay.tsx', '.alipay.ts', '.alipay.jsx', '.alipay.js', '.web.tsx', '.web.ts', '.web.jsx', '.web.js', '.ts', '.tsx', '.js', '.jsx', '.json'];
+    config.resolve.extensions = ['', '.web.tsx', '.web.ts', '.web.jsx', '.web.js', '.ts', '.tsx', '.js', '.jsx', '.json'];
 
     config.babel.plugins.push([
       require.resolve('babel-plugin-transform-runtime'),

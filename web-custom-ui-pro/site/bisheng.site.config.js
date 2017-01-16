@@ -1,9 +1,12 @@
 const path = require('path');
 const commonConfig = require('../ant-design-mobile/site/bisheng.site.config');
+const configSvg = require('../svg.config');
 
 module.exports = Object.assign({}, commonConfig, {
   theme: './ant-design-mobile/site/theme',
   webpackConfig(config) {
+    configSvg(config, true);
+
     config.module.noParse = [/moment.js/];
     config.resolve.alias = {
       'antd_custom_ui': process.cwd(),
