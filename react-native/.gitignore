@@ -51,3 +51,12 @@ android/app/libs
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
+ios/build
+ios/bundle
+android/bundle
+android/.gradle
+android/app/build
+android/build
+android/local.properties
+android/app/src/main/assets
+android/app/src/main/res/drawable*
