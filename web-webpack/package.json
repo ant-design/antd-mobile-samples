@@ -30,6 +30,7 @@
     "express": "^4.13.3",
     "express-urlrewrite": "^1.2.0",
     "extract-text-webpack-plugin": "~1.0.1",
+    "glob": "^7.1.1",
     "less": "~2.7.1",
     "less-loader": "~2.2.3",
     "postcss": "~5.2.5",
@@ -41,6 +42,7 @@
     "react-router": "~1.0.0-rc3",
     "serve-index": "~1.7.2",
     "style-loader": "^0.12.4",
+    "svg-sprite-loader": "^0.2.0",
     "url-loader": "~0.5.7",
     "webpack": "~1.13.1",
     "webpack-dev-middleware": "~1.6.1"

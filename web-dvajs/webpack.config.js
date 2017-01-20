@@ -53,7 +53,7 @@ module.exports = function(webpackConfig, env) {
   }));
 
   // for antd-mobile@1.0
-  const svgDirs = [];
+  const svgDirs = []; // 如果需要本地部署图标，需要在此加入本地图标路径
   glob.sync('node_modules/**/*antd-mobile/lib', { dot: true }).forEach(p => {
     svgDirs.push(new RegExp(p));
   });
@@ -64,13 +64,13 @@ module.exports = function(webpackConfig, env) {
       loader.exclude = svgDirs;
     }
   });
-  if (webpackConfig.module.loaders[0].loader !== 'svg-sprite') {
-    webpackConfig.module.loaders.unshift({
-      test: /\.svg$/,
-      loader: 'svg-sprite',
-      include: svgDirs,
-    });
-  }
+  // Note: https://github.com/kisenka/svg-sprite-loader/issues/4
+  // Can not process SVG files twice. You need to make sure of it yourself.
+  webpackConfig.module.loaders.unshift({
+    test: /\.svg$/,
+    loader: 'svg-sprite',
+    include: svgDirs,
+  });
 
   return webpackConfig;
 };

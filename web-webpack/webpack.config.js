@@ -4,6 +4,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var pxtorem = require('postcss-pxtorem');
 
+const glob = require('glob');  // require 需要放在文件头部
+
+const svgDirs = []; // 如果需要本地部署图标，需要在此加入本地图标路径
+glob.sync('node_modules/**/*antd-mobile/lib', { dot: true }).forEach(p => {
+  svgDirs.push(new RegExp(p));
+});
+
 module.exports = {
   devtool: 'source-map', // or 'inline-source-map'
 
@@ -36,7 +43,9 @@ module.exports = {
           presets: ['es2015', 'stage-0', 'react']
         }
       },
-      { test: /\.(jpg|png|svg)$/, loader: "url?limit=8192" },
+      { test: /\.(jpg|png)$/, loader: "url?limit=8192" },
+      // svg-sprite for antd-mobile@1.0 注意：如果有其他 svg loader 设置，请 exclude 掉这里的 svgDirs 目录
+      { test: /\.svg$/, loader: 'svg-sprite', include: svgDirs },
       // { test: /\.css$/, loader: 'style!css' }, // 把css处理成内联style，动态插入到页面
       { test: /\.less$/i, loader: ExtractTextPlugin.extract('style', 'css!postcss!less') },
       { test: /\.css$/i, loader: ExtractTextPlugin.extract('style', 'css!postcss') }
