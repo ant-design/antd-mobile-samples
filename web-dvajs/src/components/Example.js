@@ -1,9 +1,12 @@
 import React from 'react';
+import { Button, SearchBar, Icon } from 'antd-mobile';
 
 const Example = (props) => {
   return (
     <div>
-      Example
+      <Button loading>Start</Button>
+      <Icon type="check" />
+      <SearchBar />
     </div>
   );
 };

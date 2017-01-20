@@ -1,5 +1,6 @@
 const webpack = require('atool-build/lib/webpack');
 const pxtorem = require('postcss-pxtorem');
+const glob = require('glob');
 
 module.exports = function(webpackConfig, env) {
   webpackConfig.babel.plugins.push('transform-runtime');
@@ -50,6 +51,26 @@ module.exports = function(webpackConfig, env) {
     rootValue: 100,
     propWhiteList: [],
   }));
+
+  // for antd-mobile@1.0
+  const svgDirs = [];
+  glob.sync('node_modules/**/*antd-mobile/lib', { dot: true }).forEach(p => {
+    svgDirs.push(new RegExp(p));
+  });
+  // exclude the default svg-url-loader from
+  // atool-build https://github.com/ant-tool/atool-build/blob/e4bd2959689b6a95cb5c1c854a5db8c98676bdb3/src/getWebpackCommonConfig.js#L161
+  webpackConfig.module.loaders.forEach(loader => {
+    if (loader.test.toString() === '/\\.svg(\\?v=\\d+\\.\\d+\\.\\d+)?$/') {
+      loader.exclude = svgDirs;
+    }
+  });
+  if (webpackConfig.module.loaders[0].loader !== 'svg-sprite') {
+    webpackConfig.module.loaders.unshift({
+      test: /\.svg$/,
+      loader: 'svg-sprite',
+      include: svgDirs,
+    });
+  }
 
   return webpackConfig;
 };
