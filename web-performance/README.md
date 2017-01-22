@@ -2,6 +2,8 @@
 
 performance test proj
 
+[test record](./record.md)
+
 ### Install & Start
 
 ```shell
