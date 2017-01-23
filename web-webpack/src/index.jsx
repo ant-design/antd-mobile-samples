@@ -31,4 +31,4 @@ const App = React.createClass({
   }
 })
 
-ReactDOM.render(<App></App>, document.getElementById('example'));
+ReactDOM.render(<App />, document.getElementById('example'));

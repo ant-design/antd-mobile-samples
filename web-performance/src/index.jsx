@@ -12,6 +12,11 @@ import './index.less';
 
 const App = React.createClass({
   render() {
+    var rs = window.renderStart = new Date().getTime();
+    loger(
+      '从 react / react-dom / fastclick / component (2 个 http 链接)，加载和执行\
+      到第一次进入 entry component render 函数的耗时：', rs - bodyStart);
+
     return (<div className="container">
       <div className="body">
         <Misc />
@@ -24,4 +29,4 @@ const App = React.createClass({
   }
 })
 
-ReactDOM.render(<App></App>, document.getElementById('example'));
+ReactDOM.render(<App />, document.getElementById('example'));

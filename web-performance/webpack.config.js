@@ -63,11 +63,11 @@ module.exports = {
   },
   plugins: [
     // new webpack.optimize.CommonsChunkPlugin('shared.js'),
-    new webpack.optimize.CommonsChunkPlugin({
-      // minChunks: 2,
-      name: 'shared',
-      filename: 'shared.js'
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   // minChunks: 2,
+    //   name: 'shared',
+    //   filename: 'shared.js'
+    // }),
     new ExtractTextPlugin('[name].css', { allChunks: true }),
   ]
 

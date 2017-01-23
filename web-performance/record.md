@@ -9,9 +9,10 @@
 - 进入页面入口组件的 constructor 函数时间
 - 进入页面入口组件的 componentDidMount 函数时间
 
-### 组件性能
+### 页面、组件性能
 
-- 动画流畅度(fps)
+- 组件 render 执行次数
+- 动画流畅度、页面滚动性能 (fps)
 - reflow / repaint 情况
 
 ## 测试方法：
