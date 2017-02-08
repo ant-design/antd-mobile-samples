@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   SearchBar, Tabs, Steps,
   NavBar, Icon, Button,

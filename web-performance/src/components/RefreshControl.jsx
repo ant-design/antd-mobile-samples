@@ -1,4 +1,5 @@
 /* eslint no-dupe-keys: 0, no-mixed-operators: 0 */
+import React from 'react';
 import { RefreshControl, ListView } from 'antd-mobile';
 
 const data = [

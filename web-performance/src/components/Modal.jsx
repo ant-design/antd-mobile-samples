@@ -1,3 +1,4 @@
+import React from 'react';
 import { Modal, Button, SearchBar } from 'antd-mobile';
 
 export default React.createClass({

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import PerfProfiler from './PerfProfiler';
+
 import Misc from './components/Misc';
 import Carousel from './components/Carousel';
 import Form from './components/Form';
@@ -18,6 +20,7 @@ const App = React.createClass({
       到第一次进入 entry component render 函数的耗时：', rs - bodyStart);
 
     return (<div className="container">
+      <PerfProfiler />
       <div className="body">
         <Misc />
         <Carousel />

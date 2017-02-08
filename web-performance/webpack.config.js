@@ -57,10 +57,11 @@ module.exports = {
     }),
     pxtorem({ rootValue: 100, propWhiteList: [] })
   ],
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM"
-  },
+  // production use
+  // externals: {
+  //   "react": "React",
+  //   "react-dom": "ReactDOM"
+  // },
   plugins: [
     // new webpack.optimize.CommonsChunkPlugin('shared.js'),
     // new webpack.optimize.CommonsChunkPlugin({

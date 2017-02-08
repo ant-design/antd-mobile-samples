@@ -1,3 +1,4 @@
+import React from 'react';
 import { createForm } from 'rc-form';
 import moment from 'moment'; // moment.min ~= 48kb
 import { district } from 'antd-mobile-demo-data';

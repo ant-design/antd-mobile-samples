@@ -1,3 +1,4 @@
+import React from 'react';
 import { Popup, List, Button, Icon, Checkbox } from 'antd-mobile';
 
 const isIPhone = new RegExp('\\biPhone\\b|\\biPod\\b', 'i').test(window.navigator.userAgent);
