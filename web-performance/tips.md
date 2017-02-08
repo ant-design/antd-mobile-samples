@@ -6,7 +6,7 @@
 
 - `header` 标签内不要有「外链」资源，最大程度减少白屏时间
     - 替换`<link rel="stylesheet" href="xx.css">`为内联`<style>...</style>`
-    - 所有 CSS 都必须内嵌，内嵌样式表最大为 50 KB
+    - 所有 CSS 都必须内嵌，内嵌样式表最大为 50 KB. ref: https://www.ampproject.org/learn/how-amp-works/
 - 仅运行 GPU 加速动画 (Only GPU-accelerated properties)
     - `transition` property : currently `opacity`, `transform` and `-vendorPrefix-transform`
     - `@keyframes {...}` : currently `opacity`, `transform` and `-vendorPrefix-transform`
