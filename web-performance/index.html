@@ -33,6 +33,35 @@
       ele.style.cssText = "position:fixed;z-index:99999;left:0;bottom:2rem;background:rgba(0,0,0,.5);color:#fff;padding:5px; max-height:2rem; overflow-y: auto;";
       ele.innerHTML += args.join(' ') + '<br /><br />';
     }
+    function getPerformanceTiming () {
+      var performance = window.performance;
+      var timing = performance.timing;
+      var times = {}
+      if (!performance || !timing) {
+        console.log('你的浏览器不支持 performance 接口');
+        times = {};
+      }
+
+      // 客户端拿到第一个字节数据时间
+      times.TFB = timing.responseStart - timing.navigationStart;
+
+      // 开始解析的时间，可以理解为白屏时间
+      times.beginRender = timing.domLoading - timing.navigationStart;
+
+      // DOM 解析耗时
+      times.domParseTime = timing.domComplete - timing.domInteractive;
+
+      // DOM READY
+      times.DCL = timing.domContentLoadedEventEnd - timing.navigationStart;
+
+      // 加载异步资源的时间，这个时间太长说明经过网络请求的资源较多，或网络环境不佳，
+      // times.sourceLoad = timing.domContentLoadedEventEnd - timing.domContentLoadedEventStart;
+
+      // load 事件
+      times.load = timing.loadEventEnd - timing.navigationStart;
+
+      return times;
+    }
   </script>
   <script>
     var bodyStart = new Date().getTime();
@@ -45,6 +74,11 @@
   if ('addEventListener' in document) {
     window.addEventListener('load', function() {
       loger('从 bodyStart 到 window onload 耗时：', new Date().getTime() - bodyStart);
+      var pt = getPerformanceTiming();
+      loger('客户端拿到第一个字节数据时间', pt.TFB);
+      loger('浏览器开始解析 dom 的时间', pt.beginRender);
+      loger('浏览器解析 dom 耗时', pt.domParseTime);
+      loger('domready', pt.DCL);
       FastClick.attach(document.body);
     }, false);
   }
