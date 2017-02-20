@@ -3,6 +3,7 @@ import { View, AppRegistry } from 'react-native';
 import { DatePicker, List } from 'antd-mobile';
 import React from 'react';
 import { createForm } from 'rc-form';
+import Misc from './components/rn/Misc';
 
 let MobileDemo = React.createClass({
   render() {
@@ -20,6 +21,7 @@ let MobileDemo = React.createClass({
           </List.Item>
         </DatePicker>
       </List>
+      <Misc />
     </View>);
   }
 });

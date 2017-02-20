@@ -15,11 +15,11 @@ let MobileDemo = React.createClass({
             <List.Item arrow="horizontal">日期+时间</List.Item>
           </DatePicker>
         </List>
-        <Button type="primary" style={{ margin: '16px 0', padding: '0 16px' }}>
+        <Button loading style={{ margin: '16px 0', padding: '0 16px' }}>
           按钮
         </Button>
 
-        <Icon type="aliwangwang" />
+        <Icon type="check" />
       </div>
     );
   },
