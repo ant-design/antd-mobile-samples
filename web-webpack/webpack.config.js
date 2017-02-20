@@ -8,7 +8,8 @@ const glob = require('glob');  // require 需要放在文件头部
 
 const svgDirs = []; // 如果需要本地部署图标，需要在此加入本地图标路径
 glob.sync('node_modules/**/*antd-mobile/lib', { dot: true }).forEach(p => {
-  svgDirs.push(new RegExp(p));
+  // https://github.com/kisenka/svg-sprite-loader/issues/65
+  svgDirs.push(new RegExp(p, 'i'));
 });
 
 module.exports = {
