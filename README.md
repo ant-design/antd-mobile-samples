@@ -27,8 +27,6 @@ e.g. typescript samples
 
 ##### [web-typescript](web-typescript/README.md)
 
-##### [typescript](typescript/README.md) (web + rn)
-
 ##### [web-custom-ui](web-custom-ui/README.md)
 
 ##### [rn-custom-ui](rn-custom-ui/README.md)
