@@ -1,0 +1,44 @@
+{
+  "name": "antd-antm-demo",
+  "version": "0.0.1",
+  "private": true,
+  "entry": {
+    "index": "./index.js",
+    "mobile": "./mobile.js"
+  },
+  "scripts": {
+    "build": "RUN_ENV=pc atool-build",
+    "build:mobile": "RUN_ENV=mobile atool-build",
+    "lint": "eslint --ext .js src/",
+    "start": "RUN_ENV=pc dora --plugins \"proxy,webpack,livereload?enableJs=false&injectHost=127.0.0.1\"",
+    "start:mobile": "RUN_ENV=mobile dora --plugins \"proxy,webpack,livereload?enableJs=false&injectHost=127.0.0.1\""
+  },
+  "dependencies": {
+    "antd-mobile": "^1.0.0",
+    "antd": "^1.0.0",
+    "babel-runtime": "6.x",
+    "react": "15.3.x",
+    "react-dom": "15.3.x"
+  },
+  "devDependencies": {
+    "atool-build": "^0.9.0",
+    "babel-eslint": "^6.0.2",
+    "babel-plugin-import": "~1.0.1",
+    "babel-plugin-transform-runtime": "^6.8.0",
+    "dora": "0.4.x",
+    "dora-plugin-livereload": "^0.5.0",
+    "dora-plugin-proxy": "^0.8.5",
+    "dora-plugin-webpack": "^0.8.1",
+    "eslint": "^2.12.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.4.2",
+    "eslint-plugin-react": "^5.1.1",
+    "postcss-pxtorem": "^3.3.1",
+    "svg-sprite-loader": "^0.1.1",
+    "pre-commit": "1.x"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
