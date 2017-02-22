@@ -44,7 +44,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-    "antd-mobile": "^0.9.13",
+    "antd-mobile": "~1.0.0",
     "babel-polyfill": "^6.20.0",
     "dexie": "^1.5.1",
     "mobx": "^2.7.0",

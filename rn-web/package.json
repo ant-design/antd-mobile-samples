@@ -11,7 +11,7 @@
     "start": "dora --plugins \"proxy,webpack,livereload?enableJs=false&injectHost=127.0.0.1\""
   },
   "dependencies": {
-    "antd-mobile": "^1.0.0",
+    "antd-mobile": "~1.0.0",
     "babel-runtime": "6.x",
     "rc-form": "1.x",
     "react": "15.3.x",

@@ -7,7 +7,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "antd-mobile": "~0.9.12",
+    "antd-mobile": "~1.0.0",
     "babel-runtime": "^6.20.0"
   },
   "devDependencies": {

@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "antd-mobile": "~1.0.0-alpha.43",
+    "antd-mobile": "~1.0.0",
     "babel-runtime": "~6.11.6",
     "moment": "^2.14.1",
     "rc-form": "^0.17.2"

@@ -4,7 +4,7 @@
     "index": "./src/index.js"
   },
   "dependencies": {
-    "antd-mobile": "~1.0.0-beta.1",
+    "antd-mobile": "~1.0.0",
     "babel-plugin-import": "^1.1.0",
     "dva": "~1.1.0"
   },

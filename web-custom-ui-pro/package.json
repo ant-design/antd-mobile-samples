@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "antd-mobile": "^1.0.0-alpha.35",
+    "antd-mobile": "~1.0.0",
     "classnames": "^2.2.5",
     "less-vars-to-js": "^1.1.2",
     "lodash.throttle": "^4.1.1",
