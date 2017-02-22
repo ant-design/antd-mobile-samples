@@ -1,4 +1,21 @@
-# antd-mobile with react native custom ui
+# antd-mobile with rn custom ui
 
-antd_custom_ui 是 Ant Design Mobile 针对聚宝风格的 React 实现。
-我们在 [antd-mobile](http://mobile.ant.design/) 的基础上，参照「聚宝 UI 设计规范」进行了风格定制。
+### single component
+
+doing...
+
+### custom theme
+
+1. create `theme.js` file in project path, add variables; eg:
+
+  ```
+  module.exports = {
+    brand_primary: 'red',
+    color_link: 'red',
+    border_color_base: 'green',
+  };
+  ```
+
+2. run `node scripts/custom-rn-theme.js` before you start server; eg:
+
+  `node scripts/custom-rn-theme.js && node_modules/react-native/local-cli/cli.js start  `
