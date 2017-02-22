@@ -1,9 +1,9 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var autoprefixer = require('autoprefixer');
-var pxtorem = require('postcss-pxtorem');
+const autoprefixer = require('autoprefixer');
+const pxtorem = require('postcss-pxtorem');
 
 module.exports = {
   devtool: "source-map",

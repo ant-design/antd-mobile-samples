@@ -1,16 +1,17 @@
-var path = require('path')
-var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var autoprefixer = require('autoprefixer');
-var pxtorem = require('postcss-pxtorem');
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const pxtorem = require('postcss-pxtorem');
 
-const glob = require('glob');  // require 需要放在文件头部
+// 1. 如需添加私有图标，可在如下的 svgDirs 数组中加入本地 svg 文件路径
+const svgDirs = [
+  // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 自己私人的 svg 存放目录
+];
 
-const svgDirs = []; // 如果需要本地部署图标，需要在此加入本地图标路径
-glob.sync('node_modules/**/*antd-mobile/lib', { dot: true }).forEach(p => {
-  // https://github.com/kisenka/svg-sprite-loader/issues/65
-  svgDirs.push(new RegExp(p, 'i'));
-});
+// 2. 把属于 antd-mobile 内置 svg 文件也加入进来
+const antdDir = require.resolve('antd-mobile').replace(/warn\.js$/, '');
+svgDirs.push(antdDir);
 
 module.exports = {
   devtool: 'source-map', // or 'inline-source-map'
@@ -46,7 +47,7 @@ module.exports = {
       },
       { test: /\.(jpg|png)$/, loader: "url?limit=8192" },
       // svg-sprite for antd-mobile@1.0 注意：如果有其他 svg loader 设置，请 exclude 掉这里的 svgDirs 目录
-      { test: /\.svg$/, loader: 'svg-sprite', include: svgDirs },
+      { test: /\.(svg)$/i, loader: 'svg-sprite', include: svgDirs },
       // { test: /\.css$/, loader: 'style!css' }, // 把css处理成内联style，动态插入到页面
       { test: /\.less$/i, loader: ExtractTextPlugin.extract('style', 'css!postcss!less') },
       { test: /\.css$/i, loader: ExtractTextPlugin.extract('style', 'css!postcss') }

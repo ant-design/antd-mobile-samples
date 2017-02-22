@@ -30,7 +30,6 @@
     "express": "^4.13.3",
     "express-urlrewrite": "^1.2.0",
     "extract-text-webpack-plugin": "~1.0.1",
-    "glob": "^7.1.1",
     "less": "~2.7.1",
     "less-loader": "~2.2.3",
     "postcss": "~5.2.5",

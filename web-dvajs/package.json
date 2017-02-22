@@ -20,7 +20,6 @@
     "dora-plugin-webpack": "^0.8.1",
     "dora-plugin-webpack-hmr": "^0.2.1",
     "expect": "^1.20.2",
-    "glob": "^7.1.1",
     "postcss-pxtorem": "~3.3.1",
     "react": "~15.4.1",
     "react-dom": "~15.4.1",

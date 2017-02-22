@@ -1,22 +1,30 @@
 'use strict';
 
-var antdDir = require.resolve('antd-mobile/lib/index.web').replace(__dirname, '').replace(/index\.web\.js$/, '');
+const path = require('path');
+
+// 1. 如需添加私有图标，可在如下的 svgDirs 数组中加入本地 svg 文件路径
+const svgDirs = [
+  // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 自己私人的 svg 存放目录
+];
+
+// 2. 把属于 antd-mobile 内置 svg 文件也加入进来
+const antdDir = require.resolve('antd-mobile').replace(/warn\.js$/, '');
+svgDirs.push(antdDir);
 
 module.exports = function (config, includeDemo) {
-  let svgDirs = [
-    /components\/icon\/style\/assets/,
-    /components\/notice-bar\/style\/assets/,
-    /components\/toast\/style\/assets/,
-  ];
+  svgDirs = svgDirs.concat([
+    path.resolve(__dirname, 'components/icon/style/assets/'),
+    path.resolve(__dirname, 'components/notice-bar/style/assets/'),
+    path.resolve(__dirname, 'components/toast/style/assets/'),
+  ]);
   if (includeDemo) {
     svgDirs = svgDirs.concat([
-      /components\/steps\/demo/,
-      /components\/icon\/demo/,
-      /components\/popover\/demo/,
-      /components\/action-sheet\/demo/,
-      /components\/result\/demo/,
+      path.resolve(__dirname, 'components/steps/demo/'),
+      path.resolve(__dirname, 'components/icon/demo/'),
+      path.resolve(__dirname, 'components/popover/demo/'),
+      path.resolve(__dirname, 'components/action-sheet/demo/'),
+      path.resolve(__dirname, 'components/result/demo/'),
     ]);
-    svgDirs.push(new RegExp(antdDir));
   }
   // exclude the default svg-url-loader from atool-build https://github.com/ant-tool/atool-build/blob/master/src/getWebpackCommonConfig.js#L161
   config.module.loaders.forEach(loader => {
@@ -28,7 +36,7 @@ module.exports = function (config, includeDemo) {
   // Can not process SVG files twice
   if (config.module.loaders[0].loader !== 'svg-sprite') {
     config.module.loaders.unshift({
-      test: /\.svg$/,
+      test: /\.(svg)$/i,
       loader: 'svg-sprite',
       include: svgDirs,
     });

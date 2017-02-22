@@ -11,7 +11,7 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
-var config = {
+const config = {
     cache: true,
     devtool: false,
     entry: {
