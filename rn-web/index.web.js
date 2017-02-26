@@ -20,6 +20,7 @@ let MobileDemo = React.createClass({
         </Button>
 
         <Icon type="check" />
+        <Icon type={require('./svg/money.svg')} />
       </div>
     );
   },
