@@ -52,29 +52,26 @@ module.exports = function(webpackConfig, env) {
     propWhiteList: [],
   }));
 
-  // 1. 如需添加私有图标，可在如下的 svgDirs 数组中加入本地 svg 文件路径
   const svgDirs = [
-    // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 自己私人的 svg 存放目录
+    require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. 属于 antd-mobile 内置 svg 文件
+    path.resolve(__dirname, './src/assets/'),  // 2. 自己私人的 svg 存放目录
   ];
 
-  // 2. 把属于 antd-mobile 内置 svg 文件也加入进来
-  const antdDir = require.resolve('antd-mobile').replace(/warn\.js$/, '');
-  svgDirs.push(antdDir);
-
-  // exclude the default svg-url-loader from
-  // atool-build https://github.com/ant-tool/atool-build/blob/e4bd2959689b6a95cb5c1c854a5db8c98676bdb3/src/getWebpackCommonConfig.js#L161
+  // 因为一个 SVG 文件不能被处理两遍. 在 atool-build 默认为 svg配置的svg-url-loade 里 exclude 掉需要 svg-sprite-loader处理的目录
+  // https://github.com/ant-tool/atool-build/blob/master/src/getWebpackCommonConfig.js#L162
+  // https://github.com/kisenka/svg-sprite-loader/issues/4
   webpackConfig.module.loaders.forEach(loader => {
-    if (loader.test.toString() === '/\\.svg(\\?v=\\d+\\.\\d+\\.\\d+)?$/') {
+    if (loader.test && typeof loader.test.test === 'function' && loader.test.test('.svg')) {
       loader.exclude = svgDirs;
     }
   });
-  // Note: https://github.com/kisenka/svg-sprite-loader/issues/4
-  // Can not process SVG files twice. You need to make sure of it yourself.
+  // 4. 配置 webpack loader
   webpackConfig.module.loaders.unshift({
     test: /\.(svg)$/i,
     loader: 'svg-sprite',
-    include: svgDirs,
+    include: svgDirs, // 把 svgDirs 路径下的所有 svg 文件交给 svg-sprite-loader 插件处理
   });
+
 
   return webpackConfig;
 };

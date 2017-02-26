@@ -6,6 +6,7 @@ const Example = (props) => {
     <div>
       <Button loading>Start</Button>
       <Icon type="check" />
+      <Icon type={require('../assets/money.svg')} />
       <SearchBar />
     </div>
   );
