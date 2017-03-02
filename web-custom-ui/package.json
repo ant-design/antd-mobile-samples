@@ -1,6 +1,6 @@
 {
   "name": "antd_mobile_custom_ui_exa",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ant Design 移动版的风格定制版",
   "keywords": [
     "ant",
@@ -13,6 +13,7 @@
     "theme.js"
   ],
   "license": "MIT",
+  "main": "lib/warn.js",
   "dependencies": {
     "antd-mobile": "^1.0.0",
     "classnames": "^2.2.5",
@@ -70,7 +71,8 @@
     "react-intl": "^2.0.1",
     "react-stateless-wrapper": "~1.0.2",
     "reqwest": "~2.0.5",
-    "svg-sprite-loader": "0.0.31"
+    "svg-sprite-loader": "0.0.31",
+    "typescript": "~2.1.6"
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run demolint && npm run lesshint",
@@ -78,7 +80,6 @@
     "tslint": "antd-tools run ts-lint && npm run compile && rm -rf lib",
     "demolint": "RUN_ENV=DEMO eslint components/*/demo/*.md --ext '.md'",
     "lesshint": "lesshint components/ -r scripts/lesshint-report.js",
-    "ci": "tnpm run lint",
     "eslint-fix": "eslint --fix site scripts ./*.js --ext '.js,.jsx' && eslint-tinker ./components/*/demo/*.md",
     "pre-publish": "node ./scripts/build-less-entry",
     "prepublish": "antd-tools run guard",
@@ -87,6 +88,7 @@
     "dist": "antd-tools run dist",
     "build": "npm run dist",
     "compile": "antd-tools run compile",
+    "watch-tsc": "antd-tools run watch-tsc",
     "clean": "antd-tools run clean",
     "start": "concurrently \"bisheng start -c ./site/bisheng.desktop.config.js --no-livereload\" \"bisheng start -c ./site/bisheng.kitchen.config.js --no-livereload\"",
     "site": "concurrently \"bisheng build -c ./site/bisheng.desktop.config.js\" \"bisheng build -c ./site/bisheng.kitchen.config.js\"",
