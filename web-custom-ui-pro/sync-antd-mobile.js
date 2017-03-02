@@ -72,7 +72,8 @@ function syncAntd() {
       fs.writeFileSync(path.join(destDir, '/index.web.tsx'), tsxContent(c));
 
       // copy examples\docs md file
-      fs.copySync(path.join(sourceDir, '/index.md'), path.join(destDir, '/index.md'));
+      fs.copySync(path.join(sourceDir, '/index.en-US.md'), path.join(destDir, '/index.en-US.md'));
+      fs.copySync(path.join(sourceDir, '/index.zh-CN.md'), path.join(destDir, '/index.zh-CN.md'));
       fs.copySync(path.join(sourceDir, '/demo'), path.join(destDir, '/demo'));
       // del react-native examples file
       del.sync([path.join(destDir, '/demo/*.tsx')]);

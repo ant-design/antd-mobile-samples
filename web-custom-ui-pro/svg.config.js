@@ -3,13 +3,9 @@
 const path = require('path');
 
 // 1. 如需添加私有图标，可在如下的 svgDirs 数组中加入本地 svg 文件路径
-const svgDirs = [
-  // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 自己私人的 svg 存放目录
+let svgDirs = [
+  require.resolve('antd-mobile').replace(/warn\.js$/, ''),
 ];
-
-// 2. 把属于 antd-mobile 内置 svg 文件也加入进来
-const antdDir = require.resolve('antd-mobile').replace(/warn\.js$/, '');
-svgDirs.push(antdDir);
 
 module.exports = function (config, includeDemo) {
   svgDirs = svgDirs.concat([
