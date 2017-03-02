@@ -100,9 +100,6 @@
     "port": 8001
   },
   "typings": "lib/index.web.d.ts",
-  "publishConfig": {
-    "registry": "http://registry.npm.alibaba-inc.com"
-  },
   "pre-commit": [
     "lint"
   ],
