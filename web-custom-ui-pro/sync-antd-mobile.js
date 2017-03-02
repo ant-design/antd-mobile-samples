@@ -9,7 +9,7 @@ var path = require('path');
 var del = require('del');
 var execSync = require('child_process').execSync;
 
-var libName = 'antd_custom_ui';
+var libName = 'antd_mobile_custom_ui_exa';
 
 // 枚举出 antd-mobile 里的所有可用组件
 var components = [
@@ -77,7 +77,7 @@ function syncAntd() {
       fs.copySync(path.join(sourceDir, '/demo'), path.join(destDir, '/demo'));
       // del react-native examples file
       del.sync([path.join(destDir, '/demo/*.tsx')]);
-      // replace ` from 'antd-mobile'` with ` from 'antd_custom_ui'` in demo content
+      // replace ` from 'antd-mobile'` with ` from 'antd_mobile_custom_ui_exa'` in demo content
       var files = fs.walkSync(path.join(destDir, '/demo'));
       files.forEach(function (file) {
         var ct = fs.readFileSync(file).toString().replace(/\sfrom\s'antd-mobile'/g, " from '" + libName + "'");

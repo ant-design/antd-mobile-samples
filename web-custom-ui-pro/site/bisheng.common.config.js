@@ -14,8 +14,8 @@ module.exports = {
     config.module.noParse = [/moment.js/];
 
     config.resolve.alias = {
-      'antd_custom_ui/lib': path.join(process.cwd(), 'components'),
-      'antd_custom_ui': process.cwd(),
+      'antd_mobile_custom_ui_exa/lib': path.join(process.cwd(), 'components'),
+      'antd_mobile_custom_ui_exa': process.cwd(),
       site: path.join(process.cwd(), 'site'),
     };
 
@@ -29,7 +29,7 @@ module.exports = {
       'import',
       [{
         style: true,
-        libraryName: 'antd_custom_ui',
+        libraryName: 'antd_mobile_custom_ui_exa',
         libraryDirectory: 'components',
       },
       {

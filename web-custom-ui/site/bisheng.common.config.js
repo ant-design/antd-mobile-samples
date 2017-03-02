@@ -1,7 +1,6 @@
 const path = require('path');
 const configSvg = require('../svg.config');
-var a = require.resolve('antd-mobile').replace('/lib/warn.js', '/');
-console.log(a);
+
 module.exports = {
   webpackConfig(config) {
     configSvg(config, true);
@@ -15,8 +14,8 @@ module.exports = {
     config.module.noParse = [/moment.js/];
 
     config.resolve.alias = {
-      'antd-mobile': a,
-      antd_custom_ui: process.cwd(),
+      'antd-mobile': require.resolve('antd-mobile').replace('/lib/warn.js', '/'),
+      antd_mobile_custom_ui_exa: process.cwd(),
       site: path.join(process.cwd(), 'site'),
     };
 

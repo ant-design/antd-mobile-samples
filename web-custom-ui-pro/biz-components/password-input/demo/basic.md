@@ -5,7 +5,7 @@ title: 基本
 
 
 ````jsx
-import { PasswordInput } from 'antd_custom_ui';
+import { PasswordInput } from 'antd_mobile_custom_ui_exa';
 
 const Demo = React.createClass({
   render() {

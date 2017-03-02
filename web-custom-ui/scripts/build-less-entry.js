@@ -3,12 +3,12 @@
 /* eslint-disable */
 'use strict';
 
-// Build a entry less file to dist/antd_custom_ui.less
+// Build a entry less file to dist/antd_mobile_custom_ui_exa.less
 var fs = require('fs');
 var path = require('path');
 
 if(fs.existsSync(path.join(__dirname,'../dist'))) {
-  console.log('Building a entry less file to dist/antd_custom_ui.less');
+  console.log('Building a entry less file to dist/antd_mobile_custom_ui_exa.less');
   var componentsPath = path.join(process.cwd(), 'components');
   var componentsLessContent = '';
 
@@ -23,7 +23,7 @@ if(fs.existsSync(path.join(__dirname,'../dist'))) {
 
     // Build less entry file: dist/antd.less
     fs.writeFileSync(
-      path.join(process.cwd(), 'dist', 'antd_custom_ui.less'),
+      path.join(process.cwd(), 'dist', 'antd_mobile_custom_ui_exa.less'),
       '@import "../lib/style/index.less";\n@import "../lib/style/components.less";'
     );
   });

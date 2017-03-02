@@ -1,10 +1,10 @@
 /* eslint arrow-body-style: 0 */
 import React from 'react';
 import { List, Icon } from 'antd-mobile/lib';
-import '../../static/style';
 import 'antd-mobile/lib/style/index.less';
-import 'antd-mobile/lib/list/style/index.less'
-import 'antd-mobile/lib/icon/style/index.less'
+import 'antd-mobile/lib/list/style/index.less';
+import 'antd-mobile/lib/icon/style/index.less';
+import '../../static/style';
 
 function getQuery(searchStr) {
   let query = {};

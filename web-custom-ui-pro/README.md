@@ -1,6 +1,6 @@
-# antd_custom_ui
+# antd_mobile_custom_ui_exa
 
-antd_custom_ui 是 Ant Design Mobile 针对聚宝风格的 React 实现。
+antd_mobile_custom_ui_exa 是 Ant Design Mobile 针对聚宝风格的 React 实现。
 我们在 [antd-mobile](http://mobile.ant.design/) 的基础上，参照「聚宝 UI 设计规范」进行了风格定制。
 
 ## Install & Usage
@@ -10,6 +10,8 @@ antd_custom_ui 是 Ant Design Mobile 针对聚宝风格的 React 实现。
 ## 开发
 
 ```
+# node@6+  npm@3+
+
 $ npm install
 $ gulp // 自动同步 antd-mobile 组件 demo ，并监控文件变化（注意过程中的提示）
 ```
@@ -29,7 +31,7 @@ $ gulp // 自动同步 antd-mobile 组件 demo ，并监控文件变化（注意
 ## 风格定制包开发
 
 1. 拷贝本仓库。
-2. 全局替换 `antd_custom_ui` 为你的包名，例如 `xxx-ui`，并修改相应文档的文案。
+2. 全局替换 `antd_mobile_custom_ui_exa` 为你的包名，例如 `xxx-ui`，并修改相应文档的文案。
 3. 按照上面的 `开发` 文档，跑起来。
 4. 在`themes/default.less`文件里覆盖 antd-mobile 提供的相应 less 变量 (可以在此目录添加更多的 theme 文件)。
 5. 仅覆盖变量无法满足需求，在`components/xx/index.web.tsx`文件里添加自己的代码逻辑。

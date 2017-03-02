@@ -5,7 +5,7 @@ title: 基本
 
 
 ````jsx
-import { BizScrollView, Icon } from 'antd_custom_ui';
+import { BizScrollView, Icon } from 'antd_mobile_custom_ui_exa';
 
 const data = [
   { url: '/trade.htm?page=buy', type: 'info', text: '买入', 'data-seed': 'BJS49.P2325.B6628' },

@@ -33,7 +33,7 @@ module.exports = {
     },
   },
   plugins: [
-    `bisheng-plugin-antd`,
+    'bisheng-plugin-antd',
     'bisheng-plugin-react?lang=__react',
   ],
   routes: [{

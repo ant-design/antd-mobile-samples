@@ -7,7 +7,7 @@ title: 基本
 
 
 ````jsx
-import { List, Stepper } from 'antd_custom_ui';
+import { List, Stepper } from 'antd_mobile_custom_ui_exa';
 
 function onChange(value) {
   console.log('changed', value);

@@ -5,7 +5,7 @@ title: 类型、尺寸
 
 
 ````jsx
-import { Button } from 'antd_custom_ui';
+import { Button } from 'antd_mobile_custom_ui_exa';
 
 const ButtonExample = React.createClass({
   render() {
