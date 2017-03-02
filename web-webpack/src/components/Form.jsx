@@ -5,6 +5,8 @@ import { district } from 'antd-mobile-demo-data';
 import { Picker, DatePicker, List, Checkbox } from 'antd-mobile';
 import enUs from 'antd-mobile/lib/date-picker/locale/en_US';
 
+import AsyncPicker from './Picker';
+
 const CheckboxItem = Checkbox.CheckboxItem;
 
 // 如果不是使用 List.Item 作为 children
@@ -54,6 +56,9 @@ let Test = React.createClass({
           <List.Item arrow="horizontal">日期</List.Item>
         </DatePicker>
       </List>
+      <AsyncPicker>
+        <CustomChildren>多列异步 Picker</CustomChildren>
+      </AsyncPicker>
       <Picker data={district} title="选择地区" extra="请选择(可选)" value={pickerValue} onChange={(v) => this.setState({ pickerValue: v })}>
         <CustomChildren>省市区选择</CustomChildren>
       </Picker>
