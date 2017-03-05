@@ -1,6 +1,10 @@
 ## antd-mobile demo with roadhog, dva
 
-svg config + rem config
+Include below common usage:
+
+- custom svg config
+- rem config
+- custom theme config
 
 ### dev
 

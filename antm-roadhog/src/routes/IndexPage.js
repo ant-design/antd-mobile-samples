@@ -1,14 +1,12 @@
+/* eslint-disable no-plusplus, global-require */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { connect } from 'dva';
 import { DatePicker, List, Button, Icon, Tabs, WhiteSpace } from 'antd-mobile';
 import { createForm } from 'rc-form';
-import styles from './IndexPage.css';
 
 const TabPane = Tabs.TabPane;
 
-function callback(key) {
-  console.log(key);
+function callback() {
 }
 
 
@@ -19,7 +17,7 @@ const makeTabPane = (key) => {
         {`选项${key}内容`}
       </div>
     </TabPane>
-  )
+  );
 };
 
 const makeMultiTabPane = (count) => {
@@ -34,7 +32,7 @@ class MobileDemo extends React.Component {
   render() {
     return (
       <div>
-        <List renderHeader={ () => '选择时间'}>
+        <List renderHeader={() => '选择时间'}>
           <DatePicker
             mode="datetime"
             {...this.props.form.getFieldProps('datetime')}
@@ -42,7 +40,7 @@ class MobileDemo extends React.Component {
             <List.Item arrow="horizontal">日期+时间</List.Item>
           </DatePicker>
         </List>
-        <Button loading style={{ margin: '16px 0', padding: '0 16px' }}>
+        <Button loading style={{ margin: '16px 0', padding: '0 16px' }} type="primary">
           按钮
         </Button>
 

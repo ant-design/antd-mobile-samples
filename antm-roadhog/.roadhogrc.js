@@ -7,14 +7,15 @@ const svgSpriteDirs = [
 ];
 
 export default {
-  "entry": "src/index.js",
+  entry: 'src/index.js',
   svgSpriteLoaderDirs: svgSpriteDirs,
-  "env": {
-    "development": {
-      "extraBabelPlugins": [
-        "dva-hmr",
-        "transform-runtime",
-        ["import", { "libraryName": "antd-mobile", "libraryDirectory": "lib", "style": "css" }]
+  "theme": "./theme.config.js",
+  env: {
+    development: {
+      extraBabelPlugins: [
+        'dva-hmr',
+        'transform-runtime',
+        ['import', { 'libraryName': 'antd-mobile', 'libraryDirectory': 'lib', 'style': true }]
       ],
       extraPostCSSPlugins: [
         pxtorem({
@@ -23,10 +24,10 @@ export default {
         }),
       ],
     },
-    "production": {
-      "extraBabelPlugins": [
-        "transform-runtime",
-        ["import", { "libraryName": "antd-mobile", "libraryDirectory": "lib", "style": "css" }]
+    production: {
+      extraBabelPlugins: [
+        'transform-runtime',
+        ['import', { 'libraryName': 'antd-mobile', 'libraryDirectory': 'lib', 'style': true }]
       ],
       extraPostCSSPlugins: [
         pxtorem({
