@@ -9,6 +9,8 @@ npm@3+
 
 ## Samples link
 
+> [Web Q & A demo](web-qa/README.md)
+
 ##### [rn-web](rn-web/README.md) (rn + web comprehensively)
 
 ##### [web-basic](web-webpack/README.md)

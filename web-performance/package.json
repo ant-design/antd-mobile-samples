@@ -39,7 +39,6 @@
     "react-addons-linked-state-mixin": "^15.4.2",
     "react-addons-perf": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-router": "~1.0.0-rc3",
     "serve-index": "~1.7.2",
     "style-loader": "^0.12.4",
     "svg-sprite-loader": "^0.2.0",

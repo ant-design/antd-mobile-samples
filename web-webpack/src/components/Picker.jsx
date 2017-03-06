@@ -33,7 +33,7 @@ export default React.createClass({
     const d = [...this.state.data];
     if (value[0] === "2") {
       //动态加两列数据
-			d[1].children = [
+      d[1].children = [
         {
           "label": "杭州",
           "value": "2-1",
