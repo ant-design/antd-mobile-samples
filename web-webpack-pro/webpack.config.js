@@ -63,6 +63,14 @@ module.exports = {
                 test: /\.jpe?g$|\.gif$|\.png$/i,
                 exclude: /node_modules/,
                 loader: 'url?limit=8192&name=images/[hash:8].[name].[ext]'
+            },
+            {
+                test: /\.(svg)$/i,
+                loader: require.resolve('svg-sprite-loader'),
+                include: [
+                  require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. 属于 antd-mobile 内置 svg 文件
+                  //path.resolve(__dirname, './svg/'),  // 2. 自己私人的 svg 存放目录
+                ]
             }
         ]
     },
