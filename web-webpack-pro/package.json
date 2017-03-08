@@ -4,6 +4,7 @@
   "description": "小管家客户端-react",
   "main": "index.js",
   "scripts": {
+    "start": "npm run dev",
     "dll": "webpack --config webpack.dll.js  -p ",
     "dev": "webpack-dev-server --host 0.0.0.0 --port 8000 --inline --compress --hot --content-base build --history-api-fallback",
     "build": "webpack --config webpack.config.build.js --progress --colors -p"
