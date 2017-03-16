@@ -1,5 +1,17 @@
 # antd-mobile react-native demo
 
+```
+node4+ npm3+
+
+npm i react-native-cli -g
+npm i
+npm start
+
+react-native run-ios // ios
+
+react-native run-android // android
+```
+
 ### use antd-mobile in react-native project
 
 1. install dep
