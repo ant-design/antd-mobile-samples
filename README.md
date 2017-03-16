@@ -9,19 +9,14 @@ npm@3+
 
 ## Samples link
 
-> [Web Q & A demo](web-qa/README.md)
+> [Web Q & A demo](web-qa)
 
-##### [rn-web](rn-web/README.md) (rn + web comprehensively)
-
-##### [web-basic](web-webpack/README.md)
-
-##### [web-pro](web-webpack-pro/README.md)
-
-##### [web-typescript](web-typescript/README.md)
-
-##### [web-custom-ui](web-custom-ui/README.md)
-
-##### [rn-custom-ui](rn-custom-ui/README.md)
+- [web-basic](./web-webpack)
+- [rn-basic](./react-native)
+- [web-pro](./web-webpack-pro)
+- [web-typescript](./web-typescript)
+- [web-custom-ui](./web-custom-ui)
+- [rn-custom-ui](./rn-custom-ui)
 
 
 ## Directory naming conventions
