@@ -1,15 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 
-import TapTest from './components/Tap';
+import App from './components/App';
+import Detail from './components/Detail';
 
-const App = React.createClass({
+class Base extends React.Component{
   render() {
-    return (<div>
-      {/* TapTest 测试是否有 点击穿透 问题 */}
-      <TapTest />
-    </div>);
+    return <div className="root">
+      {this.props.children}
+    </div>
   }
-})
+};
 
-ReactDOM.render(<App />, document.getElementById('example'));
+ReactDOM.render((
+  <Router history={hashHistory}>
+    <Route path="/" component={Base}>
+      <IndexRoute component={App}/>
+      <Route path="app" component={App}></Route>
+      <Route path="next" component={Detail}></Route>
+    </Route>
+  </Router>
+), document.getElementById('example'));
