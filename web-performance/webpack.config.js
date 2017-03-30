@@ -28,8 +28,6 @@ module.exports = {
         test: /\.jsx$/, exclude: /node_modules/, loader: 'babel',
         query: {
           plugins: [
-            ["external-helpers"],
-            ["babel-plugin-transform-runtime", { polyfill: false }],
             ["transform-runtime", { polyfill: false }],
             ["import", [{ "style": "css", "libraryName": "antd-mobile" }]]
           ],
