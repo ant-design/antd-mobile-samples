@@ -5,7 +5,8 @@
 	"scripts": {
 		"rn-start": "node node_modules/react-native/local-cli/cli.js start",
     "start": "node scripts/custom-rn-theme && npm run rn-start",
-		"test": "jest"
+		"test": "jest",
+		"ios": "node node_modules/react-native/local-cli/cli.js run-ios"
 	},
 	"dependencies": {
     "antd-mobile": "~1.0.0",

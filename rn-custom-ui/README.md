@@ -16,6 +16,4 @@ doing...
   };
   ```
 
-2. run `node scripts/custom-rn-theme.js` before you start server; eg:
-
-  `node scripts/custom-rn-theme.js && node_modules/react-native/local-cli/cli.js start  `
+2. open one terminal, run `npm start`, then open another terminal, run `npm run ios`
