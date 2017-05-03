@@ -1,5 +1,5 @@
 import {
-  SearchBar, Tabs, Steps,
+  SearchBar, Tabs, Steps, Stepper,
   NavBar, Icon, Button,
 } from 'antd-mobile';
 import DrawerTest from './Drawer';
@@ -20,6 +20,7 @@ export default class Misc extends React.Component{
       >NavBar</NavBar>
 
       <SearchBar placeholder="搜索" />
+      <Stepper showNumber max={10} min={1} />
 
       <Tabs defaultActiveKey="1">
         <TabPane tab="选项卡一" key="1">
