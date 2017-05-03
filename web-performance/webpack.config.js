@@ -6,6 +6,9 @@ var pxtorem = require('postcss-pxtorem');
 
 module.exports = {
   devtool: 'source-map', // or 'inline-source-map'
+  devServer: {
+    disableHostCheck: true
+  },
 
   entry: { "index": path.resolve(__dirname, 'src/index') },
 

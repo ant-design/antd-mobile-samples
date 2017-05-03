@@ -7,6 +7,9 @@ const pxtorem = require('postcss-pxtorem');
 
 module.exports = {
   devtool: "source-map",
+  devServer: {
+    disableHostCheck: true
+  },
 
   entry: "./src/index.tsx",
   output: {

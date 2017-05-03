@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "antd-mobile": "~1.0.0",
+    "antd-mobile": "^1.0.0",
     "babel-runtime": "~6.11.6",
     "moment": "^2.14.1",
     "rc-form": "^0.17.2"
@@ -44,6 +44,6 @@
     "url-loader": "~0.5.7",
     "webpack": "~1.13.1",
     "webpack-dev-middleware": "~1.6.1",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "~1.16.2"
   }
 }
