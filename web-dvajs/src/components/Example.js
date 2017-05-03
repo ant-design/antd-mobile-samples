@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, SearchBar, Icon } from 'antd-mobile';
+import { Button, SearchBar, Icon, Stepper } from 'antd-mobile';
 
 const Example = (props) => {
   return (
@@ -8,6 +8,7 @@ const Example = (props) => {
       <Icon type="check" />
       <Icon type={require('../assets/money.svg')} />
       <SearchBar />
+      <Stepper showNumber max={10} min={1} />
     </div>
   );
 };
