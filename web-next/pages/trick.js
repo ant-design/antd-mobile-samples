@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
   WhiteSpace,
-  List, Radio, Checkbox, Switch, Modal, Button, Menu
+  List, Switch, Modal, Button, Menu
 } from 'antd-mobile'
 import Layout from '../components/Layout'
 import MenuBar from '../components/MenuBar'
