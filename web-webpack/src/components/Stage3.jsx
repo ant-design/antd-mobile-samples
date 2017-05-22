@@ -1,11 +1,10 @@
+import React from 'react';
 import { createForm } from 'rc-form';
 import moment from 'moment'; // moment.min ~= 48kb
 import { district } from 'antd-mobile-demo-data';
 
 import { Picker, DatePicker, List, Checkbox } from 'antd-mobile';
 import enUs from 'antd-mobile/lib/date-picker/locale/en_US';
-
-import AsyncPicker from './Picker';
 
 const CheckboxItem = Checkbox.CheckboxItem;
 
@@ -30,6 +29,9 @@ let Test = React.createClass({
       // dpValue: moment(),
       dpValue: null,
     }
+  },
+  componentDidMount() {
+    this.props.changeTitle('Stage 3');
   },
   render() {
     const { getFieldProps } = this.props.form;
@@ -56,9 +58,6 @@ let Test = React.createClass({
           <List.Item arrow="horizontal">日期</List.Item>
         </DatePicker>
       </List>
-      <AsyncPicker>
-        <CustomChildren>多列异步 Picker</CustomChildren>
-      </AsyncPicker>
       <Picker data={district} title="选择地区" extra="请选择(可选)" value={pickerValue} onChange={(v) => this.setState({ pickerValue: v })}>
         <CustomChildren>省市区选择</CustomChildren>
       </Picker>

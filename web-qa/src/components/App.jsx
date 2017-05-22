@@ -1,22 +1,22 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
-import { Button, NavBar, WhiteSpace } from 'antd-mobile';
+import { NavBar } from 'antd-mobile';
 
-export default class App extends React.Component{
+export default class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      title: 'app',
+    };
+  }
   render() {
-    const history=hashHistory;
+    // console.log(this.props.route, this.props.params, this.props.routeParams);
     return (
-      <div style={{minHeight:480}}>
-        <NavBar mode="light" iconName={false}>第一界面</NavBar>
-
-        <WhiteSpace size="lg"/>
-        <Button onClick={() => {
-          history.push("/next");
-          console.log('第一界面 点击按钮 B');
-        }}>
-          父页面 button 测试 点击穿透
-        </Button>
-
+      <div className="root-layout">
+        <NavBar mode="light" onLeftClick={() => hashHistory.goBack()}>{this.state.title}</NavBar>
+        {React.cloneElement(this.props.children, {
+          changeTitle: title => this.setState({ title })
+        })}
       </div>
     );
   }
