@@ -21,18 +21,19 @@ const CustomChildren = (props) => {
   );
 };
 
-let Test = React.createClass({
-  getInitialState() {
-    return {
+class Demo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       pickerValue: [],
       // pickerValue: ['340000', '340800', '340824']
       // dpValue: moment(),
       dpValue: null,
-    }
-  },
+    };
+  }
   componentDidMount() {
     this.props.changeTitle('Stage 3');
-  },
+  }
   render() {
     const { getFieldProps } = this.props.form;
     const { pickerValue, dpValue } = this.state;
@@ -65,8 +66,7 @@ let Test = React.createClass({
         <CustomChildren>时间选择</CustomChildren>
       </DatePicker>
     </div>);
-  },
-});
+  }
+}
 
-Test = createForm()(Test);
-export default Test;
+export default createForm()(Demo);

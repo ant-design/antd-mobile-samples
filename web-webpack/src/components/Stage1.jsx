@@ -3,7 +3,7 @@ import { RefreshControl, ListView, Carousel } from 'antd-mobile';
 
 class Carou extends React.Component {
   state = {
-    data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'AiyWuByWklrrUDlFignR'],
+    data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
     initialHeight: 400,
   }
   render() {
@@ -13,7 +13,7 @@ class Carou extends React.Component {
           <a key={ii}
             style={{
               display: 'block', height: this.state.initialHeight,
-              background: `url(https://zos.alipayobjects.com/rmsportal/${ii}.png) no-repeat`,
+              background: `url(https://zos.alipayobjects.com/rmsportal/${ii || 'QcWDkUhvYIVEcvtosxMF'}.png) no-repeat`,
               backgroundSize: 'cover'
             }}
           />

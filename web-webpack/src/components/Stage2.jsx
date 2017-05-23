@@ -5,7 +5,7 @@ import {
 
 const TabPane = Tabs.TabPane;
 
-export default class Misc extends React.Component {
+export default class Demo extends React.Component {
   componentDidMount() {
     this.props.changeTitle('Stage 2');
   }
