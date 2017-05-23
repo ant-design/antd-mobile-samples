@@ -1,5 +1,5 @@
 import React from 'react';
-import { RefreshControl, ListView, Carousel } from 'antd-mobile';
+import { RefreshControl, ListView, Carousel, SwipeAction } from 'antd-mobile';
 
 class Carou extends React.Component {
   state = {
@@ -58,12 +58,28 @@ export default class Demo extends React.Component {
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderHeader={() => <div>ListView + RefreshControl</div>}
+        renderHeader={() => <div>ListView + RefreshControl + SwipeAction</div>}
         renderRow={(rowData, sectionID, rowID) => {
           return (
             <div key={rowID} style={{ padding: 10 }}>
               <div>{rowData}</div>
-              <Carou />
+              {Number(rowID) % 2 === 0 ? <Carou /> : <SwipeAction
+                autoClose
+                right={[
+                  {
+                    text: 'Cancel',
+                    onPress: () => console.log('cancel'),
+                    style: { backgroundColor: '#ddd', color: 'white' },
+                  },
+                  {
+                    text: 'Delete',
+                    onPress: () => console.log('delete'),
+                    style: { backgroundColor: '#F4333C', color: 'white' },
+                  },
+                ]}
+              >
+                <div style={{ padding: 40, backgroundColor: '#f1f1f1' }}>drag left</div>
+              </SwipeAction>}
             </div>
           );
         }}
