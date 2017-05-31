@@ -2,7 +2,7 @@
 
 ### single component
 
-doing...
+https://github.com/ant-design/ant-design-mobile/issues/1174
 
 ### custom theme
 
