@@ -1,5 +1,5 @@
 import React from 'react';
-import { RefreshControl, ListView, Carousel, SwipeAction } from 'antd-mobile';
+import { RefreshControl, ListView, Carousel, SwipeAction, Button } from 'antd-mobile';
 
 class Carou extends React.Component {
   state = {
@@ -39,15 +39,37 @@ export default class Demo extends React.Component {
     this.state = {
       dataSource: dataSource.cloneWithRows(this.initData),
       refreshing: false,
+      isLoading: false,
     };
   }
   componentDidMount() {
     this.props.changeTitle('Stage 1');
   }
-  onRefresh() {
+  onLoadData = () => {
+    this.setState({ isLoading: true });
+    setTimeout(() => {
+      for (let index = 0; index < 5; index++) {
+        this.initData = this.initData.concat(`onLoadData Data ${pageIndex++}`);
+      }
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(this.initData),
+        isLoading: false,
+      });
+    }, 1000);
+  }
+  onEndReached = (event) => {
+    // load new data
+    // hasMore: from backend data, indicates whether it is the last page, here is false
+    if (this.state.isLoading && !this.state.hasMore) {
+      return;
+    }
+    console.log('reach end', event, this.state.dataSource);
+    this.onLoadData();
+  }
+  onRefresh = () => {
     this.setState({ refreshing: true });
     setTimeout(() => {
-      this.initData = [`ref${pageIndex++}`, ...this.initData];
+      this.initData = [`onRefresh Data ${pageIndex++}`, ...this.initData];
       this.setState({
         dataSource: this.state.dataSource.cloneWithRows(this.initData),
         refreshing: false,
@@ -58,7 +80,13 @@ export default class Demo extends React.Component {
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderHeader={() => <div>ListView + RefreshControl + SwipeAction</div>}
+        renderHeader={() => <div>
+          <div>ListView + RefreshControl + SwipeAction</div>
+          <Button inline onClick={() => this.onLoadData()}>load data</Button>
+        </div>}
+        renderFooter={() => (<div style={{ padding: 30, textAlign: 'center' }}>
+          {this.state.isLoading ? 'Loading...' : 'Loaded'}
+        </div>)}
         renderRow={(rowData, sectionID, rowID) => {
           return (
             <div key={rowID} style={{ padding: 10 }}>
@@ -90,6 +118,8 @@ export default class Demo extends React.Component {
         pageSize={5}
         scrollRenderAheadDistance={200}
         scrollEventThrottle={20}
+        onEndReached={this.onEndReached}
+        onEndReachedThreshold={10}
         style={{
           height: document.body.clientHeight,
         }}
