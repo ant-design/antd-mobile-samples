@@ -45,7 +45,13 @@ export default class Demo extends React.Component {
   componentDidMount() {
     this.props.changeTitle('Stage 1');
   }
-  onLoadData = () => {
+  onEndReached = (event) => {
+    // load new data
+    // hasMore: from backend data, indicates whether it is the last page, here is false
+    if (this.state.isLoading && !this.state.hasMore) {
+      return;
+    }
+    console.log('reach end', event, this.state.dataSource);
     this.setState({ isLoading: true });
     setTimeout(() => {
       for (let index = 0; index < 5; index++) {
@@ -57,17 +63,13 @@ export default class Demo extends React.Component {
       });
     }, 1000);
   }
-  onEndReached = (event) => {
-    // load new data
-    // hasMore: from backend data, indicates whether it is the last page, here is false
-    if (this.state.isLoading && !this.state.hasMore) {
-      return;
-    }
-    console.log('reach end', event, this.state.dataSource);
-    this.onLoadData();
-  }
   onRefresh = () => {
-    this.setState({ refreshing: true });
+    console.log('onRefresh');
+    if (!this.manuallyRefresh) {
+      this.setState({ refreshing: true });
+    } else {
+      this.manuallyRefresh = false;
+    }
     setTimeout(() => {
       this.initData = [`onRefresh Data ${pageIndex++}`, ...this.initData];
       this.setState({
@@ -82,7 +84,10 @@ export default class Demo extends React.Component {
         dataSource={this.state.dataSource}
         renderHeader={() => <div>
           <div>ListView + RefreshControl + SwipeAction</div>
-          <Button inline onClick={() => this.onLoadData()}>load data</Button>
+          <Button inline onClick={() => {
+            this.manuallyRefresh = true;
+            this.setState({ refreshing: true });
+          }}>refresh data</Button>
         </div>}
         renderFooter={() => (<div style={{ padding: 30, textAlign: 'center' }}>
           {this.state.isLoading ? 'Loading...' : 'Loaded'}
