@@ -4,9 +4,10 @@
 
 ## 项目优化
 
-- `header` 标签内不要有「外链」资源，最大程度减少白屏时间
+- `head` 标签内不要有「外链」资源，最大程度减少白屏时间
     - 替换`<link rel="stylesheet" href="xx.css">`为内联`<style>...</style>`
     - 所有 CSS 都必须内嵌，内嵌样式表最大为 50 KB. ref: https://www.ampproject.org/learn/how-amp-works/
+    - `head`里，js 脚本要放到 css 之前，能避免阻塞 html 的解析。(因为 css 不会但 js 会阻塞 html 的解析)
 - 仅运行 GPU 加速动画 (Only GPU-accelerated properties)
     - `transition` property : currently `opacity`, `transform` and `-vendorPrefix-transform`
     - `@keyframes {...}` : currently `opacity`, `transform` and `-vendorPrefix-transform`
