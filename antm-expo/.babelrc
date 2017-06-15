@@ -6,6 +6,11 @@
         "transform-react-jsx-source",
         ["import", { "libraryName": "antd-mobile" }]
       ]
+    },
+    "production": {
+      "plugins": [
+        ["import", { "libraryName": "antd-mobile" }]
+      ]
     }
   }
 }
