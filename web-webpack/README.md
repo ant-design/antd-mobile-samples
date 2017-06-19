@@ -14,8 +14,8 @@ open http://localhost:8000/
 ### Build
 
 ```sh
-npm run build
-# then see dist dir
+npm run build  # then see dist dir
+# Note: you should remove `webpack-visualizer-plugin / webpack-bundle-analyzer` code in webpack.config.js file for production environment.
 ```
 
 bundle analyzer tools: 

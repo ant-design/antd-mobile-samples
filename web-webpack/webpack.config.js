@@ -3,8 +3,8 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
-var Visualizer = require('webpack-visualizer-plugin');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+var Visualizer = require('webpack-visualizer-plugin'); // remove it in production environment.
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // remove it in production environment.
 
 module.exports = {
   devtool: 'source-map', // or 'inline-source-map'
@@ -68,7 +68,7 @@ module.exports = {
       filename: 'shared.js'
     }),
     new ExtractTextPlugin('[name].css', { allChunks: true }),
-    new Visualizer(),
-    new BundleAnalyzerPlugin(),
+    new Visualizer(), // remove it in production environment.
+    new BundleAnalyzerPlugin(), // remove it in production environment.
   ]
 }
