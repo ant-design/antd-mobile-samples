@@ -14,7 +14,7 @@
     "@types/react": "~0.14.55",
     "@types/react-dom": "~0.14.19",
     "autoprefixer": "~6.5.4",
-    "babel-core": "~6.20.0",
+    "babel-core": "^6.25.0",
     "babel-loader": "~6.2.9",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-import": "~1.1.0",

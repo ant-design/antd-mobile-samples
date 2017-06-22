@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // remove it in production environment.
+// var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // remove it in production environment.
 
 const postcssOpts = {
   ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
@@ -46,10 +46,10 @@ module.exports = {
             ["import", [{ "style": "css", "libraryName": "antd-mobile" }]]
           ],
           presets: ['es2015', 'stage-0', 'react']
+          // presets: [['es2015', { modules: false }], 'stage-0', 'react'] // tree-shaking
         }
       },
       { test: /\.(jpg|png)$/, loader: "url-loader?limit=8192" },
-      // svg-sprite for antd-mobile@1.0
       {
         test: /\.(svg)$/i, loader: 'svg-sprite-loader', include: [
           require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. 属于 antd-mobile 内置 svg 文件
@@ -89,6 +89,6 @@ module.exports = {
       filename: 'shared.js'
     }),
     new ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
-    new BundleAnalyzerPlugin(), // remove it in production environment.
+    // new BundleAnalyzerPlugin(), // remove it in production environment.
   ]
 }
