@@ -33,6 +33,7 @@ module.exports = {
         test: /\.jsx$/, exclude: /node_modules/, loader: 'babel',
         query: {
           plugins: [
+            'external-helpers', // why not work?
             ["transform-runtime", { polyfill: false }],
             ["import", [{ "style": "css", "libraryName": "antd-mobile" }]]
           ],

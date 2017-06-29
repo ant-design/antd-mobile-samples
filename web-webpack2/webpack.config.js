@@ -42,6 +42,7 @@ module.exports = {
         test: /\.jsx$/, exclude: /node_modules/, loader: 'babel-loader',
         options: {
           plugins: [
+            'external-helpers', // why not work?
             ["transform-runtime", { polyfill: false }],
             ["import", [{ "style": "css", "libraryName": "antd-mobile" }]]
           ],
@@ -77,11 +78,12 @@ module.exports = {
       }
     ]
   },
-  // externals: {
-  //   "react": "React",
-  //   "react-dom": "ReactDOM"
-  // },
+  externals: {
+    "react": "React",
+    "react-dom": "ReactDOM"
+  },
   plugins: [
+    new webpack.optimize.ModuleConcatenationPlugin(),
     // new webpack.optimize.CommonsChunkPlugin('shared.js'),
     new webpack.optimize.CommonsChunkPlugin({
       // minChunks: 2,

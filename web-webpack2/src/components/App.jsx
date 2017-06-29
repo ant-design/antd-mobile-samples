@@ -1,5 +1,4 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
 import { NavBar, Drawer } from 'antd-mobile';
 
 export default class App extends React.Component {
@@ -15,7 +14,6 @@ export default class App extends React.Component {
     return (
       <div className="container">
         <NavBar mode="light"
-          onLeftClick={() => hashHistory.goBack()}
           rightContent={<b onClick={() => this.setState({ open: true })}>...</b>}
         >
           {this.state.title}
