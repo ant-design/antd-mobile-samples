@@ -1,4 +1,4 @@
-# antd-mobile + next.js
+# antd-mobile + next.js (Server Side Render)
 
 ## How to use
 

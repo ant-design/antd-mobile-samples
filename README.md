@@ -17,6 +17,8 @@ npm@3+
 - [web-typescript](./web-typescript)
 - [web-custom-ui](./web-custom-ui)
 - [rn-custom-ui](./rn-custom-ui)
+- [rn-expo](./rn-expo) React-Native Demo with [Expo](https://expo.io/)
+- [web-ssr](./rn-expo) Web Server Side Render Demo with [Next.js](https://github.com/zeit/next.js/)
 
 
 ## Directory naming conventions
