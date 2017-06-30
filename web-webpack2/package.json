@@ -4,7 +4,7 @@
   "main": "lib/index",
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --port 8000",
-    "build": "webpack --display-optimization-bailout --progress --colors"
+    "build": "webpack -p --display-optimization-bailout --progress --colors"
   },
   "license": "MIT",
   "dependencies": {
@@ -40,6 +40,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^3.0.0",
     "webpack-bundle-analyzer": "^2.8.1",
-    "webpack-dev-server": "^2.5.0"
+    "webpack-dev-server": "^2.5.0",
+    "webpack-visualizer-plugin": "^0.1.11"
   }
 }

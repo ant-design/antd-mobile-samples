@@ -3,7 +3,17 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
-// var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // remove it in production environment.
+
+const Visualizer = require('webpack-visualizer-plugin'); // remove it in production environment.
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // remove it in production environment.
+const otherPlugins = process.argv[1].indexOf('webpack-dev-server') >= 0 ? [] : [
+  new Visualizer(), // remove it in production environment.
+  new BundleAnalyzerPlugin({
+    defaultSizes: 'parsed',
+    // generateStatsFile: true,
+    statsOptions: { source: false }
+  }), // remove it in production environment.
+];
 
 const postcssOpts = {
   ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
@@ -91,6 +101,6 @@ module.exports = {
       filename: 'shared.js'
     }),
     new ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
-    // new BundleAnalyzerPlugin(), // remove it in production environment.
+    ...otherPlugins
   ]
 }

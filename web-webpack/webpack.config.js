@@ -3,8 +3,17 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
-var Visualizer = require('webpack-visualizer-plugin'); // remove it in production environment.
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // remove it in production environment.
+
+const Visualizer = require('webpack-visualizer-plugin'); // remove it in production environment.
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // remove it in production environment.
+const otherPlugins = process.argv[1].indexOf('webpack-dev-server') >= 0 ? [] : [
+  new Visualizer(), // remove it in production environment.
+  new BundleAnalyzerPlugin({
+    defaultSizes: 'parsed',
+    // generateStatsFile: true,
+    statsOptions: { source: false }
+  }), // remove it in production environment.
+];
 
 module.exports = {
   devtool: 'source-map', // or 'inline-source-map'
@@ -57,10 +66,10 @@ module.exports = {
     }),
     pxtorem({ rootValue: 100, propWhiteList: [] })
   ],
-  // externals: {
-  //   "react": "React",
-  //   "react-dom": "ReactDOM"
-  // },
+  externals: {
+    "react": "React",
+    "react-dom": "ReactDOM"
+  },
   plugins: [
     // new webpack.optimize.CommonsChunkPlugin('shared.js'),
     new webpack.optimize.CommonsChunkPlugin({
@@ -69,7 +78,6 @@ module.exports = {
       filename: 'shared.js'
     }),
     new ExtractTextPlugin('[name].css', { allChunks: true }),
-    new Visualizer(), // remove it in production environment.
-    new BundleAnalyzerPlugin(), // remove it in production environment.
+    ...otherPlugins
   ]
 }
