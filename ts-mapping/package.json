@@ -10,10 +10,11 @@
   "devDependencies": {
     "@types/react": "latest",
     "@types/react-native": "latest",
-    "tslint": "latest"
+    "tslint": "latest",
+    "typescript": "latest"
   },
   "scripts": {
-    "lint": "npm run lint:native && npm run lint:web",
+    "lint": "npm run lint:native & npm run lint:web",
     "lint:native": "tslint --type-check -p native",
     "lint:web": "tslint --type-check -p web"
   }
