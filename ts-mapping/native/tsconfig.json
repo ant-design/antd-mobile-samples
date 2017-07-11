@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "noUnusedLocals": false,
+    "baseUrl": "../",
+    "paths": {
+      "antd-mobile": [
+        "./node_modules/antd-mobile/lib/native",
+        "./types/native"
+      ],
+      "antd-mobile/lib/*": [
+        "./node_modules/antd-mobile/lib/*"
+      ]
+    }
+  }
+}
