@@ -4,6 +4,7 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const pxtorem = require('postcss-pxtorem');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
@@ -82,9 +83,9 @@ module.exports = {
     // We also include JSX as a common component filename extension to support
     // some tools, although we do not recommend using it, see:
     // https://github.com/facebookincubator/create-react-app/issues/290
-    extensions: ['.js', '.json', '.jsx'],
+    extensions: ['.web.js', '.js', '.json', '.jsx'],
     alias: {
-      
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -114,7 +115,7 @@ module.exports = {
           {
             options: {
               formatter: eslintFormatter,
-              
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -139,6 +140,8 @@ module.exports = {
           /\.gif$/,
           /\.jpe?g$/,
           /\.png$/,
+          /\.less$/,
+          /\.svg$/,
         ],
         loader: require.resolve('file-loader'),
         options: {
@@ -160,7 +163,12 @@ module.exports = {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
         loader: require.resolve('babel-loader'),
-        
+        options: {
+          plugins: [
+            ['import', { libraryName: 'antd-mobile', style: true }],
+          ],
+          cacheDirectory: true,
+        }
       },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
@@ -216,6 +224,39 @@ module.exports = {
       },
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "file" loader exclusion list.
+      {
+        test: /\.(svg)$/i,
+        loader: 'svg-sprite-loader',
+        include: [
+          require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. svg files of antd-mobile
+          path.resolve(__dirname, '../src/'),  // folder of svg files in your project
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          require.resolve('style-loader'),
+          require.resolve('css-loader'),
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+              plugins: () => [
+                autoprefixer({
+                  browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
+                }),
+                pxtorem({ rootValue: 100, propWhiteList: [] })
+              ],
+            },
+          },
+          {
+            loader: require.resolve('less-loader'),
+            options: {
+              modifyVars: { "@primary-color": "#1DA57A" },
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
