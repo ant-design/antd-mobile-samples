@@ -1,0 +1,23 @@
+{
+    "name": "antd-mobile-web",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Ant design mobile web entry",
+    "license": "MIT",
+    "scripts": {
+        "start": "webpack-dev-server",
+        "build": "webpack --progress --colors --display-reasons --display-used-exports --display-optimization-bailout",
+        "analyzer": "webpack --profile --json > dist/stats.json && webpack-bundle-analyzer dist/stats.json -m static -O -r dist/report.html"
+    },
+    "devDependencies": {
+        "antd-mobile": "^1.5.0-alpha.2",
+        "antd-mobile-web": "^1.5.0-alpha.2",
+        "babel-core": "^6.25.0",
+        "babel-loader": "^7.1.1",
+        "react": "^15.6.1",
+        "react-dom": "^15.6.1",
+        "webpack": "^3.3.0",
+        "webpack-bundle-analyzer": "^2.8.3",
+        "webpack-dev-server": "^2.5.1"
+    }
+}
