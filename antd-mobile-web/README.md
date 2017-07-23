@@ -11,11 +11,10 @@ npm start
 
 open http://localhost:8080/
 
-## Build & Run
+## Build
 
 ```bash
 npm run build
-npm start
 ```
 
 ## Bundle analyzer
