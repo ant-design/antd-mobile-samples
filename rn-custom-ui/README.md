@@ -2,7 +2,10 @@
 
 ### single component
 
-https://github.com/ant-design/ant-design-mobile/issues/1174
+- `version 1.x`:  https://github.com/ant-design/ant-design-mobile/issues/1174
+
+- `version 2.0`: https://github.com/ant-design/ant-design-mobile/pull/1629
+
 
 ### custom theme
 
