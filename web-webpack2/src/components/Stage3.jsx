@@ -1,6 +1,6 @@
 import React from 'react';
 import { createForm } from 'rc-form';
-import moment from 'moment'; // moment.min ~= 48kb
+// import moment from 'moment'; // moment.min ~= 48kb
 import { district } from 'antd-mobile-demo-data';
 
 import { Picker, DatePicker, List, Checkbox } from 'antd-mobile';
@@ -52,9 +52,9 @@ class Demo extends React.Component {
           mode="date"
           title="选择日期"
           extra="可选,小于结束日期"
-          {...getFieldProps('date1', { initialValue: moment() })}
-          minDate={moment('2015-08-06', 'YYYY-MM-DD')}
-          maxDate={moment('2017-12-03', 'YYYY-MM-DD')}
+          {...getFieldProps('date1', { initialValue: new Date() }) }
+          minDate={new Date(2015, 8, 6)}
+          maxDate={new Date(2017, 12, 3)}
         >
           <List.Item arrow="horizontal">日期</List.Item>
         </DatePicker>
