@@ -32,7 +32,7 @@ First we install antd-mobile and [babel-plugin-import](https://github.com/ant-de
 
   ```bash
   $ yarn add antd-mobile
-  $ yarn add babel-plugin-import --dev
+  $ yarn add babel-plugin-import less-loader postcss-pxtorem svg-sprite-loader@0.3.1 --dev
   ```
 
 1. Modify `config/webpack.config.dev.js`
@@ -45,6 +45,7 @@ First we install antd-mobile and [babel-plugin-import](https://github.com/ant-de
         exclude: [
           ...
           /\.less$/,
+          /\.svg$/,
           ...
         ]
       },
