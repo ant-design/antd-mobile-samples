@@ -16,7 +16,7 @@
   "dependencies": {
     "antd-mobile": "^1.1.3",
     "antd-mobile-demo-data": "^0.1.4",
-    "expo": "^17.0.0",
+    "expo": "~17.0.0",
     "react": "16.0.0-alpha.6",
     "react-dom": "^15.0.0",
     "react-native": "^0.44.0",
