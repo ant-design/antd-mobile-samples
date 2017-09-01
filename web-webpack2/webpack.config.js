@@ -21,7 +21,7 @@ const postcssOpts = {
     autoprefixer({
       browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
     }),
-    pxtorem({ rootValue: 100, propWhiteList: [] })
+    // pxtorem({ rootValue: 100, propWhiteList: [] })
   ],
 };
 
@@ -53,7 +53,7 @@ module.exports = {
           plugins: [
             'external-helpers', // why not work?
             ["transform-runtime", { polyfill: false }],
-            // ["import", [{ "style": "css", "libraryName": "antd-mobile" }]]
+            ["import", [{ "style": "css", "libraryName": "antd-mobile" }]]
           ],
           presets: ['es2015', 'stage-0', 'react']
           // presets: [['es2015', { modules: false }], 'stage-0', 'react'] // tree-shaking

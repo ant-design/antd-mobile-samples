@@ -1,6 +1,5 @@
 import React from 'react';
 import { createForm } from 'rc-form';
-// import moment from 'moment'; // moment.min ~= 48kb
 import { district } from 'antd-mobile-demo-data';
 
 import { Picker, DatePicker, List, Checkbox } from 'antd-mobile';
@@ -13,7 +12,7 @@ const CustomChildren = (props) => {
   return (
     <div
       onClick={props.onClick}
-      style={{ backgroundColor: '#fff', height: '0.9rem', lineHeight: '0.9rem', padding: '0 0.3rem' }}
+      style={{ backgroundColor: '#fff', height: 45, lineHeight: '45px', padding: '0 15px' }}
     >
       {props.children}
       <span style={{ float: 'right' }}>{props.extra}</span>
@@ -27,7 +26,7 @@ class Demo extends React.Component {
     this.state = {
       pickerValue: [],
       // pickerValue: ['340000', '340800', '340824']
-      // dpValue: moment(),
+      // dpValue: new Date(),
       dpValue: null,
     };
   }
