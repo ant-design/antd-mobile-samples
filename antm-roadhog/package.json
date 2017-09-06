@@ -11,12 +11,12 @@
   },
   "theme": "./theme.config.js",
   "dependencies": {
-    "antd-mobile": "^1.0.3",
+    "antd-mobile": "1.x",
     "babel-runtime": "^6.9.2",
     "dva": "^1.2.1",
     "rc-form": "^1.3.0",
-    "react": "^15.4.0",
-    "react-dom": "^15.4.0"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

@@ -14,11 +14,11 @@
     "start:mobile": "RUN_ENV=mobile dora --plugins \"proxy,webpack,livereload?enableJs=false&injectHost=127.0.0.1\""
   },
   "dependencies": {
-    "antd-mobile": "^1.0.0",
+    "antd-mobile": "1.x",
     "antd": "^1.0.0",
     "babel-runtime": "6.x",
-    "react": "15.3.x",
-    "react-dom": "15.3.x"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
     "atool-build": "^0.9.0",
