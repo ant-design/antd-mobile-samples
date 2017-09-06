@@ -4,7 +4,7 @@
     "index": "./src/index.js"
   },
   "dependencies": {
-    "antd-mobile": "^1.0.0",
+    "antd-mobile": "1.x",
     "babel-plugin-import": "^1.1.0",
     "dva": "~1.1.0"
   },
@@ -21,8 +21,8 @@
     "dora-plugin-webpack-hmr": "^0.2.1",
     "expect": "^1.20.2",
     "postcss-pxtorem": "~3.3.1",
-    "react": "~15.4.1",
-    "react-dom": "~15.4.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "redbox-react": "^1.3.2",
     "svg-sprite-loader": "^0.2.0"
   },

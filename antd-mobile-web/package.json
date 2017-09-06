@@ -10,7 +10,7 @@
         "analyzer": "webpack --profile --json > dist/stats.json && webpack-bundle-analyzer dist/stats.json -m static -O -r dist/report.html"
     },
     "devDependencies": {
-        "antd-mobile": "^1.5.0",
+        "antd-mobile": "1.x",
         "antd-mobile-web": "^1.5.0",
         "babel-core": "^6.25.0",
         "babel-loader": "^7.1.1",

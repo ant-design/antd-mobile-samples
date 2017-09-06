@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd-mobile": "^1.6.5",
+    "antd-mobile": "1.x",
     "babel-plugin-import": "^1.2.0",
     "less-loader": "^4.0.4",
     "postcss-pxtorem": "^4.0.1",
