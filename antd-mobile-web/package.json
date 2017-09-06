@@ -5,7 +5,7 @@
     "description": "Ant design mobile web entry",
     "license": "MIT",
     "scripts": {
-        "start": "webpack-dev-server",
+        "start": "webpack-dev-server --host 0.0.0.0 --port 8000",
         "build": "webpack --progress --colors --display-reasons --display-used-exports --display-optimization-bailout",
         "analyzer": "webpack --profile --json > dist/stats.json && webpack-bundle-analyzer dist/stats.json -m static -O -r dist/report.html"
     },
