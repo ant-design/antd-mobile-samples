@@ -7,7 +7,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "antd-mobile": "1.x",
+    "antd-mobile": "^2.0.0-alpha.9",
     "babel-runtime": "^6.20.0"
   },
   "devDependencies": {
@@ -34,7 +34,6 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "source-map-loader": "~0.1.5",
-    "svg-sprite-loader": "^0.3.1",
     "ts-loader": "^1.3.2",
     "typescript": "~2.4.0",
     "url-loader": "~0.5.7",

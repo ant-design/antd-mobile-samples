@@ -5,11 +5,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
 
-const svgDirs = [
-  require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. 属于 antd-mobile 内置 svg 文件
-  // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 2. 自己私人的 svg 存放目录
-];
-
 module.exports = {
   devtool: "source-map",
   devServer: {
@@ -35,11 +30,6 @@ module.exports = {
       { test: /\.css$/, loader: ExtractTextPlugin.extract('css?sourceMap!postcss-loader') },
       { test: /\.less$/, loader: ExtractTextPlugin.extract('css?sourceMap!postcss-loader!less?sourceMap') },
       { test: /\.(jpg|png)$/, loader: "url?limit=8192" }, //把不大于8kb的图片打包处理成Base64
-      {
-        test: /\.(svg)$/i,
-        loader: 'svg-sprite',
-        include: svgDirs,  // 把 svgDirs 路径下的所有 svg 文件交给 svg-sprite-loader 插件处理
-      },
     ],
     preLoaders: [
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
@@ -50,7 +40,7 @@ module.exports = {
     autoprefixer({
       browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
     }),
-    pxtorem({ rootValue: 100, propWhiteList: [] })
+    // pxtorem({ rootValue: 100, propWhiteList: [] })
   ],
   externals: {
     "react": "React",

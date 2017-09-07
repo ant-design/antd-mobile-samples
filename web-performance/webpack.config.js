@@ -21,11 +21,10 @@ module.exports = {
 
   resolve: {
     modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],
-    extensions: ['', '.web.js', '.jsx', '.js', '.json'],
+    extensions: ['', '.jsx', '.js', '.json'],
   },
 
   module: {
-    noParse: [/moment.js/],
     loaders: [
       {
         test: /\.jsx$/, exclude: /node_modules/, loader: 'babel',
@@ -38,11 +37,6 @@ module.exports = {
         }
       },
       { test: /\.(jpg|png)$/, loader: "url?limit=8192" },
-      // svg-sprite for antd-mobile@1.0
-      { test: /\.(svg)$/i, loader: 'svg-sprite', include: [
-        require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. 属于 antd-mobile 内置 svg 文件
-        // path.resolve(__dirname, 'src/my-project-svg-foler'),  // 自己私人的 svg 存放目录
-      ]},
       // { test: /\.css$/, loader: 'style!css' }, // 把css处理成内联style，动态插入到页面
       { test: /\.less$/i, loader: ExtractTextPlugin.extract('style', 'css!postcss!less') },
       { test: /\.css$/i, loader: ExtractTextPlugin.extract('style', 'css!postcss') }
@@ -52,7 +46,7 @@ module.exports = {
     autoprefixer({
       browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
     }),
-    pxtorem({ rootValue: 100, propWhiteList: [] })
+    // pxtorem({ rootValue: 100, propWhiteList: [] })
   ],
   // production use
   // externals: {
