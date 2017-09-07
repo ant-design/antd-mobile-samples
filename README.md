@@ -1,5 +1,10 @@
 # antd-mobile Samples
 
+Note: **The master branch is antd-mobile@2 samples**
+
+If you need antd-mobile@1.x samples, please see [1.x branch](https://github.com/ant-design/antd-mobile-samples/tree/1.x)
+
+
 ### Requirements
 
 ```
@@ -9,11 +14,8 @@ npm@3+
 
 ## Samples link
 
-> [Web Q & A demo](web-qa)
-
 - [web-basic](./web-webpack)
 - [rn-basic](./react-native)
-- [web-pro](./web-webpack-pro)
 - [web-typescript](./web-typescript)
 - [web-custom-ui](./web-custom-ui)
 - [rn-custom-ui](./rn-custom-ui)

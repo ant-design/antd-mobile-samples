@@ -1,5 +1,5 @@
 import React from 'react';
-// use `babel-plugin-import` can import js and css modularly,
+import { hashHistory } from 'react-router';
 import { NavBar, Drawer } from 'antd-mobile';
 
 // not use `babel-plugin-import`
@@ -8,7 +8,6 @@ import { NavBar, Drawer } from 'antd-mobile';
 // import 'antd-mobile/lib/nav-bar/style/css';
 // import Drawer from 'antd-mobile/lib/drawer';
 // import 'antd-mobile/lib/drawer/style/css';
-
 
 export default class App extends React.Component {
   constructor(props){
@@ -23,6 +22,7 @@ export default class App extends React.Component {
     return (
       <div className="container">
         <NavBar mode="light"
+          onLeftClick={() => hashHistory.goBack()}
           rightContent={<b onClick={() => this.setState({ open: true })}>...</b>}
         >
           {this.state.title}
