@@ -1,13 +1,11 @@
 {
   "name": "create-react-app",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
-    "antd-mobile": "1.x",
+    "antd-mobile": ">=2.0.0-alpha.12 <3.0.0",
     "babel-plugin-import": "^1.2.0",
     "less-loader": "^4.0.4",
-    "postcss-pxtorem": "^4.0.1",
-    "svg-sprite-loader": "^0.3.1",
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
