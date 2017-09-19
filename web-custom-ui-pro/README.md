@@ -9,11 +9,11 @@ antd_mobile_custom_ui_exa 是 Ant Design Mobile 针对聚宝风格的 React 实�
 
 ## 开发
 
-```
-# node@6+  npm@3+
+```sh
+# need `node@6+`  `npm@3+`
 
-$ npm install
-$ gulp // 自动同步 antd-mobile 组件 demo ，并监控文件变化（注意过程中的提示）
+$ npm i
+$ ./node_modules/.bin/gulp  # 自动同步 antd-mobile 组件和 demo ，并监控文件变化（注意过程中的提示）
 ```
 
 访问 
@@ -21,9 +21,9 @@ $ gulp // 自动同步 antd-mobile 组件 demo ，并监控文件变化（注意
 - pc: 本地 http://127.0.0.1:8001 
 - mobile: 本地 http://127.0.0.1:8002 
 
-```
-& npm run pub // 构建并发布到 npm
-& gulp site 构建网站文件，手工放到 GitHub gh-pages 分支即可
+```sh
+& npm run pub   # 构建并发布到 npm
+& gulp site   # 构建网站文件，手工放到 GitHub gh-pages 分支即可
 ```
 
 ---

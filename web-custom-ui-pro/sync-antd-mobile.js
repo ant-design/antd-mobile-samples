@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 
 /* eslint-disable */
+
+/**
+ *  同步 antd-mobile 组件和 demo
+ */
+
 'use strict';
 
 var prompt = require('prompt');
@@ -11,39 +16,41 @@ var execSync = require('child_process').execSync;
 
 var libName = 'antd_mobile_custom_ui_exa';
 
-// 枚举出 antd-mobile 里的所有可用组件
-var components = [
-  'accordion', 'action-sheet', 'activity-indicator', 'badge', 'button',
-  'card', 'carousel', 'checkbox', 'date-picker', 'drawer', 'flex', 'grid',
-  'icon', 'image-picker', 'input-item', 'list', 'list-view', 'menu', 'modal',
-  'nav-bar', 'notice-bar', 'pagination', 'picker', 'picker-view', 'popover', 'popup', 'progress',
-  'radio', 'refresh-control', 'result', 'search-bar', 'segmented-control', 'slider', 'stepper',
-  'steps', 'swipe-action', 'switch', 'tab-bar', 'table', 'tabs', 'tag', 'textarea-item',
-  'toast', 'white-space', 'wing-blank'
-];
-var antdC = path.join(__dirname, './ant-design-mobile/components'); // antd component dir
-var bizC = path.join(__dirname, './biz-components'); // biz component dir
-var destC = path.join(__dirname, './components'); // dest component dir
+// dest components 脚本构建出的 最终 组件 目录
+var destC = path.join(__dirname, './components');
+
+// biz components 业务组件目录 (可以和 antd-mobile 里组件同名)
+var bizC = path.join(__dirname, './biz-components');
+
 var bizCs = fs.readdirSync(bizC).filter(item => !(/(^|\/)\.[^\/\.]/g).test(item));
 
 exports.init = function (cb, isDirect) {
-  fs.emptyDirSync(destC); // clear components dir first
+  // 首先清空 components 目录
+  fs.emptyDirSync(destC);
+  // 如果没有下载 antd-mobile 仓库源码，则自动进行下载
+  var no_antd_mobile = !fs.existsSync(path.join(__dirname, './ant-design-mobile')); 
 
-  if (!isDirect && !fs.existsSync(path.join(__dirname, './ant-design-mobile'))) {
+  if (!isDirect && no_antd_mobile) {
     prompt.start();
-    prompt.get({ message: '需要下载 ant-design-mobile ', name: 'down', default: 'yes' }, function (err, result) {
-      if (!err && result.down === 'yes') {
-        downAntd();
+    prompt.get(
+      { message: '需要下载 ant-design-mobile ', name: 'down', default: 'yes' },
+      function (err, result) {
+        if (!err && result.down === 'yes') {
+          downAntd();
+        }
       }
-    });
+    );
   } else {
     downAntd();
   }
 
   function downAntd() {
-    if (!fs.existsSync(path.join(__dirname, './ant-design-mobile'))) {
+    if (no_antd_mobile) {
       execSync('git clone git@github.com:ant-design/ant-design-mobile.git', { stdio: 'inherit' });
     }
+    // 先拷贝 业务组件 到 components 目录
+    syncBiz();
+    // 再拷贝 antd-mobile 仓库里的组件 到 components 目录
     syncAntd();
     cb();
     console.log('==== 同步完成。请在终端打开新标签、并运行 npm start ======');
@@ -51,6 +58,7 @@ exports.init = function (cb, isDirect) {
 }
 
 exports.syncBiz = syncBiz;
+
 function syncBiz() {
   bizCs.forEach(function (bc) {
     fs.copySync(path.join(bizC, './' + bc), path.join(destC, './' + bc));
@@ -58,57 +66,80 @@ function syncBiz() {
 }
 
 function syncAntd() {
-  syncBiz();
-  components.forEach(function (c) {
-    if (bizCs.indexOf(c) > -1) {
+  // 枚举出 antd-mobile 里的所有可用组件，并同步修改到 components 目录
+  [
+    'accordion', 'action-sheet', 'activity-indicator', 'badge', 'button',
+    'card', 'carousel', 'checkbox',
+    'calendar', 'date-picker', 'date-picker-view', 'input-item', 'pagination', // has locale dir
+    'drawer', 'flex', 'grid',
+    'icon', 'image-picker', 'list', 'list-view', 'menu', 'modal',
+    'nav-bar', 'notice-bar', 'picker', 'picker-view', 'popover', 'popup', 'progress',
+    'radio', 'refresh-control', 'result', 'search-bar', 'segmented-control', 'slider', 'stepper',
+    'steps', 'swipe-action', 'switch', 'tab-bar', 'table', 'tabs', 'tag', 'textarea-item',
+    'toast', 'white-space', 'wing-blank'
+  ]
+  .forEach(function (cName) {
+    // 忽略掉 业务组件目录 里的同名组件
+    // 比如： biz-components 有 button 目录，则意味着您要【自己完全重写实现】button 组件逻辑
+    if (bizCs.indexOf(cName) > -1) {
       return;
     }
-    var sourceDir = path.join(antdC, c);
-    var destDir = path.join(destC, c);
 
-    if (fs.existsSync(path.join(sourceDir, './index.web.tsx')) || fs.existsSync(path.join(sourceDir, './index.tsx'))) {
+    var sourceDir = path.join(__dirname, './ant-design-mobile/components', cName);
+    var destDir = path.join(destC, cName);
+
+    if (fs.existsSync(path.join(sourceDir, './index.tsx'))) {
+      // 先 清空或创建 相应 cName 目录
       fs.emptyDirSync(destDir);
-      // create tsx
-      fs.writeFileSync(path.join(destDir, '/index.web.tsx'), tsxContent(c));
 
-      // copy examples\docs md file
+      // 创建 相应 cName 目录下的 index.tsx 文件
+      fs.writeFileSync(
+        path.join(destDir, '/index.tsx'),
+        `import ${camelCase(cName)} from 'antd-mobile/lib/${cName}';\n` +
+        `export default ${camelCase(cName)};\n`
+      );
+
+      // 创建 相应 cName 目录下的 examples & docs md 文件 (只是从 antd 拷贝过来)
       fs.copySync(path.join(sourceDir, '/index.en-US.md'), path.join(destDir, '/index.en-US.md'));
       fs.copySync(path.join(sourceDir, '/index.zh-CN.md'), path.join(destDir, '/index.zh-CN.md'));
       fs.copySync(path.join(sourceDir, '/demo'), path.join(destDir, '/demo'));
-      // del react-native examples file
+
+      // 删除 用于 react-native 的 demo 文件
       del.sync([path.join(destDir, '/demo/*.tsx')]);
-      // replace ` from 'antd-mobile'` with ` from 'antd_mobile_custom_ui_exa'` in demo content
-      var files = fs.walkSync(path.join(destDir, '/demo'));
-      files.forEach(function (file) {
-        var ct = fs.readFileSync(file).toString().replace(/\sfrom\s'antd-mobile'/g, " from '" + libName + "'");
-        fs.writeFileSync(file, ct);
+
+      // 改变 demo 文件中的 `antd-mobile` 组件库名、为 新的 libName
+      fs.walkSync(path.join(destDir, '/demo')).forEach(function (file) {
+        fs.writeFileSync(file, fs.readFileSync(file).toString()
+          .replace(/\sfrom\s'antd-mobile'/g, ` from '${libName}'`));
       });
 
-      // copy date-picker locale dir
-      if (c === 'date-picker') {
+      // 同步 带有 locale 目录的组件
+      if (fs.existsSync(path.join(sourceDir, './locale'))) {
         var localeDir = path.join(destDir, './locale');
+        // 在 dest 目录里 清空或创建 locale 目录
         fs.emptyDirSync(localeDir);
-        fs.writeFileSync(path.join(localeDir, '/en_US.tsx'), `export { default } from 'antd-mobile/lib/date-picker/locale/en_US';\n`);
-        fs.writeFileSync(path.join(localeDir, '/zh_CN.tsx'), `export { default } from 'antd-mobile/lib/date-picker/locale/zh_CN';\n`);
+        // 暂时 先创建 en 和 zh 两个文件  todos
+        fs.writeFileSync(path.join(localeDir, '/en_US.tsx'),
+          `export { default } from 'antd-mobile/lib/${cName}/locale/en_US';\n`);
+        fs.writeFileSync(path.join(localeDir, '/zh_CN.tsx'),
+          `export { default } from 'antd-mobile/lib/${cName}/locale/zh_CN';\n`);
       }
 
-      // create style
+      // 创建 相应 cName 目录下的 style 样式文件
       var styleDir = path.join(destDir, './style');
       fs.emptyDirSync(styleDir);
-      fs.writeFileSync(path.join(styleDir, '/index.less'), `@import '~antd-mobile/lib/${
-        c === 'date-picker' ? 'picker' : c
-      }/style/index.less';`);
-
-      var indexStyle = path.join(sourceDir, './style/index.web.tsx');
-      if (!fs.existsSync(indexStyle)) {
-        indexStyle = path.join(sourceDir, './style/index.tsx');
+      if (fs.existsSync(path.join(sourceDir, './style/index.less'))) {
+        fs.writeFileSync(path.join(styleDir, './index.less'),
+          `@import '~antd-mobile/lib/${cName}/style/index.less';`);
       }
-      fs.copySync(indexStyle, path.join(styleDir, '/index.web.tsx'));
-      // Analyze and identify dependencies
+      var indexStyle = path.join(sourceDir, './style/index.tsx');
+      fs.copySync(indexStyle, path.join(styleDir, '/index.tsx'));
+
+      // 一个组件可能在 style/index.tsx 里标明依赖另一个组件样式，此时需要确保 被依赖的组件 存在
       //       var ct = fs.readFileSync(indexStyle);
       //       if (ct.toString().split('\n').filter(function(i) { return i.trim() }).length > 2) {
       //         console.log(`
-      // ========== Note: ${c} need the following component styles ====
+      // ========== Note: ${cName} need the following component styles ====
       // ${ct}==============================================================
       //         `);
       //       }
@@ -121,11 +152,6 @@ function camelCase(name) {
     name.slice(1).replace(/-(\w)/g, (m, n) => {
       return n.toUpperCase();
     });
-}
-function tsxContent(componentName) {
-  return `import ${camelCase(componentName)} from 'antd-mobile/lib/${componentName}';
-export default ${camelCase(componentName)};
-`;
 }
 
 
