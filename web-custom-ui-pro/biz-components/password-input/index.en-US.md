@@ -1,8 +1,7 @@
 ---
 category: Components
 type: Biz
-chinese: PasswordInput
-english: PasswordInput
+title: PasswordInput
 ---
 
 

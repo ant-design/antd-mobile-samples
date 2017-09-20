@@ -1,8 +1,7 @@
 ---
 category: Components
 type: Biz
-chinese: 滚动视图
-english: ScrollView
+title: ScrollView
 ---
 
 

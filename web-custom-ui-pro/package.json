@@ -73,7 +73,7 @@
     "react-intl": "^2.2.3"
   },
   "scripts": {
-    "lint": "npm run tslint && npm run srclint && npm run demolint && npm run stylelint && npm run applint",
+    "lint": "npm run tslint && npm run srclint && npm run demolint && npm run stylelint",
     "srclint": "eslint site scripts --ext '.js,.jsx'",
     "tslint": "antd-tools run ts-lint && npm run compile && rm -rf lib",
     "tslint-fix": "antd-tools run ts-lint-fix && npm run compile && rm -rf lib",

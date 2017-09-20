@@ -66,17 +66,21 @@ function syncBiz() {
 }
 
 function syncAntd() {
+  // 先删除 ./ant-design-mobile/.babelrc 文件，解决 "react-native" presets 报错问题？
+  del.sync([path.join(__dirname, './ant-design-mobile/.babelrc')]);
+
   // 枚举出 antd-mobile 里的所有可用组件，并同步修改到 components 目录
   [
-    'accordion', 'action-sheet', 'activity-indicator', 'badge', 'button',
-    'card', 'carousel', 'checkbox',
-    'calendar', 'date-picker', 'date-picker-view', 'input-item', 'pagination', // has locale dir
-    'drawer', 'flex', 'grid',
-    'icon', 'image-picker', 'list', 'list-view', 'menu', 'modal',
-    'nav-bar', 'notice-bar', 'picker', 'picker-view', 'popover', 'popup', 'progress',
-    'radio', 'refresh-control', 'result', 'search-bar', 'segmented-control', 'slider', 'stepper',
-    'steps', 'swipe-action', 'switch', 'tab-bar', 'table', 'tabs', 'tag', 'textarea-item',
-    'toast', 'white-space', 'wing-blank'
+    // the style of `icon,button,picker,picker-view,list,flex` is dependent by other components.
+    'icon', 'button', 'picker', 'picker-view', 'list', 'flex',
+    // has locale dir
+    'calendar', 'date-picker', 'date-picker-view', 'input-item', 'pagination',
+    // 'action-sheet', 'checkbox', 'accordion', 'activity-indicator', 'badge', 'card', 'carousel',
+    // 'drawer', 'grid', 'image-picker', 'list-view', 'menu', 'modal',
+    // 'nav-bar', 'notice-bar', 'popover', 'popup', 'progress',
+    // 'radio', 'refresh-control', 'result', 'search-bar', 'segmented-control', 'slider', 'stepper',
+    // 'steps', 'swipe-action', 'switch', 'tab-bar', 'table', 'tabs', 'tag', 'textarea-item',
+    // 'toast', 'white-space', 'wing-blank'
   ]
   .forEach(function (cName) {
     // 忽略掉 业务组件目录 里的同名组件

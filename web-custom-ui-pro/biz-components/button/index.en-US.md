@@ -1,8 +1,7 @@
 ---
-category: Basic Components
-type: Basic Components
-chinese: 按钮
-english: Button
+category: Components
+type: Biz
+title: Button
 ---
 
 点击后会触发一个操作。

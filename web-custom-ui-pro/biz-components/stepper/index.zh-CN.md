@@ -1,8 +1,8 @@
 ---
 category: Components
 type: Biz
-chinese: 步进器
-english: Stepper
+title: Stepper
+subtitle: 步进器
 ---
 
 用作增加或者减少当前数值。
