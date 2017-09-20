@@ -34,7 +34,7 @@ $ ./node_modules/.bin/gulp  # 自动同步 antd-mobile 组件和 demo ，并监�
 2. 全局替换 `antd_mobile_custom_ui_exa` 为你的包名，例如 `xxx-ui`，并修改相应文档的文案。
 3. 按照上面的 `开发` 文档，跑起来。
 4. 在`themes/default.less`文件里覆盖 antd-mobile 提供的相应 less 变量 (可以在此目录添加更多的 theme 文件)。
-5. 仅覆盖变量无法满足需求，在`components/xx/index.web.tsx`文件里添加自己的代码逻辑。
+5. 仅覆盖变量无法满足需求，在`components/xx/index.tsx`文件里添加自己的代码逻辑。
 
 组件的目录结构如下：
 
@@ -44,25 +44,25 @@ components/steps
 │   ├── basic.md         // 演示文档，可以有多个
 │   └── another.md
 ├── index.md              // 组件的入口文档
-├── index.web.tsx         // web 组件 JS 入口，通常依赖 antd-mobile 上的对应组件并直接暴露
+├── index.tsx             // 组件 JS 入口，通常依赖 antd-mobile 上的对应组件并直接暴露
 └── style
-    ├── index.less        // web 组件样式，通常依赖 antd-mobile 上的对应样式并进行复写
-    └── index.web.tsx     // web 组件样式的入口
+    ├── index.less        // 组件样式，通常依赖 antd-mobile 上的对应样式并进行复写
+    └── index.tsx         // 组件样式的入口
 ```
 
 通常需要进行复写的源码有以下两个：
 
-- `index.web.tsx` 使用 [typescript](http://typescriptlang.org/) 规范进行书写：
+- `index.tsx` 使用 [typescript](http://typescriptlang.org/) 规范进行书写：
 
   ```jsx
   // 依赖后直接暴露
-  import Button from 'antd-mobile/lib/steps/index.web';
+  import Button from 'antd-mobile/lib/steps/index';
   export default Button;
   ```
 
   ```jsx
   import React from 'react';
-  import Icon from 'antd-mobile/lib/icon/index.web';
+  import Icon from 'antd-mobile/lib/icon/index';
 
   export interface Props {
     prefixCls?: string;

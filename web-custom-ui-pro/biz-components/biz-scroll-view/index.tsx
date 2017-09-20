@@ -21,7 +21,6 @@ export default class BizScrollView extends React.Component<TsProps, TsState> {
   static defaultProps = {
     prefixCls: 'biz-scroll-view',
     scrollEventThrottle: 20,
-    visibleItemsAmount: 4,
     data: [],
   };
   _onScroll: any;
@@ -59,7 +58,7 @@ export default class BizScrollView extends React.Component<TsProps, TsState> {
   }
 
   render() {
-    const { className, prefixCls, visibleItemsAmount, data } = this.props;
+    const { className, prefixCls, visibleItemsAmount = 4, data } = this.props;
     const wrapCls = classNames({
       [className as string]: !!className,
       [prefixCls as string]: true,

@@ -1,23 +1,43 @@
 const path = require('path');
-const configSvg = require('../svg.config');
+const webpack = require('webpack');
+
+const useReact = process.env.DEMO_ENV === 'react';
+const isDev = process.env.NODE_ENV === 'development';
+
+const reactExternals = {
+  react: 'React',
+  'react-dom': 'ReactDOM',
+  'react-router': 'ReactRouter',
+};
+
+const preactAlias = {
+  react: 'preact-compat',
+  'react-dom': 'preact-compat',
+  'create-react-class': 'preact-compat/lib/create-react-class',
+};
+
+const prodExternals = useReact ? reactExternals : {};
 
 module.exports = {
   webpackConfig(config) {
-    configSvg(config, true);
     config.externals = {
-      react: 'React',
-      'react-dom': 'ReactDOM',
-      'react-router': 'ReactRouter',
       history: 'History',
       'babel-polyfill': 'this', // hack babel-polyfill has no exports
     };
-    config.module.noParse = [/moment.js/];
-
+    // dev 环境下统一不 external
+    // 因为 preact/devtools 未提供 umd
+    if (!isDev) {
+      config.externals = Object.assign(config.externals, prodExternals);
+    }
     config.resolve.alias = {
       'antd_mobile_custom_ui_exa/lib': path.join(process.cwd(), 'components'),
       'antd_mobile_custom_ui_exa': process.cwd(),
       site: path.join(process.cwd(), 'site'),
     };
+
+    if (!useReact) {
+      config.resolve.alias = Object.assign(config.resolve.alias, preactAlias);
+    }
 
     config.babel.plugins.push([
       'babel-plugin-transform-runtime',
@@ -28,16 +48,20 @@ module.exports = {
     ], [
       'import',
       [{
-        style: true,
         libraryName: 'antd_mobile_custom_ui_exa',
         libraryDirectory: 'components',
       },
       {
-        style: true,
         libraryName: 'antd-mobile',
         libraryDirectory: 'lib',
       }],
     ]);
+    
+    config.plugins.push(new webpack.DefinePlugin({ PREACT_DEVTOOLS: isDev && !useReact }));
     return config;
+  },
+  htmlTemplateExtraData: {
+    isDev,
+    useReact,
   },
 };
