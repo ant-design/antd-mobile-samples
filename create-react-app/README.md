@@ -31,71 +31,77 @@ Open browser at http://localhost:3000/, it renders a header saying "Welcome to R
 First we install antd-mobile and [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)(A babel plugin for importing components on demand [principle](https://github.com/ant-design/ant-design/blob/master/docs/react/getting-started#Import-on-Demand)) from yarn or npm.
 
   ```bash
+  # you must run `eject` first
+  $ yarn run eject
   $ yarn add antd-mobile
   $ yarn add babel-plugin-import less-loader postcss-pxtorem svg-sprite-loader@0.3.1 --dev
   ```
 
 1. Modify `config/webpack.config.dev.js`
 
-    ```js
+    ```diff
+    + const pxtorem = require('postcss-pxtorem');
+    ...
     extensions: ['.web.js', '.js', '.json', '.jsx'],
     ...
     rules: [
-      {
-        exclude: [
-          ...
-          /\.less$/,
-          /\.svg$/,
-          ...
-        ]
-      },
       ...
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
         ...
         options: {
-          plugins: [
-            ['import', { libraryName: 'antd-mobile', style: true }],
-          ],
+    +     plugins: [
+    +       ['import', { libraryName: 'antd-mobile', style: true }],
+    +     ],
           cacheDirectory: true,
         }
       },
       ...
       // It is generally necessary to use the Icon component, need to configure svg-sprite-loader
+    + {
+    +  test: /\.(svg)$/i,
+    +  loader: 'svg-sprite-loader',
+    +  include: [
+    +    require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. svg files of antd-mobile
+    +    path.resolve(__dirname, '../src/'),  // folder of svg files in your project
+    +  ]
+    + },
+    + {
+    +  test: /\.less$/,
+    +  use: [
+    +    require.resolve('style-loader'),
+    +    require.resolve('css-loader'),
+    +    {
+    +      loader: require.resolve('postcss-loader'),
+    +      options: {
+    +        ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+    +        plugins: () => [
+    +          autoprefixer({
+    +            browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
+    +          }),
+    +          pxtorem({ rootValue: 100, propWhiteList: [] })
+    +        ],
+    +      },
+    +    },
+    +    {
+    +      loader: require.resolve('less-loader'),
+    +      options: {
+    +        modifyVars: { "@primary-color": "#1DA57A" },
+    +      },
+    +    },
+    +  ],
+    + },
       {
-        test: /\.(svg)$/i,
-        loader: 'svg-sprite-loader',
-        include: [
-          require.resolve('antd-mobile').replace(/warn\.js$/, ''),  // 1. svg files of antd-mobile
-          // path.resolve(__dirname, 'src/my-project-svg-foler'),  // folder of svg files in your project
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          require.resolve('style-loader'),
-          require.resolve('css-loader'),
-          {
-            loader: require.resolve('postcss-loader'),
-            options: {
-              ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-              plugins: () => [
-                autoprefixer({
-                  browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
-                }),
-                pxtorem({ rootValue: 100, propWhiteList: [] })
-              ],
-            },
-          },
-          {
-            loader: require.resolve('less-loader'),
-            options: {
-              modifyVars: { "@primary-color": "#1DA57A" },
-            },
-          },
+        exclude: [
+          ...
+    +    /\.less$/,
+    +    /\.svg$/,
+          ...
         ],
-      }
+        loader: require.resolve('file-loader'),
+        ...
+      },
     ]
     ```
     > Note, we only modified webpack.config.dev.js now, if you wish this config working on production environment, you need to update webpack.config.prod.js as well.
@@ -110,4 +116,4 @@ First we install antd-mobile and [babel-plugin-import](https://github.com/ant-de
     if(!window.Promise) {
       document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
     }
-    ```  
+    ```
