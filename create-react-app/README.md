@@ -108,7 +108,7 @@ First we install antd-mobile and [babel-plugin-import](https://github.com/ant-de
 
 2. Entry html page Required settings:
 
-  * Use HD program settings, see [antd-mobile-0.8-以上版本「高清」方案设置](https://github.com/ant-design/ant-design-mobile/wiki/antd-mobile-0.8-%E4%BB%A5%E4%B8%8A%E7%89%88%E6%9C%AC%E3%80%8C%E9%AB%98%E6%B8%85%E3%80%8D%E6%96%B9%E6%A1%88%E8%AE%BE%E7%BD%AE) for details.
+  * Use HD program settings, see [antd-mobile@0.8-1.x HD setting](https://github.com/ant-design/ant-design-mobile/wiki/HD) for details.
   * Use [FastClick](https://github.com/ftlabs/fastclick), ref [#576](https://github.com/ant-design/ant-design-mobile/issues/576)
   * Use Promise fallback support (some Android phones do not support Promise), as follows:
 
