@@ -28,64 +28,39 @@ Open browser at http://localhost:3000/, it renders a header saying "Welcome to R
 
 ### Import antd-mobile
 
-First we install antd-mobile and [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)(A babel plugin for importing components on demand [principle](https://github.com/ant-design/ant-design/blob/master/docs/react/getting-started#Import-on-Demand)) from yarn or npm.
+First we install antd-mobile, [react-app-rewired](https://github.com/timarney/react-app-rewired) and [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)(A babel plugin for importing components on demand [principle](https://github.com/ant-design/ant-design/blob/master/docs/react/getting-started#Import-on-Demand)) from yarn or npm.
 
   ```bash
   $ yarn add antd-mobile
-  $ yarn add babel-plugin-import less-loader --dev
+  $ yarn add babel-plugin-import react-app-rewired --dev
   ```
 
-1. Modify `config/webpack.config.dev.js`
+1. modify the scripts field in package.json.
+
+    ```diff
+    /* package.json */
+    "scripts": {
+    -   "start": "react-scripts start",
+    +   "start": "react-app-rewired start",
+    -   "build": "react-scripts build",
+    +   "build": "react-app-rewired build",
+    -   "test": "react-scripts test --env=jsdom",
+    +   "test": "react-app-rewired test --env=jsdom",
+    }
+    ```
+2. Then create a `config-overrides.js` at root directory of your project for futher overriding and modify config-overrides.js:
 
     ```js
-    extensions: ['.web.js', '.js', '.json', '.jsx'],
-    ...
-    rules: [
-      {
-        exclude: [
-          ...
-          /\.less$/,
-          ...
-        ]
-      },
-      ...
-      // Process JS with Babel.
-      {
-        test: /\.(js|jsx)$/,
-        ...
-        options: {
-          plugins: [
-            ['import', { libraryName: 'antd-mobile', style: true }],
-          ],
-          cacheDirectory: true,
-        }
-      },
-      ...
-      {
-        test: /\.less$/,
-        use: [
-          require.resolve('style-loader'),
-          require.resolve('css-loader'),
-          {
-            loader: require.resolve('postcss-loader'),
-            options: {
-              ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-              plugins: () => [
-                autoprefixer({
-                  browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4'],
-                }),
-                pxtorem({ rootValue: 100, propWhiteList: [] })
-              ],
-            },
-          },
-          {
-            loader: require.resolve('less-loader'),
-            options: {
-              modifyVars: { "@primary-color": "#1DA57A" },
-            },
-          },
-        ],
-      }
-    ]
+    const { injectBabelPlugin } = require('react-app-rewired');
+    module.exports = function override(config, env) {
+      config = injectBabelPlugin(['import', { libraryName: 'ant-mobile', style: 'css' }], config);
+      return config;
+    };
     ```
-    > Note, we only modified webpack.config.dev.js now, if you wish this config working on production environment, you need to update webpack.config.prod.js as well.
+
+3. change importation like below:
+
+    ```diff
+    - import Button from 'antd/lib/button';
+    + import { Button } from 'antd';
+    ```
