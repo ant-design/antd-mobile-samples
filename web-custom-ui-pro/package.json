@@ -82,7 +82,7 @@
     "stylelint": "stylelint \"{site,components}/**/*.less\" --syntax less",
     "stylelint-fix": "stylelint \"{site,components}/**/*.less\" --syntax less --fix",
     "eslint-fix": "eslint --fix site scripts ./*.js --ext '.js,.jsx' && eslint-tinker ./components/*/demo/*.md",
-    "pre-publish": "npm run test:all && node ./scripts/build-less-entry",
+    "pre-publish": "npm run test && node ./scripts/build-less-entry",
     "prepublish": "antd-tools run guard",
     "prepare": "antd-tools run guard",
     "prepublishOnly": "antd-tools run guard",
