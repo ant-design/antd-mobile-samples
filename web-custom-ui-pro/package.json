@@ -71,7 +71,8 @@
     "react-document-title": "^2.0.1",
     "react-dom": "^15.6.1",
     "react-github-button": "^0.1.9",
-    "react-intl": "^2.2.3"
+    "react-intl": "^2.2.3",
+    "react-test-renderer": "^15.4.2"
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run demolint && npm run stylelint",
