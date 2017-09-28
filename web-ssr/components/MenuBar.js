@@ -3,7 +3,7 @@ import Router from 'next/router'
 import { TabBar, Icon } from 'antd-mobile'
 
 export default class MenuBar extends Component {
-  render () {
+  render() {
     const {
       pathname,
       children
