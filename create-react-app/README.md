@@ -62,5 +62,5 @@ First we install antd-mobile, [react-app-rewired](https://github.com/timarney/re
 
     ```diff
     - import Button from 'antd/lib/button';
-    + import { Button } from 'antd';
+    + import { Button } from 'antd-mobile';
     ```
