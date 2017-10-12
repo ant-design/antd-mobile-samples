@@ -5,8 +5,8 @@
     "antd-mobile": "^2.0.0-beta.2",
     "babel-plugin-import": "^1.2.1",
     "next": "latest",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "require-hacker": "^3.0.0",
     "svg-sprite-loader": "0.3.1"
   },
