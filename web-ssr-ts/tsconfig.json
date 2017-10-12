@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "target": "es6"
+  },
+  "compileOnSave": false
+}
