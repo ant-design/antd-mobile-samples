@@ -58,18 +58,6 @@ module.exports = {
       module: require('../components/list/demo/basic'),
     },
     {
-      title: 'ListView',
-      description: '长列表',
-      icon: 'https://zos.alipayobjects.com/rmsportal/lMztpIPTRAIWGIP.png',
-      module: require('../components/list-view/demo/basic'),
-    },
-    {
-      title: 'ListView (only row)',
-      description: '长列表',
-      icon: 'https://zos.alipayobjects.com/rmsportal/lMztpIPTRAIWGIP.png',
-      module: require('../components/list-view/demo/basic-row'),
-    },
-    {
       title: 'Modal',
       description: '对话框',
       icon: 'https://os.alipayobjects.com/rmsportal/HzRRcuwtqUCCOBg.png',
@@ -172,12 +160,6 @@ module.exports = {
       description: '单选框',
       icon: 'https://os.alipayobjects.com/rmsportal/MJszdVSBKhtGmIP.png',
       module: require('../components/radio/demo/basic'), // 必须
-    },
-    {
-      title: 'RefreshControl',
-      description: '下拉刷新',
-      icon: 'https://os.alipayobjects.com/rmsportal/nUAtybajGulmcSM.png',
-      module: require('../components/refresh-control/demo/basic'),
     },
     {
       title: 'Slider',

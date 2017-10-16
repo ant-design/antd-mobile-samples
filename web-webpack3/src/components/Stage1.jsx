@@ -1,5 +1,5 @@
 import React from 'react';
-import { RefreshControl, ListView, Carousel, SwipeAction, Button } from 'antd-mobile';
+import { PullToRefresh, ListView, Carousel, SwipeAction, Button } from 'antd-mobile';
 
 class Carou extends React.Component {
   state = {
@@ -65,11 +65,6 @@ export default class Demo extends React.Component {
   }
   onRefresh = () => {
     console.log('onRefresh');
-    if (!this.manuallyRefresh) {
-      this.setState({ refreshing: true });
-    } else {
-      this.manuallyRefresh = false;
-    }
     setTimeout(() => {
       this.initData = [`onRefresh Data ${pageIndex++}`, ...this.initData];
       this.setState({
@@ -83,9 +78,8 @@ export default class Demo extends React.Component {
       <ListView
         dataSource={this.state.dataSource}
         renderHeader={() => <div>
-          <div>ListView + RefreshControl + SwipeAction</div>
+          <div>ListView + PullToRefresh + SwipeAction</div>
           <Button inline onClick={() => {
-            this.manuallyRefresh = true;
             this.setState({ refreshing: true });
           }}>refresh data</Button>
         </div>}
@@ -130,7 +124,7 @@ export default class Demo extends React.Component {
         }}
         contentContainerStyle={{ position: 'relative' }}
         scrollerOptions={{ scrollbars: true }}
-        refreshControl={<RefreshControl
+        pullToRefresh={<PullToRefresh
           refreshing={this.state.refreshing}
           onRefresh={this.onRefresh}
         />}
