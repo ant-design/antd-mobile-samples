@@ -22,4 +22,5 @@ npm-debug.log
 .*.sw*
 dist
 yarn.lock
+package-lock.json
 **/.vscode
