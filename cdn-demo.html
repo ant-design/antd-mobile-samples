@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/antd-mobile/dist/antd-mobile.min.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+  <script src="//cdn.bootcss.com/react/15.4.1/react.min.js"></script>
+  <script src="//cdn.bootcss.com/react/15.4.1/react-dom.min.js"></script>
+  <script src="https://unpkg.com/antd-mobile/dist/antd-mobile.min.js"></script>
+  <script>
+    window.data = {
+      picker: [{
+        value: 'bj',
+        label: '北京市',
+      }, {
+        value: 'zj',
+        label: '浙江省',
+      }, {
+        value: 'gd',
+        label: '广东省',
+      }, {
+        value: 'hn',
+        label: '海南省',
+      }, {
+        value: 'cq',
+        label: '重庆市',
+      }, {
+        value: 'sc',
+        label: '四川省',
+      }],
+    };
+  </script>
+  <script type="text/jsx">
+    console.log(window['antd-mobile'])
+    const Button = window['antd-mobile'].Button;
+    const SearchBar = window['antd-mobile'].SearchBar;
+    const Picker = window['antd-mobile'].Picker;
+    const List = window['antd-mobile'].List;
+    const NoticeBar = window['antd-mobile'].NoticeBar;
+    const CheckboxItem = window['antd-mobile'].Checkbox.CheckboxItem;
+    const App = React.createClass({
+      getInitialState() {
+        return {
+          pickerValue: [],
+        };
+      },
+      render() {
+        return <div>
+          <NoticeBar mode="link">国庆期间余额宝收益和转出到账时间</NoticeBar>
+          <SearchBar placeholder="pp" />
+          <Button>Button</Button>
+          <List>
+            <CheckboxItem onChange={(e) => {console.log('checkbox', e);}}>CheckboxItem</CheckboxItem>
+            <Picker
+              data={window.data.picker}
+              title="选择地区"
+              extra="请选择(可选)"
+              value={this.state.pickerValue}
+              onChange={(v) => this.setState({ pickerValue: v })}
+            >
+              <List.Item arrow="horizontal">省市区选择</List.Item>
+            </Picker>
+          </List>
+          <List style={{height: document.documentElement.clientHight}}>
+            {_.map(new Array(200), (i, index) => (
+            <List.Item key={index}>我是第{index}个item</List.Item>
+            ))}
+          </List>
+        </div>
+      }
+    });
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+  <script>
+    if ('addEventListener' in document) {
+      window.addEventListener('load', function() {
+        FastClick.attach(document.body);
+      }, false);
+    }
+  </script>
+</body>
+
+</html>
