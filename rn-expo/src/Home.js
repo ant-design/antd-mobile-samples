@@ -95,7 +95,7 @@ class Home extends React.Component {
           >React Native 组件</List.Item>
         </List>
         <View style={styles.footer}>
-          <Text style={styles.version}>Demo 版本: 1.0.0</Text>
+          <Text style={styles.version}>Demo 版本: 2.0.0</Text>
         </View>
       </View>
     );

@@ -1,10 +1,10 @@
 {
   "name": "antm-expo",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "devDependencies": {
     "babel-plugin-import": "^1.2.0",
-    "react-native-scripts": "0.0.30"
+    "react-native-scripts": "^1.5.0"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -14,12 +14,12 @@
     "ios": "react-native-scripts ios"
   },
   "dependencies": {
-    "antd-mobile": "1.x",
+    "antd-mobile": "next",
     "antd-mobile-demo-data": "^0.1.4",
-    "expo": "~17.0.0",
-    "react": "16.0.0-alpha.6",
-    "react-dom": "^15.6.1",
-    "react-native": "^0.44.0",
+    "expo": "^21.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-native": "^0.48.4",
     "react-navigation": "^1.0.0-beta.11"
   }
 }

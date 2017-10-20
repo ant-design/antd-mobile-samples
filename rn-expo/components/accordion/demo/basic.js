@@ -2,15 +2,14 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Accordion, List } from 'antd-mobile';
+
 export default class AccordionExmple extends React.Component {
-    constructor() {
-        super(...arguments);
-        this.onChange = (key) => {
-            console.log(key);
-        };
-    }
-    render() {
-        return (<View style={{ marginTop: 80, marginBottom: 10 }}>
+  onChange = (key) => {
+    console.log(key);
+  }
+  render() {
+    return (
+      <View style={{ marginTop: 80, marginBottom: 10 }}>
         <Accordion onChange={this.onChange} defaultActiveKey="2">
           <Accordion.Panel header="Title 1">
             <List>
@@ -24,6 +23,7 @@ export default class AccordionExmple extends React.Component {
             Text text text text text text text text text text text text text text text
           </Accordion.Panel>
         </Accordion>
-      </View>);
-    }
+      </View>
+    );
+  }
 }

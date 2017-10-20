@@ -70,12 +70,6 @@ module.exports = {
       module: require('../components/popover/demo/basic'),
     },
     {
-      title: 'Popup', // 必须
-      description: '弹出层',
-      icon: 'https://zos.alipayobjects.com/rmsportal/gfWmRfZNzMyVUss.png',
-      module: require('../components/popup/demo/basic'), // 必须
-    },
-    {
       title: 'Result', // 必须
       description: '结果页',
       icon: 'https://os.alipayobjects.com/rmsportal/nREwETegxvDndJZ.png',
@@ -126,6 +120,12 @@ module.exports = {
       module: require('../components/date-picker/demo/popup'),
     },
     {
+      title: 'DatePickerView', // 必须
+      description: '日期选择视图',
+      icon: 'https://os.alipayobjects.com/rmsportal/IQtMSWmYwLEuqln.png',
+      module: require('../components/date-picker-view/demo/basic'),
+    },
+    {
       title: 'ImagePicker',
       description: '图片选择',
       icon: 'https://os.alipayobjects.com/rmsportal/NDsSvklLUeodsHK.png',
@@ -142,6 +142,12 @@ module.exports = {
       description: '选择器',
       icon: 'https://os.alipayobjects.com/rmsportal/STBLvEutBwPySbL.png',
       module: require('../components/picker/demo/popup'),
+    },
+    {
+      title: 'PickerView',
+      description: '选择器视图',
+      icon: 'https://os.alipayobjects.com/rmsportal/STBLvEutBwPySbL.png',
+      module: require('../components/picker-view/demo/basic'),
     },
     {
       title: 'Progress',

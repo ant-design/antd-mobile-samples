@@ -1,12 +1,12 @@
 {
   "expo": {
     "name": "antd-mobile",
-    "sdkVersion": "17.0.0",
+    "sdkVersion": "21.0.0",
     "description": "A configurable Mobile UI http://mobile.ant.design/",
     "slug": "antd-mobile",
     "orientation": "portrait",
     "privacy": "public",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "icon": "https://zos.alipayobjects.com/rmsportal/aLYxQXfGOIgXZLKHadSi.png",
     "loading": {
       "icon": "https://zos.alipayobjects.com/rmsportal/aLYxQXfGOIgXZLKHadSi.png"
