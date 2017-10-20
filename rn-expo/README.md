@@ -38,8 +38,8 @@ First we install antd-mobile and [babel-plugin-import](https://github.com/ant-de
   ```
 
 1. Modify the `.babelrc` config, then restart the service.
-  
-  ```
+
+  ```diff
   --- a/.babelrc
   +++ b/.babelrc
   @@ -1,5 +1,6 @@
@@ -50,10 +50,10 @@ First we install antd-mobile and [babel-plugin-import](https://github.com/ant-de
        "development": {
          "plugins": ["transform-react-jsx-source"]
   ```
-    
+
 2. Modify the App.js file, import Button component from antd-mobile.
 
-  ```
+  ```diff
   --- a/App.js
   +++ b/App.js
   @@ -1,5 +1,7 @@
