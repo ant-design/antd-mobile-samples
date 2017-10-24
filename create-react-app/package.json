@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "dependencies": {
-    "antd-mobile": ">=2.0.0-alpha.12 <3.0.0",
+    "antd-mobile": "^2.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.13"
