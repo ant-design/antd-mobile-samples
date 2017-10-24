@@ -16,7 +16,7 @@
   "license": "MIT",
   "main": "index.js",
   "dependencies": {
-    "antd-mobile": "next",
+    "antd-mobile": "^2.0.0",
     "classnames": "^2.2.5",
     "lodash.throttle": "^4.1.1",
     "rc-steps": "^2.2.0"
@@ -55,8 +55,8 @@
     "gulp": "^3.9.1",
     "jest": "^20.0.4",
     "jsonml.js": "^0.1.0",
-    "lesshint": "^4.0.2",
     "less-vars-to-js": "^1.1.2",
+    "lesshint": "^4.0.2",
     "lint-staged": "^4.0.2",
     "lodash.debounce": "^4.0.6",
     "mockdate": "^2.0.1",
@@ -72,6 +72,7 @@
     "react-dom": "^15.6.1",
     "react-github-button": "^0.1.9",
     "react-intl": "^2.2.3",
+    "react-sticky": "^6.0.1",
     "react-test-renderer": "^15.4.2"
   },
   "scripts": {
