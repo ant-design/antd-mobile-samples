@@ -39,7 +39,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^3.0.0",
     "webpack-bundle-analyzer": "^2.8.1",
-    "webpack-dev-server": "^2.5.0",
+    "webpack-dev-server": "2.7.1",
     "webpack-visualizer-plugin": "^0.1.11"
   }
 }

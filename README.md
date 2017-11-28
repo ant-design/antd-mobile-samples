@@ -12,6 +12,9 @@ node@4+
 npm@3+
 ```
 
+Note: In order to run on the old Android, `webpack-dev-server`'s version need to be `2.7.1`.
+[ref](https://github.com/mrdulin/blog/issues/35)
+
 ## Samples link
 
 - [web-basic](./web-webpack)
