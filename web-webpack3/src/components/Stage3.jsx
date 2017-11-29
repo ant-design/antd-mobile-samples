@@ -2,7 +2,7 @@ import React from 'react';
 import { createForm } from 'rc-form';
 import { district } from 'antd-mobile-demo-data';
 
-import { Picker, DatePicker, List, Checkbox } from 'antd-mobile';
+import { Picker, DatePicker, List, Checkbox, InputItem } from 'antd-mobile';
 import enUs from 'antd-mobile/lib/date-picker/locale/en_US';
 
 const CheckboxItem = Checkbox.CheckboxItem;
@@ -36,8 +36,12 @@ class Demo extends React.Component {
   render() {
     const { getFieldProps } = this.props.form;
     const { pickerValue, dpValue } = this.state;
-    return (<div className="form">
-      <List renderHeader={() => <b>选择时间</b>}>
+    return (<form className="form" onsubmit="return false">
+      <List renderHeader={() => <b>表单项</b>}>
+        <InputItem />
+        <InputItem type="number" />
+        <InputItem pattern="[0-9]*" required />
+        <InputItem type="submit" value="submit" />
         <CheckboxItem onChange={(e) => console.log('checkbox', e)}>
           CheckboxItem
         </CheckboxItem>
@@ -64,7 +68,7 @@ class Demo extends React.Component {
       <DatePicker mode="date" title="选择日期" extra="请选择(可选)" value={dpValue} onChange={(v) => this.setState({ dpValue: v })}>
         <CustomChildren>时间选择</CustomChildren>
       </DatePicker>
-    </div>);
+    </form>);
   }
 }
 

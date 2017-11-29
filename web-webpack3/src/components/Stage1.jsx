@@ -4,19 +4,28 @@ import { PullToRefresh, ListView, Carousel, SwipeAction, Button } from 'antd-mob
 class Carou extends React.Component {
   state = {
     data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-    initialHeight: 400,
+    imgHeight: 400,
   }
   render() {
     return (
       <Carousel infinite>
         {this.state.data.map(ii => (
-          <a key={ii}
-            style={{
-              display: 'block', height: this.state.initialHeight,
-              background: `url(https://zos.alipayobjects.com/rmsportal/${ii || 'QcWDkUhvYIVEcvtosxMF'}.png) no-repeat`,
-              backgroundSize: 'cover'
-            }}
-          />
+          <a
+            key={ii}
+            href="http://www.alipay.com"
+            style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+          >
+            <img
+              src={`https://zos.alipayobjects.com/rmsportal/${ii || 'QcWDkUhvYIVEcvtosxMF'}.png`}
+              alt=""
+              style={{ width: '100%', verticalAlign: 'top' }}
+              onLoad={() => {
+                // fire window resize event to change height
+                window.dispatchEvent(new Event('resize'));
+                this.setState({ imgHeight: 'auto' });
+              }}
+            />
+          </a>
         ))}
       </Carousel>
     );
