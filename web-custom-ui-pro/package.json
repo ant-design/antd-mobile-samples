@@ -1,6 +1,6 @@
 {
   "name": "antd_mobile_custom_ui_exa",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Ant Design 移动版的聚宝风格定制版",
   "keywords": [
     "ant",
@@ -76,7 +76,8 @@
     "react-intl": "^2.2.3",
     "react-sticky": "^6.0.1",
     "react-test-renderer": "^15.4.2",
-    "typescript": "^2.6.2"
+    "typescript": "^2.6.2",
+    "webpack-visualizer-plugin": "^0.1.11"
   },
   "scripts": {
     "lint": "npm run tslint && npm run srclint && npm run demolint && npm run stylelint",

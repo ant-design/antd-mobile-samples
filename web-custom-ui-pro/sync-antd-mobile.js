@@ -69,7 +69,8 @@ exports.init = function (cb, isDirect) {
     if (no_antd_mobile) {
       execSync('git clone git@github.com:ant-design/ant-design-mobile.git', { stdio: 'inherit' });
     } else {
-      execSync('cd ant-design-mobile && git reset --hard && git pull');
+      // 当前不做自动更新，用户自己手动更新文档，否则与 pkg.antd-mobile 版本不匹配 from @warmhug
+      // execSync('cd ant-design-mobile && git reset --hard && git pull');
     }
     // 先拷贝 业务组件 到 components 目录
     syncBiz();
@@ -184,9 +185,16 @@ function syncUtil(params) {
     fs.mkdirSync('./components/_util');
   }
   utils.forEach(item => {
-    fs.writeFileSync(`./components/_util/${item}`, fs.readFileSync(`./ant-design-mobile/components/_util/${item}`));
+    let content;
+    if (item = 'upgradeTip.tsx') {
+      content = '';
+    } else {
+      content = fs.readFileSync(`./ant-design-mobile/components/_util/${item}`);
+    }
+    fs.writeFileSync(`./components/_util/${item}`, content);
   })
 }
+
 function mergeEntry() {
   const files = fs.readdirSync('./components')
   const exportStatements = files.map(foldername => {
@@ -199,11 +207,4 @@ function mergeEntry() {
   componentsStatements.unshift(header);
   fs.writeFileSync('./components/index.tsx', componentsStatements.join('\n'))
 }
-function camelCase(name) {
-  return name.charAt(0).toUpperCase() +
-    name.slice(1).replace(/-(\w)/g, (m, n) => {
-      return n.toUpperCase();
-    });
-}
-
 
