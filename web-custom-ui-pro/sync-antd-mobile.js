@@ -12,6 +12,7 @@ var prompt = require('prompt');
 var fs = require('fs-extra');
 var path = require('path');
 var del = require('del');
+const pkg = require('./package.json');
 var execSync = require('child_process').execSync;
 
 var libName = 'antd_mobile_custom_ui_exa';
@@ -24,11 +25,31 @@ var bizC = path.join(__dirname, './biz-components');
 
 var bizCs = fs.readdirSync(bizC).filter(item => !(/(^|\/)\.[^\/\.]/g).test(item));
 
+function camelCase(params) {
+  return params.split('-').map(item => item.toLowerCase().replace(/( |^)[a-z]/g, (L) => L.toUpperCase())).join('');
+}
+
+const header =
+`
+// this file is not used if use https://github.com/ant-design/babel-plugin-import
+const ENV = process.env.NODE_ENV;
+if (ENV !== 'production' &&
+  ENV !== 'test' &&
+  typeof console !== 'undefined' &&
+  console.warn &&
+  typeof window !== 'undefined') {
+  console.warn(
+    'You are using a whole package of ${pkg.name}, ' +
+    'please use https://www.npmjs.com/package/babel-plugin-import to reduce app bundle size.',
+  );
+}
+`;
+
 exports.init = function (cb, isDirect) {
   // 首先清空 components 目录
   fs.emptyDirSync(destC);
   // 如果没有下载 antd-mobile 仓库源码，则自动进行下载
-  var no_antd_mobile = !fs.existsSync(path.join(__dirname, './ant-design-mobile')); 
+  var no_antd_mobile = !fs.existsSync(path.join(__dirname, './ant-design-mobile'));
 
   if (!isDirect && no_antd_mobile) {
     prompt.start();
@@ -47,11 +68,17 @@ exports.init = function (cb, isDirect) {
   function downAntd() {
     if (no_antd_mobile) {
       execSync('git clone git@github.com:ant-design/ant-design-mobile.git', { stdio: 'inherit' });
+    } else {
+      execSync('cd ant-design-mobile && git reset --hard && git pull');
     }
     // 先拷贝 业务组件 到 components 目录
     syncBiz();
     // 再拷贝 antd-mobile 仓库里的组件 到 components 目录
     syncAntd();
+    // 创建混合的 components/index.tsx 入口文件
+    mergeEntry();
+    // 再拷贝 antd-mobile util 文件到 components 目录
+    syncUtil();
     cb();
     console.log('==== 同步完成。请在终端打开新标签、并运行 npm start ======');
   }
@@ -75,12 +102,12 @@ function syncAntd() {
     'icon', 'button', 'picker', 'picker-view', 'list', 'flex',
     // has locale dir
     'calendar', 'date-picker', 'date-picker-view', 'input-item', 'pagination',
-    // 'action-sheet', 'checkbox', 'accordion', 'activity-indicator', 'badge', 'card', 'carousel',
-    // 'drawer', 'grid', 'image-picker', 'list-view', 'menu', 'modal',
-    // 'nav-bar', 'notice-bar', 'popover', 'popup', 'progress',
-    // 'radio', 'refresh-control', 'result', 'search-bar', 'segmented-control', 'slider', 'stepper',
-    // 'steps', 'swipe-action', 'switch', 'tab-bar', 'table', 'tabs', 'tag', 'textarea-item',
-    // 'toast', 'white-space', 'wing-blank'
+    'action-sheet', 'checkbox', 'accordion', 'activity-indicator', 'badge', 'card', 'carousel',
+    'drawer', 'grid', 'image-picker', 'list-view', 'menu', 'modal',
+    'nav-bar', 'notice-bar', 'popover', 'popup', 'progress',
+    'radio', 'refresh-control', 'result', 'search-bar', 'segmented-control', 'slider', 'stepper',
+    'steps', 'swipe-action', 'switch', 'tab-bar', 'table', 'tabs', 'tag', 'textarea-item',
+    'toast', 'white-space', 'wing-blank'
   ]
   .forEach(function (cName) {
     // 忽略掉 业务组件目录 里的同名组件
@@ -151,6 +178,27 @@ function syncAntd() {
   });
 }
 
+function syncUtil(params) {
+  const utils = fs.readdirSync('./ant-design-mobile/components/_util');
+  if (!fs.existsSync('./components/_util')) {
+    fs.mkdirSync('./components/_util');
+  }
+  utils.forEach(item => {
+    fs.writeFileSync(`./components/_util/${item}`, fs.readFileSync(`./ant-design-mobile/components/_util/${item}`));
+  })
+}
+function mergeEntry() {
+  const files = fs.readdirSync('./components')
+  const exportStatements = files.map(foldername => {
+    return `export { default as ImagePicker } from './${foldername}/index';`
+  })
+  const componentsStatements = files.map(item => {
+    const componentName = camelCase(item);
+    return `export { default as ${componentName} } from './${item}/index';`
+  });
+  componentsStatements.unshift(header);
+  fs.writeFileSync('./components/index.tsx', componentsStatements.join('\n'))
+}
 function camelCase(name) {
   return name.charAt(0).toUpperCase() +
     name.slice(1).replace(/-(\w)/g, (m, n) => {
