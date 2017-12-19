@@ -56,7 +56,6 @@
     "gulp": "^3.9.1",
     "jest": "^20.0.4",
     "jsonml.js": "^0.1.0",
-    "less-vars-to-js": "^1.1.2",
     "lesshint": "^4.0.2",
     "lint-staged": "^4.0.2",
     "lodash.debounce": "^4.0.6",
@@ -76,6 +75,7 @@
     "react-sticky": "^6.0.1",
     "react-test-renderer": "^15.4.2",
     "typescript": "^2.6.2",
+    "webpack-less-theme-plugin": "^2.0.1",
     "webpack-visualizer-plugin": "^0.1.11"
   },
   "scripts": {
@@ -108,6 +108,5 @@
   "config": {
     "port": 8001
   },
-  "typings": "lib/index.web.d.ts",
-  "theme": "./theme.js"
+  "typings": "lib/index.web.d.ts"
 }

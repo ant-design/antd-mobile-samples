@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CSSSplitWebpackPlugin = require('css-split-webpack-plugin').default;
+const LessThemePlugin = require('webpack-less-theme-plugin');
 const replaceLib = require('antd-tools/lib/replaceLib');
 
 const useReact = process.env.DEMO_ENV === 'react';
@@ -80,6 +81,9 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }));
+
+
+    config.plugins.push(new LessThemePlugin({ theme: './themes/default.less' }));
 
     // fix webpack-dev-server "SyntaxError: Use of const in strict mode." ref https://github.com/mrdulin/blog/issues/35
     // https://github.com/webpack/webpack/issues/2031#issuecomment-339336830
