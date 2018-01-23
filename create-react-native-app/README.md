@@ -2,37 +2,25 @@
 
 ### Install and Initialization
 
-We need to install the appropriate tools first, you may need install [yarn](https://github.com/yarnpkg/yarn/) too.
-
 ```bash
-$ npm install -g yarn
 $ npm install -g create-react-native-app
+
+# Note: The tool will create and initialize environment and dependencies automaticly, please try config your proxy setting or use other npm registry if any network errors happen during it.
+$ create-react-native-app my-app
+
+$ cd my-app
+$ npm start
 ```
 
-Then we create a new project named antm-demo.
-
-```bash
-$ create-react-native-app antm-demo
-```
-
-The tool will create and initialize environment and dependencies automaticly, please try config your proxy setting or use other npm registry if any network errors happen during it.
-
-Then we go inside antm-demo and start it.
-
-```bash
-$ cd antm-demo
-$ yarn start
-```
-
-Run `npm run ios` in terminal, it should be ok if you can see the page content in simulator.
+You can also run `npm run ios` / `npm run android` in terminal to access the application in the MacOS or PC simulator.
 
 ### Import antd-mobile
 
 First we install antd-mobile and [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)(A babel plugin for importing components on demand [principle](https://github.com/ant-design/ant-design/blob/master/docs/react/getting-started#Import-on-Demand)) from yarn or npm.
 
   ```bash
-  $ yarn add antd-mobile
-  $ yarn add babel-plugin-import --dev
+  $ npm install antd-mobile --save
+  $ npm install babel-plugin-import --save-dev
   ```
 
 1. Modify the `.babelrc` config, then restart the service.  
