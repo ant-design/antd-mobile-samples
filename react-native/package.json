@@ -1,5 +1,5 @@
 {
-  "name": "react-native-antd--mobile-demo",
+  "name": "reactNative",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,16 +7,16 @@
     "test": "jest"
   },
   "dependencies": {
-    "antd-mobile": "1.x",
-    "react": "^15.6.1",
-    "react-native": "0.40.0"
+    "antd-mobile": "^2.1.10",
+    "react": "16.3.1",
+    "react-native": "0.55.4"
   },
   "devDependencies": {
-    "babel-jest": "18.0.0",
-    "babel-plugin-import": "^1.1.0",
-    "babel-preset-react-native": "1.9.1",
-    "jest": "18.1.0",
-    "react-test-renderer": "~15.4.0-rc.4"
+    "babel-jest": "23.0.0",
+    "babel-plugin-import": "^1.7.0",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "23.0.0",
+    "react-test-renderer": "16.3.1"
   },
   "jest": {
     "preset": "react-native"

@@ -1,8 +1,14 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
 import React, { Component } from 'react';
 import { DatePicker, List } from 'antd-mobile';
-import { AppRegistry, View } from 'react-native';
+import { View } from 'react-native';
 
-export default class AntdMobieDemo extends Component {
+export default class App extends Component {
   render() {
     return (<View style={{ marginTop: 30 }}>
       <List>
@@ -15,6 +21,3 @@ export default class AntdMobieDemo extends Component {
     </View>);
   }
 }
-
-// change xxxxx to your project name
-AppRegistry.registerComponent('xxxxx', () => AntdMobieDemo);

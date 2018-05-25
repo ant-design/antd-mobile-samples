@@ -2,13 +2,8 @@
 
 ```
 node4+ npm3+
-
-npm i react-native-cli -g
 npm i
-npm start
-
 react-native run-ios // ios
-
 react-native run-android // android
 ```
 
