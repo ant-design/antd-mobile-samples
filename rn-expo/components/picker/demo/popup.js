@@ -1,5 +1,5 @@
 import { View } from 'react-native';
-import { Picker, List } from 'antd-mobile';
+import { Picker, List } from 'antd-mobile-rn';
 import React from 'react';
 import { district } from 'antd-mobile-demo-data';
 export default class PopupExample extends React.Component {

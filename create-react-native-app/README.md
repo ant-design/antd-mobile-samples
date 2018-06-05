@@ -1,4 +1,4 @@
-## How to use `antd-mobile` with create-react-native-app
+## How to use `antd-mobile-rn` with create-react-native-app
 
 ### Install and Initialization
 
@@ -14,12 +14,12 @@ $ npm start
 
 You can also run `npm run ios` / `npm run android` in terminal to access the application in the MacOS or PC simulator.
 
-### Import antd-mobile
+### Import antd-mobile-rn
 
-First we install antd-mobile and [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)(A babel plugin for importing components on demand [principle](https://github.com/ant-design/ant-design/blob/master/docs/react/getting-started#Import-on-Demand)) from yarn or npm.
+First we install antd-mobile-rn and [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)(A babel plugin for importing components on demand [principle](https://github.com/ant-design/ant-design/blob/master/docs/react/getting-started#Import-on-Demand)) from yarn or npm.
 
   ```bash
-  $ npm install antd-mobile --save
+  $ npm install antd-mobile-rn --save
   $ npm install babel-plugin-import --save-dev
   ```
 
@@ -28,23 +28,23 @@ First we install antd-mobile and [babel-plugin-import](https://github.com/ant-de
     ```json
     {
       "presets": ["babel-preset-expo"],
-      "plugins": [["import", { "libraryName": "antd-mobile" }]],
+      "plugins": [["import", { "libraryName": "antd-mobile-rn" }]],
       "env": {
         ...
       }
     }
     ```
-2. Modify the `App.js` file, import `Button` component from antd-mobile.
+2. Modify the `App.js` file, import `Button` component from antd-mobile-rn.
 
   ```js
   ...
-  import { Button } from 'antd-mobile';
+  import { Button } from 'antd-mobile-rn';
 
   ...
   render() {
     return (
       ...
-      <Button>antd-mobile button</Button>
+      <Button>antd-mobile-rn button</Button>
       ...
     );
   }

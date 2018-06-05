@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, ScrollView, Text } from 'react-native';
-import { Drawer, List, Button, WhiteSpace } from 'antd-mobile';
+import { Drawer, List, Button, WhiteSpace } from 'antd-mobile-rn';
 const styles = StyleSheet.create({
     container: {
         flex: 1,

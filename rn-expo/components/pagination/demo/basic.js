@@ -1,5 +1,5 @@
 import React from 'react';
-import { WhiteSpace, Pagination, WingBlank } from 'antd-mobile';
+import { WhiteSpace, Pagination, WingBlank } from 'antd-mobile-rn';
 const locale = {
     prevText: '上一步',
     nextText: '下一步',

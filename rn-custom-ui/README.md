@@ -1,13 +1,13 @@
-# antd-mobile with rn custom ui
+# antd-mobile-rn with rn custom ui
 
 ## single component
 
 ### `version 1.x`:  https://github.com/ant-design/ant-design-mobile/issues/1174
 
-1. import the component origin style of antd-mobile, eg:
+1. import the component origin style of antd-mobile-rn, eg:
 
    ```js
-   import InputItemStyle from 'antd-mobile/lib/input-item/style/index';
+   import InputItemStyle from 'antd-mobile-rn/lib/input-item/style/index';
    ```
 2. find and replace the object key which you want to custom, eg:
 
@@ -33,10 +33,10 @@
 
 ### `version 2.0`: https://github.com/ant-design/ant-design-mobile/pull/1629
 
-1. import the component origin style of antd-mobile, eg:
+1. import the component origin style of antd-mobile-rn, eg:
 
   ```js
-  import InputItemStyle from 'antd-mobile/lib/input-item/style/index.native';
+  import InputItemStyle from 'antd-mobile-rn/lib/input-item/style/index.native';
   ```
 2. find and replace the object key which you want to custom, eg:
 
@@ -76,12 +76,12 @@
   // for 1.x
   // const defaultVars = require('antd-mobile/lib/style/themes/default');
   // for 2.x
-  const defaultVars = require('antd-mobile/lib/style/themes/default.native');
+  const defaultVars = require('antd-mobile-rn/lib/style/themes/default.native');
   const customVars = require('../theme');
   // for 1.x
   // const themePath = path.resolve(require.resolve('antd-mobile'), '../style/themes/default.js');
   // for 2.x
-  const themePath = path.resolve(require.resolve('antd-mobile'), '../style/themes/default.native.js');
+  const themePath = path.resolve(require.resolve('antd-mobile-rn'), '../style/themes/default.native.js');
   const themeVars = Object.assign({}, defaultVars, customVars);
 
   if (fs.statSync(themePath).isFile()) {

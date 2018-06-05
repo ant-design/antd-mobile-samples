@@ -2,7 +2,7 @@
 import React from 'react';
 /* tslint:enable:no-unused-variable */
 import { View, Text, Alert } from 'react-native';
-import { Button, WhiteSpace, WingBlank } from 'antd-mobile';
+import { Button, WhiteSpace, WingBlank } from 'antd-mobile-rn';
 /* tslint:disable:no-console */
 export default () => (<View style={{ marginTop: 80 }}>
     <WhiteSpace />

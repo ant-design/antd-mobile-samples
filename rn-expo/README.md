@@ -1,6 +1,6 @@
-# antd-mobile React-Native app for expo
+# antd-mobile-rn React-Native app for expo
 
-## How to use `antd-mobile` with create-react-native-app
+## How to use `antd-mobile-rn` with create-react-native-app
 
 ### Install and Initialization
 
@@ -28,12 +28,12 @@ $ yarn start
 
 Run `npm run ios` in terminal, it should be ok if you can see the page content in simulator.
 
-### Import antd-mobile
+### Import antd-mobile-rn
 
-First we install antd-mobile and [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)(A babel plugin for importing components on demand [principle](https://github.com/ant-design/ant-design/blob/master/docs/react/getting-started#Import-on-Demand)) from yarn or npm.
+First we install antd-mobile-rn and [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)(A babel plugin for importing components on demand [principle](https://github.com/ant-design/ant-design/blob/master/docs/react/getting-started#Import-on-Demand)) from yarn or npm.
 
   ```bash
-  $ yarn add antd-mobile
+  $ yarn add antd-mobile-rn
   $ yarn add babel-plugin-import --dev
   ```
 
@@ -45,13 +45,13 @@ First we install antd-mobile and [babel-plugin-import](https://github.com/ant-de
   @@ -1,5 +1,6 @@
    {
      "presets": ["babel-preset-expo"],
-  +  "plugins": [["import", { "libraryName": "antd-mobile" }]],
+  +  "plugins": [["import", { "libraryName": "antd-mobile-rn" }]],
      "env": {
        "development": {
          "plugins": ["transform-react-jsx-source"]
   ```
 
-2. Modify the App.js file, import Button component from antd-mobile.
+2. Modify the App.js file, import Button component from antd-mobile-rn.
 
   ```diff
   --- a/App.js
@@ -59,7 +59,7 @@ First we install antd-mobile and [babel-plugin-import](https://github.com/ant-de
   @@ -1,5 +1,7 @@
    import React from 'react';
    import { StyleSheet, Text, View } from 'react-native';
-  +import { Button } from 'antd-mobile';
+  +import { Button } from 'antd-mobile-rn';
   +
 
    export default class App extends React.Component {
@@ -68,7 +68,7 @@ First we install antd-mobile and [babel-plugin-import](https://github.com/ant-de
            <Text>Open up App.js to start working on your app!</Text>
            <Text>Changes you make will automatically reload.</Text>
            <Text>Shake your phone to open the developer menu.</Text>
-  +        <Button>antd-mobile button</Button>
+  +        <Button>antd-mobile-rn button</Button>
          </View>
        );
      }

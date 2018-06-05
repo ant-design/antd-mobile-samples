@@ -1,4 +1,4 @@
-import inputItemStyle from 'antd-mobile/lib/input-item/style/index.native';
+import inputItemStyle from 'antd-mobile-rn/lib/input-item/style/index.native';
 
 export default {
   ...inputItemStyle,

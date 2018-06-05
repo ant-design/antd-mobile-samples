@@ -1,4 +1,4 @@
 {
   "presets": ["react-native"],
-  "plugins": [["import", { "libraryName": "antd-mobile" }]]
+  "plugins": [["import", { "libraryName": "antd-mobile-rn" }]]
 }

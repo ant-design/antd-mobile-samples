@@ -1,4 +1,4 @@
-import { Button, Flex, WingBlank, WhiteSpace } from 'antd-mobile';
+import { Button, Flex, WingBlank, WhiteSpace } from 'antd-mobile-rn';
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
 const Circle = (props) => {

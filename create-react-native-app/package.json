@@ -20,7 +20,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "antd-mobile": ">=2.0.0-alpha.12 <3.0.0",
+    "antd-mobile-rn": "next",
     "expo": "^17.0.0",
     "react": "16.0.0-alpha.6",
     "react-native": "^0.44.0"

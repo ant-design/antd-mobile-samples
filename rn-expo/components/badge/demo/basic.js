@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import { Badge, WhiteSpace } from 'antd-mobile';
+import { Badge, WhiteSpace } from 'antd-mobile-rn';
 export default class BasicTagExample extends React.Component {
     render() {
         return (<ScrollView style={{ flex: 1 }} automaticallyAdjustContentInsets={false} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>

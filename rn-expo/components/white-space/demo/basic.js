@@ -1,4 +1,4 @@
-import { WhiteSpace } from 'antd-mobile';
+import { WhiteSpace } from 'antd-mobile-rn';
 import React from 'react';
 import { View, Text } from 'react-native';
 const PlaceHolder = (props) => (<View style={{ backgroundColor: '#ebebef', height: 30 }} {...props}>

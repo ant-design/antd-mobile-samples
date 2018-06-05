@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, View, Text } from 'react-native';
-import { Grid } from 'antd-mobile';
+import { Grid } from 'antd-mobile-rn';
 const data = Array.from(new Array(9)).map((_val, i) => ({
     icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
     text: `名字${i}`,

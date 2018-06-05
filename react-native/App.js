@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import { DatePicker, List } from 'antd-mobile';
+import { DatePicker, List } from 'antd-mobile-rn';
 import { View } from 'react-native';
 
 export default class App extends Component {

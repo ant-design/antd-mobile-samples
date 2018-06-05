@@ -1,6 +1,6 @@
 /* tslint:disable:no-console */
 import { View } from 'react-native';
-import { DatePicker, List } from 'antd-mobile';
+import { DatePicker, List } from 'antd-mobile-rn';
 import React from 'react';
 
 const now = new Date();

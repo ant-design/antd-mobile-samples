@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Pagination, LocaleProvider, List, DatePicker, WhiteSpace, Button } from 'antd-mobile';
+import { Pagination, LocaleProvider, List, DatePicker, WhiteSpace, Button } from 'antd-mobile-rn';
 import enUS from '../en_US';
 
 const maxDate = new Date(2018, 11, 3, 22, 0);

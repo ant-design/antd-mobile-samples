@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { WhiteSpace, Checkbox, List } from 'antd-mobile';
+import { WhiteSpace, Checkbox, List } from 'antd-mobile-rn';
 const AgreeItem = Checkbox.AgreeItem;
 const CheckboxItem = Checkbox.CheckboxItem;
 export default class BasicCheckboxExample extends React.Component {

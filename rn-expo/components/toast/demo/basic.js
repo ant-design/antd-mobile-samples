@@ -1,6 +1,6 @@
 /* tslint:disable:no-console */
 import React from 'react';
-import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile';
+import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile-rn';
 import { DeviceEventEmitter } from 'react-native';
 function showToast() {
     Toast.info('这是一个 toast 提示!!!');

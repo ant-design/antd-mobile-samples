@@ -9,7 +9,7 @@
 		"ios": "node node_modules/react-native/local-cli/cli.js run-ios"
 	},
 	"dependencies": {
-    "antd-mobile": "~2.0.0-alpha.4",
+    "antd-mobile-rn": "next",
     "react": "^15.6.1",
 		"react-native": "0.41.2"
 	},

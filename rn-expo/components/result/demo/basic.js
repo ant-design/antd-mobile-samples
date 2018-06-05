@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, Text, Image } from 'react-native';
-import { Result } from 'antd-mobile';
+import { Result } from 'antd-mobile-rn';
 export default class ResultExample extends React.Component {
     render() {
         return (<ScrollView style={{ backgroundColor: '#F5F5F9', flex: 1 }}>

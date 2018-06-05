@@ -1,7 +1,7 @@
 /* tslint:disable:jsx-no-multiline-js */
 import React from 'react';
 import { View, Text } from 'react-native';
-import { WhiteSpace, Radio, List } from 'antd-mobile';
+import { WhiteSpace, Radio, List } from 'antd-mobile-rn';
 const RadioItem = Radio.RadioItem;
 export default class BasicRadioExample extends React.Component {
     constructor() {

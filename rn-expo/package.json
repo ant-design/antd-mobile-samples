@@ -14,8 +14,8 @@
     "ios": "react-native-scripts ios"
   },
   "dependencies": {
-    "antd-mobile": "next",
     "antd-mobile-demo-data": "^0.1.4",
+    "antd-mobile-rn": "next",
     "expo": "^21.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

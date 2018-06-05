@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, Platform } from 'react-native';
-import { Popover } from 'antd-mobile';
+import { Popover } from 'antd-mobile-rn';
 const Item = Popover.Item;
 export default class PopoverExample extends React.Component {
     constructor(props) {

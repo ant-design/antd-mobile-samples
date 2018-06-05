@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import { Tabs } from 'antd-mobile';
+import { Tabs } from 'antd-mobile-rn';
 
 const renderContent = (tab, index) => {
   const style = {

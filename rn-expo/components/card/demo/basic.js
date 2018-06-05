@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Card, WhiteSpace, WingBlank } from 'antd-mobile';
+import { Card, WhiteSpace, WingBlank } from 'antd-mobile-rn';
 export default class BasicCardExample extends React.Component {
     render() {
         return (<View style={{ paddingTop: 30 }}>

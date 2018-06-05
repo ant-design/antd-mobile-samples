@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Carousel } from 'antd-mobile';
+import { Carousel } from 'antd-mobile-rn';
 export default class BasicCarouselExample extends React.Component {
     onselectedIndexChange(index) {
         /* tslint:disable: no-console */

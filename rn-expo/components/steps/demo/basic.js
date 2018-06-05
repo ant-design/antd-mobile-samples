@@ -1,5 +1,5 @@
 /* tslint:disable:jsx-no-multiline-js */
-import { Steps, WingBlank, Icon } from 'antd-mobile';
+import { Steps, WingBlank, Icon } from 'antd-mobile-rn';
 const Step = Steps.Step;
 import React from 'react';
 import { View, ScrollView, Text } from 'react-native';

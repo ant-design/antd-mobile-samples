@@ -1,7 +1,7 @@
 /* tslint:disable:jsx-no-multiline-js */
 import React from 'react';
 import { ScrollView, Text } from 'react-native';
-import { InputItem, List, Button } from 'antd-mobile';
+import { InputItem, List, Button } from 'antd-mobile-rn';
 
 export default class BasicInputItemExample extends React.Component {
   constructor(props) {

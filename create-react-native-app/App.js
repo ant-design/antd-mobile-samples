@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'antd-mobile';
+import { Button } from 'antd-mobile-rn';
 
 export default class App extends React.Component {
   render() {

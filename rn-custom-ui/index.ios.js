@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import {AppRegistry, StyleSheet, View } from 'react-native';
-import { Tag, InputItem, List } from 'antd-mobile';
+import { Tag, InputItem, List } from 'antd-mobile-rn';
 import inputStyle from './inputStyle';
 
 console.log(inputStyle)

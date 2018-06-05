@@ -1,4 +1,4 @@
-# antd-mobile react-native demo
+# antd-mobile-rn react-native demo
 
 ```
 node4+ npm3+
@@ -7,18 +7,18 @@ react-native run-ios // ios
 react-native run-android // android
 ```
 
-### use antd-mobile in react-native project
+### use antd-mobile-rn in react-native project
 
 1. install dep
 
   ```bash
-  $ npm install antd-mobile --save
+  $ npm install antd-mobile-rn --save
   $ npm install babel-plugin-import --save-dev
   ```
 2. config `.babelrc`
 
   ```json
-  {"plugins": [["import", { "libraryName": "antd-mobile" }]]}
+  {"plugins": [["import", { "libraryName": "antd-mobile-rn" }]]}
   ```
 
 ### sample code
@@ -26,7 +26,7 @@ react-native run-android // android
   ```jsx
   import React, { Component } from 'react';
   import { AppRegistry } from 'react-native';
-  import { Button } from 'antd-mobile';
+  import { Button } from 'antd-mobile-rn';
 
   class HelloWorldApp extends Component {
     render() {

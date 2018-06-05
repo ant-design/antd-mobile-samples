@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { WhiteSpace, WingBlank } from 'antd-mobile';
+import { WhiteSpace, WingBlank } from 'antd-mobile-rn';
 const PlaceHolder = (props) => (<View style={{ backgroundColor: '#ebebef', height: 30 }} {...props}>
     <Text style={{ color: '#bbb', textAlign: 'center', lineHeight: 30 }}>Block</Text>
   </View>);

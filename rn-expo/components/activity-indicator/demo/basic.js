@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import { WhiteSpace, WingBlank, Button, Flex, ActivityIndicator } from 'antd-mobile';
+import { WhiteSpace, WingBlank, Button, Flex, ActivityIndicator } from 'antd-mobile-rn';
 export default class ActivityIndicatorExample extends React.Component {
     constructor(props) {
         super(props);

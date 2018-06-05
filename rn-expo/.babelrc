@@ -4,12 +4,12 @@
     "development": {
       "plugins": [
         "transform-react-jsx-source",
-        ["import", { "libraryName": "antd-mobile" }]
+        ["import", { "libraryName": "antd-mobile-rn" }]
       ]
     },
     "production": {
       "plugins": [
-        ["import", { "libraryName": "antd-mobile" }]
+        ["import", { "libraryName": "antd-mobile-rn" }]
       ]
     }
   }

@@ -11,7 +11,7 @@ import {
   ActivityIndicator,
   StatusBar,
 } from 'react-native';
-import { List } from 'antd-mobile';
+import { List } from 'antd-mobile-rn';
 import { Font } from 'expo';
 
 const styles = StyleSheet.create({

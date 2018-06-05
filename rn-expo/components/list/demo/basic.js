@@ -1,7 +1,7 @@
 /* tslint:disable:jsx-no-multiline-js */
 import React from 'react';
 import { Image, ScrollView, View } from 'react-native';
-import { List } from 'antd-mobile';
+import { List } from 'antd-mobile-rn';
 
 const Item = List.Item;
 const Brief = Item.Brief;
