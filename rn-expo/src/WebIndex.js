@@ -1,48 +1,48 @@
-import React from 'react';
+import React from 'react'
 import {
   StyleSheet,
   View,
   WebView,
   Modal,
-  ActivityIndicator,
-} from 'react-native';
+  ActivityIndicator
+} from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   webView: {
-    flex: 1,
+    flex: 1
   },
   loading: {
     marginTop: 64,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    justifyContent: 'center'
+  }
+})
 
 export default class WebIndex extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       visible: true,
-      error: false,
-    };
+      error: false
+    }
   }
 
   onLoadEnd = () => {
     this.setState({
-      visible: false,
-    });
+      visible: false
+    })
   }
 
-  render() {
+  render () {
     return (
       <View style={styles.container}>
         <WebView
           style={styles.webView}
-          ref="webview"
+          ref='webview'
           onLoadEnd={this.onLoadEnd}
           automaticallyAdjustContentInsets={false}
           source={{ uri: 'https://mobile.ant.design/kitchen-sink/' }}
@@ -57,11 +57,11 @@ export default class WebIndex extends React.Component {
           <View style={styles.loading}>
             <ActivityIndicator
               animating
-              size="large"
+              size='large'
             />
           </View>
         </Modal>
       </View>
-    );
+    )
   }
 }

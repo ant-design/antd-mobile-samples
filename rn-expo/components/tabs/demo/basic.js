@@ -1,35 +1,38 @@
 /* tslint:disable:no-console */
-import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
-import { Tabs } from 'antd-mobile-rn';
-
-const renderContent = (tab, index) => {
-  const style = {
-    paddingVertical: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 10,
-    backgroundColor: '#ddd',
-  };
-  const content = [1, 2, 3, 4, 5, 6, 7, 8].map(i => {
-    return <View key={`${index}_${i}`} style={style}>
-      <Text>
-        {tab.title} - {i}
-      </Text>
-    </View>;
-  });
-  return <ScrollView style={{ backgroundColor: '#fff' }}>
-    {content}
-  </ScrollView>;
-};
+import React from 'react'
+import { View, Text, ScrollView } from 'react-native'
+import { Tabs } from 'antd-mobile-rn'
 
 export default class BasicTabsExample extends React.Component {
-  render() {
+  renderContent = (tab, index) => {
+    const style = {
+      paddingVertical: 40,
+      justifyContent: 'center',
+      alignItems: 'center',
+      margin: 10,
+      backgroundColor: '#ddd'
+    }
+    const content = [1, 2, 3, 4, 5, 6, 7, 8].map(i => {
+      return (
+        <View key={`${index}_${i}`} style={style}>
+          <Text>{tab.title} - {i}</Text>
+        </View>
+      )
+    })
+
+    return (
+      <ScrollView style={{ backgroundColor: '#fff' }}>
+        {content}
+      </ScrollView>
+    )
+  }
+
+  render () {
     const tabs = [
       { title: 'First Tab' },
       { title: 'Second Tab' },
-      { title: 'Third Tab' },
-    ];
+      { title: 'Third Tab' }
+    ]
     const tabs2 = [
       { title: '1st Tab' },
       { title: '2nd Tab' },
@@ -39,14 +42,14 @@ export default class BasicTabsExample extends React.Component {
       { title: '6th Tab' },
       { title: '7th Tab' },
       { title: '8th Tab' },
-      { title: '9th Tab' },
-    ];
+      { title: '9th Tab' }
+    ]
     const style = {
       alignItems: 'center',
       justifyContent: 'center',
       height: 150,
-      backgroundColor: '#fff',
-    };
+      backgroundColor: '#fff'
+    }
     return (
       <View style={{ flex: 1 }}>
         <Tabs
@@ -73,13 +76,12 @@ export default class BasicTabsExample extends React.Component {
           <Tabs
             tabs={tabs2}
             initialPage={1}
-            tabBarPosition="top"
+            tabBarPosition='top'
           >
-            {renderContent}
+            {this.renderContent}
           </Tabs>
         </View>
       </View>
-    );
+    )
   }
-
 }

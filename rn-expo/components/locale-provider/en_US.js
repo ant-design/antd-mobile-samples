@@ -1,9 +1,11 @@
-import moment from 'moment';
-moment.locale('en');
-import Pagination from '../pagination/locale/en_US';
-import DatePicker from '../date-picker/locale/en_US';
+import moment from 'moment'
+import Pagination from '../pagination/locale/en_US'
+import DatePicker from '../date-picker/locale/en_US'
+
+moment.locale('en')
+
 export default {
-    locale: 'en',
-    Pagination,
-    DatePicker,
-};
+  locale: 'en',
+  Pagination,
+  DatePicker
+}
