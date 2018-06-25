@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "private": true,
   "devDependencies": {
-    "babel-plugin-import": "^1.2.0",
-    "react-native-scripts": "^1.5.0"
+    "babel-plugin-import": "^1.8.0",
+    "react-native-scripts": "^1.14.0"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -14,12 +14,11 @@
     "ios": "react-native-scripts ios"
   },
   "dependencies": {
-    "antd-mobile-demo-data": "^0.1.4",
+    "antd-mobile-demo-data": "^0.2.0",
     "antd-mobile-rn": "next",
-    "expo": "^21.0.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-native": "^0.48.4",
-    "react-navigation": "^1.0.0-beta.11"
+    "expo": "^28.0.0",
+    "react": "^16.4.1",
+    "react-native": "^0.55.4",
+    "react-navigation": "^2.5.2"
   }
 }
