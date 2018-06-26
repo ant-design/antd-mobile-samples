@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "antd-mobile",
-    "sdkVersion": "27.0.0",
+    "sdkVersion": "28.0.0",
     "description": "A configurable Mobile UI http://mobile.ant.design/",
     "slug": "antd-mobile",
     "orientation": "portrait",
