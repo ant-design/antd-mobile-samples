@@ -1,36 +1,37 @@
-import React from 'react';
-import { View, Alert } from 'react-native';
-import { SearchBar } from 'antd-mobile-rn';
+import React from 'react'
+import { View, Alert } from 'react-native'
+import { SearchBar } from 'antd-mobile-rn'
 
 export default class SearchBarDemo extends React.Component {
-  state = {
-    value: '美食',
-  };
-
-  onChange = (value) => {
-    this.setState({ value });
+  constructor (props) {
+    super(props)
+    this.state = {
+      value: 'Food'
+    }
   }
 
-  clear = () => {
-    this.setState({ value: '' });
-  }
+  onChange = value => this.setState({ value })
 
-  render() {
+  clear = () => this.setState({ value: '' })
+
+  render () {
     return (
       <View style={{ marginTop: 30 }}>
         <SearchBar
-          defaultValue="初始值"
-          placeholder="搜索"
+          defaultValue='Initial value'
+          placeholder='search for'
+          cancelText='Cancel'
         />
         <SearchBar
           value={this.state.value}
-          placeholder="搜索"
+          placeholder='search for'
           onSubmit={(value) => Alert.alert(value)}
           onCancel={this.clear}
           onChange={this.onChange}
+          cancelText='Cancel'
           showCancelButton
         />
       </View>
-    );
+    )
   }
 }

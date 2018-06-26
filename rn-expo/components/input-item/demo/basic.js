@@ -1,11 +1,11 @@
 /* tslint:disable:jsx-no-multiline-js */
-import React from 'react';
-import { ScrollView, Text } from 'react-native';
-import { InputItem, List, Button } from 'antd-mobile-rn';
+import React from 'react'
+import { ScrollView, Text } from 'react-native'
+import { InputItem, List, Button } from 'antd-mobile-rn'
 
 export default class BasicInputItemExample extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       value: '',
       value1: '',
@@ -20,11 +20,11 @@ export default class BasicInputItemExample extends React.Component {
       phone: '',
       password: '',
       number: '',
-      focused: false,
-    };
+      focused: false
+    }
   }
 
-  render() {
+  render () {
     return (
       <ScrollView
         style={{ flex: 1 }}
@@ -32,189 +32,137 @@ export default class BasicInputItemExample extends React.Component {
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
       >
-        <List renderHeader={() => '基本'}>
+        <List renderHeader={() => 'Basic'}>
           <InputItem
             clear
             error
             onErrorPress={() => alert('clicked me')}
             value={this.state.value}
-            onChange={(value) => {
-              this.setState({
-                value,
-              });
-            }}
-            extra="元"
-            placeholder="有标签"
+            onChange={(value) => this.setState({ value })}
+            extra='$'
+            placeholder='Label'
           >
-            输入框
+            Input box
           </InputItem>
           <InputItem
             clear
-            onErrorPress={() => { alert(1); }}
-            value="不可编辑"
-            onChange={(value) => {
-              this.setState({
-                value,
-              });
-            }}
-            extra={<Text>元</Text>}
-            placeholder="不可编辑"
+            onErrorPress={() => { alert(1) }}
+            value='Not editable'
+            onChange={(value) => this.setState({ value })}
+            extra={<Text>$</Text>}
+            placeholder='Not editable'
             editable={false}
           >
-            输入框
+            Input box
           </InputItem>
           <InputItem
             clear
             value={this.state.value1}
-            onChange={(value) => {
-              this.setState({
-                value1: value,
-              });
-            }}
-            placeholder="无标签"
+            onChange={(value) => this.setState({ value1: value })}
+            placeholder='No label'
           />
           <InputItem
-            defaultValue="xx"
+            defaultValue='xx'
             clear
-            placeholder="自动获取光标"
+            placeholder='Get cursor automatically'
             autoFocus
           >
-            标题
+            Title
           </InputItem>
           <InputItem
             clear
-            placeholder="点击下方按钮该输入框会获取光标"
+            placeholder='Click the button below to get the cursor'
             focused={this.state.focused}
-            onFocus={() => {
-              this.setState({
-                focused: false,
-              });
-            }}
+            onFocus={() => this.setState({ focused: false })}
           >
-            标题
+            Title
           </InputItem>
           <List.Item>
             <Button
-              onClick={() => {
-                this.setState({
-                  focused: true,
-                });
-              }}
-              type="primary"
+              onClick={() => this.setState({ focused: true })}
+              type='primary'
             >
-              点击获取光标
+              Click to get the cursor
             </Button>
           </List.Item>
         </List>
-        <List renderHeader={() => '固定标签字数'} >
+        <List renderHeader={() => 'Fixed tags'} >
           <InputItem
             clear
             value={this.state.labelnum1}
-            onChange={(value) => {
-              this.setState({
-                labelnum1: value,
-              });
-            }}
+            onChange={(value) => this.setState({ labelnum1: value })}
             labelNumber={2}
-            placeholder="两个字标签"
+            placeholder='Tag 2'
           >
-            姓名
+            One
           </InputItem>
           <InputItem
             clear
             value={this.state.labelnum2}
-            onChange={(value) => {
-              this.setState({
-                labelnum2: value,
-              });
-            }}
+            onChange={(value) => this.setState({ labelnum2: value })}
             labelNumber={3}
-            placeholder="三个字标签"
+            placeholder='Tag 3'
           >
-            校验码
+            Two
           </InputItem>
           <InputItem
             clear
             value={this.state.labelnum3}
-            onChange={(value) => {
-              this.setState({
-                labelnum3: value,
-              });
-            }}
+            onChange={(value) => this.setState({ labelnum3: value })}
             labelNumber={4}
-            placeholder="四个字标签（默认）"
+            placeholder='Tag 4'
           >
-            四字标签
+            Three
           </InputItem>
         </List>
-        <List renderHeader={() => '格式'}>
+        <List renderHeader={() => 'Format'}>
           <InputItem
             clear
             error
             value={this.state.text}
-            onChange={(value) => {
-              this.setState({
-                text: value,
-              });
-            }}
-            placeholder="text"
+            onChange={(value) => this.setState({ text: value })}
+            placeholder='text'
           >
-            文本输入
+            Text
           </InputItem>
           <InputItem
             clear
-            type="bankCard"
+            type='bankCard'
             value={this.state.bankcard}
-            onChange={(value) => {
-              this.setState({
-                bankcard: value,
-              });
-            }}
-            placeholder="bankCard"
+            onChange={(value) => this.setState({ bankcard: value })}
+            placeholder='bankCard'
           >
-            银行卡
+            Card
           </InputItem>
           <InputItem
             clear
-            type="phone"
+            type='phone'
             value={this.state.phone}
-            onChange={(value) => {
-              this.setState({
-                phone: value,
-              });
-            }}
-            placeholder="phone"
+            onChange={(value) => this.setState({ phone: value })}
+            placeholder='phone'
           >
-            手机号
+            Phone
           </InputItem>
           <InputItem
             clear
-            type="password"
+            type='password'
             value={this.state.password}
-            onChange={(value) => {
-              this.setState({
-                password: value,
-              });
-            }}
-            placeholder="password"
+            onChange={(value) => this.setState({ password: value })}
+            placeholder='password'
           >
-            密码
+            Password
           </InputItem>
           <InputItem
             clear
-            type="number"
+            type='number'
             value={this.state.number}
-            onChange={(value) => {
-              this.setState({
-                number: value,
-              });
-            }}
-            placeholder="number"
+            onChange={(value) => this.setState({ number: value })}
+            placeholder='number'
           >
-            数字
+            Number
           </InputItem>
         </List>
       </ScrollView>
-    );
+    )
   }
 }

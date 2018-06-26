@@ -5,6 +5,9 @@
   "devDependencies": {
     "babel-plugin-import": "^1.8.0",
     "react-native-scripts": "^1.14.0"
+    "babel-eslint": "^8.2.3",
+    "babel-preset-expo": "^4.0.0",
+    "standard": "^11.0.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -20,5 +23,13 @@
     "react": "^16.4.1",
     "react-native": "^0.55.4",
     "react-navigation": "^2.5.2"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "fetch",
+      "alert",
+      "navigator"
+    ]
   }
 }

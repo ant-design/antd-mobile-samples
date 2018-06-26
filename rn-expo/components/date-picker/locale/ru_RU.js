@@ -1,7 +1,7 @@
-import DatePickerLocale from 'rmc-date-picker/lib/locale/en_US';
+import DatePickerLocale from 'rmc-date-picker/lib/locale/ru_RU'
 export default {
-    okText: 'Ок',
-    dismissText: 'Отмена',
-    extra: 'Пожалуйста, выберите',
-    DatePickerLocale,
-};
+  okText: 'Ок',
+  dismissText: 'Отмена',
+  extra: 'Пожалуйста, выберите',
+  DatePickerLocale
+}

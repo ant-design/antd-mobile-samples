@@ -1,39 +1,40 @@
-import { PickerView } from 'antd-mobile-rn';
-import React from 'react';
+import { PickerView } from 'antd-mobile-rn'
+import React from 'react'
 
 const seasons = [
   [
     {
       label: '2013',
-      value: '2013',
+      value: '2013'
     },
     {
       label: '2014',
-      value: '2014',
-    },
+      value: '2014'
+    }
   ],
   [
     {
-      label: '春',
-      value: '春',
+      label: 'Spring',
+      value: 'Spring'
     },
     {
-      label: '夏',
-      value: '夏',
-    },
-  ],
-];
+      label: 'Summer',
+      value: 'Summer'
+    }
+  ]
+]
 
 export default class PickerViewExample extends React.Component {
-  state = {
-    value: null,
-  };
-  onChange = (value) => {
-    this.setState({
-      value,
-    });
+  constructor (props) {
+    super(props)
+    this.state = {
+      value: null
+    }
   }
-  render() {
+
+  onChange = value => this.setState({ value })
+
+  render () {
     return (
       <PickerView
         onChange={this.onChange}
@@ -41,6 +42,6 @@ export default class PickerViewExample extends React.Component {
         data={seasons}
         cascade={false}
       />
-    );
+    )
   }
 }

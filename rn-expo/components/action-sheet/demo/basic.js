@@ -1,68 +1,75 @@
-import React from 'react';
-import { View, Text, Platform } from 'react-native';
-import { ActionSheet, Button } from 'antd-mobile-rn';
+import React from 'react'
+import { View, Text, Platform } from 'react-native'
+import { ActionSheet, Button } from 'antd-mobile-rn'
+
+export const title = 'ActionSheet'
+
+export const description = 'ActionSheet example'
+
 export default class Test extends React.Component {
-    constructor() {
-        super();
-        this.showActionSheet = () => {
-            const BUTTONS = ['操作一', '操作二', '操作三', '删除', '取消'];
-            ActionSheet.showActionSheetWithOptions({
-                title: '标题',
-                message: '我是描述我是描述',
-                options: BUTTONS,
-                cancelButtonIndex: 4,
-                destructiveButtonIndex: 3,
-            }, (buttonIndex) => {
-                this.setState({ clicked: BUTTONS[buttonIndex] });
-            });
-        };
-        this.showShareActionSheet = () => {
-            const opts = {
-                url: 'https://www.alipay.com/',
-                message: 'message to go with the shared url',
-                excludedActivityTypes: [
-                    <Button onClick={() => ActionSheet.close()}>close ActionSheet</Button>,
-                ],
-                subject: null,
-            };
-            if (Platform.OS === 'ios') {
-                opts.subject = 'a subject to go in the email heading';
-                opts.excludedActivityTypes = [
-                    'com.apple.UIKit.activity.PostToTwitter',
-                ];
-            }
-            ActionSheet.showShareActionSheetWithOptions(opts, (error) => alert(error), (success, method) => {
-                let text;
-                if (success) {
-                    text = `通过 ${method} 分享`;
-                }
-                else {
-                    text = '您没有分享';
-                }
-                this.setState({ text });
-            });
-        };
-        this.state = {
-            clicked: 'none',
-            text: '',
-        };
+  constructor () {
+    super()
+    this.state = {
+      clicked: 'none',
+      text: ''
     }
-    render() {
-        return (<View style={{ marginTop: 30 }}>
+  }
+
+  showActionSheet = () => {
+    const BUTTONS = ['Option 1', 'Option 2', 'Option 3', 'Delete', 'Cancel']
+    ActionSheet.showActionSheetWithOptions({
+      title: 'Title',
+      message: 'I am describing that',
+      options: BUTTONS,
+      cancelButtonIndex: 4,
+      destructiveButtonIndex: 3
+    }, (buttonIndex) => {
+      this.setState({ clicked: BUTTONS[buttonIndex] })
+    })
+  }
+
+  showShareActionSheet = () => {
+    const opts = {
+      url: 'https://www.alipay.com/',
+      message: 'message to go with the shared url',
+      excludedActivityTypes: [
+        <Button onClick={() => ActionSheet.close()}>close ActionSheet</Button>
+      ],
+      subject: null
+    }
+    if (Platform.OS === 'ios') {
+      opts.subject = 'a subject to go in the email heading'
+      opts.excludedActivityTypes = [
+        'com.apple.UIKit.activity.PostToTwitter'
+      ]
+    }
+    ActionSheet.showShareActionSheetWithOptions(opts, (error) => alert(error), (success, method) => {
+      let text
+      if (success) {
+        text = `by ${method} share it`
+      } else {
+        text = 'You did not share'
+      }
+      this.setState({ text })
+    })
+  }
+
+  render () {
+    return (
+      <View style={{ marginTop: 30 }}>
         <View style={[{ padding: 8 }]}>
-          <Button onClick={this.showActionSheet}>默认状态操作列表</Button>
+          <Button onClick={this.showActionSheet}>Default state action list</Button>
         </View>
         <Text style={[{ padding: 8 }]}>
-          点击过的按钮: {this.state.clicked}
+          Clicked button: {this.state.clicked}
         </Text>
         <View style={[{ padding: 8 }]}>
-          <Button onClick={this.showShareActionSheet}>带分享功能的操作列表</Button>
+          <Button onClick={this.showShareActionSheet}>Sharing actions</Button>
         </View>
         <Text style={[{ padding: 8 }]}>
           {this.state.text}
         </Text>
-      </View>);
-    }
+      </View>
+    )
+  }
 }
-export const title = 'ActionSheet';
-export const description = 'ActionSheet example';
