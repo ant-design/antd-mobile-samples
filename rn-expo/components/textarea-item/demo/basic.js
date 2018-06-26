@@ -1,35 +1,35 @@
 /* tslint:disable:no-console */
-import React from 'react';
-import { ScrollView } from 'react-native';
-import { TextareaItem, List } from 'antd-mobile-rn';
+import React from 'react'
+import { ScrollView } from 'react-native'
+import { TextareaItem, List } from 'antd-mobile-rn'
+
 export default class BasicTextAreaItemExample extends React.Component {
-    constructor(props) {
-        super(props);
-        this.onChange = (val) => {
-            // console.log(val);
-            this.setState({ val });
-        };
-        this.state = {
-            val: '默认带value',
-        };
+  constructor (props) {
+    super(props)
+    this.state = {
+      value: 'Default value'
     }
-    render() {
-        return (<ScrollView style={{ flex: 1 }} automaticallyAdjustContentInsets={false} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
-        <List renderHeader={() => '基本'}>
-          <TextareaItem rows={4} placeholder="固定行数"/>
+  }
 
-          <TextareaItem rows={4} placeholder="多行带计数" count={100}/>
+  onChange = value => this.setState({ value })
 
-          <TextareaItem rows={4} placeholder="高度自适应" autoHeight/>
+  render () {
+    return (<ScrollView style={{ flex: 1 }} automaticallyAdjustContentInsets={false} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
+      <List renderHeader={() => 'Basic'}>
+        <TextareaItem rows={4} placeholder='Fixed row number' />
 
-          <TextareaItem value={this.state.val} onChange={this.onChange}/>
+        <TextareaItem rows={4} placeholder='Multi-line counting' count={100} />
 
-          <TextareaItem value="不可编辑 editable = {false}" editable={false}/>
+        <TextareaItem rows={4} placeholder='autoHeight' autoHeight />
 
-          <TextareaItem clear={false} placeholder="不显示清除按钮"/>
+        <TextareaItem value={this.state.value} onChange={this.onChange} />
 
-          <TextareaItem error defaultValue="报错样式 error={true}" onErrorClick={() => console.log('err')}/>
-        </List>
-      </ScrollView>);
-    }
+        <TextareaItem value='editable={false}' editable={false} />
+
+        <TextareaItem clear={false} placeholder='clear={false}' />
+
+        <TextareaItem error defaultValue='error={true}' onErrorClick={() => console.log('err')} />
+      </List>
+    </ScrollView>)
+  }
 }

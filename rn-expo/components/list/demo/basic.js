@@ -1,13 +1,13 @@
 /* tslint:disable:jsx-no-multiline-js */
-import React from 'react';
-import { Image, ScrollView, View } from 'react-native';
-import { List } from 'antd-mobile-rn';
+import React from 'react'
+import { Image, ScrollView, View } from 'react-native'
+import { List } from 'antd-mobile-rn'
 
-const Item = List.Item;
-const Brief = Item.Brief;
+const Item = List.Item
+const Brief = Item.Brief
 
 export default class BasicListExample extends React.Component {
-  render() {
+  render () {
     return (
       <ScrollView
         style={{ flex: 1, backgroundColor: '#f5f5f9' }}
@@ -16,46 +16,46 @@ export default class BasicListExample extends React.Component {
         showsVerticalScrollIndicator={false}
       >
         <List renderHeader={() => 'basic'}>
-          <Item data-seed="logId">标题文字点击无反馈，文字超长则隐藏，文字超长则隐藏</Item>
-          <Item wrap>文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行</Item>
-          <Item disabled extra="箭头向右" arrow="horizontal" onClick={() => { }}>标题文字</Item>
-          <Item extra="箭头向下" arrow="down" onClick={() => { }}>标题文字</Item>
-          <Item extra="箭头向上" arrow="up" onClick={() => { }}>标题文字</Item>
-          <Item extra="没有箭头" arrow="empty">标题文字</Item>
+          <Item data-seed='logId'>Headline text click no feedback, text is long, hidden, text is long, hidden</Item>
+          <Item wrap>Text Long Line Text Long Line Text Long Line Text Long Line Text Long Line</Item>
+          <Item disabled extra='Right arrow' arrow='horizontal' onClick={() => { }}>Headline text</Item>
+          <Item extra='Down arrow' arrow='down' onClick={() => { }}>Headline text</Item>
+          <Item extra='Up arrow' arrow='up' onClick={() => { }}>Headline text</Item>
+          <Item extra='No arrow' arrow='empty'>Headline text</Item>
           <Item
             extra={
               <View>
-                内容内容
-                <Brief style={{ textAlign: 'right' }}>辅助文字内容</Brief>
+                 Content Details
+                <Brief style={{ textAlign: 'right' }}>Auxiliary text content</Brief>
               </View>}
             multipleLine
           >
-            垂直居中对齐
+            Center vertical alignment
           </Item>
-          <Item extra="内容内容" multipleLine>
-            垂直居中对齐<Brief>辅助文字内容</Brief>
+          <Item extra=' Content Details' multipleLine>
+            Center vertical alignment<Brief>Auxiliary text content</Brief>
           </Item>
-          <Item wrap extra="文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行" multipleLine align="top" arrow="horizontal">
-            顶部对齐
-            <Brief>辅助文字内容辅助文字内容辅助文字内容辅助文字内容</Brief>
-            <Brief>辅助文字内容</Brief>
+          <Item wrap extra='Text Long Lines Text Long Lines Text Long Lines Text Long Lines Text Long Lines Text Long Lines Long Lines Long Lines' multipleLine align='top' arrow='horizontal'>
+            Top alignment
+            <Brief>Auxiliary text contentAuxiliary text contentAuxiliary text contentAuxiliary text content</Brief>
+            <Brief>Auxiliary text content</Brief>
           </Item>
           <Item
             extra={<View>
-              内容内容
-              <Brief style={{ textAlign: 'right' }}>辅助文字内容</Brief>
+               Content Details
+              <Brief style={{ textAlign: 'right' }}>Auxiliary text content</Brief>
             </View>}
             multipleLine
-            align="bottom"
+            align='bottom'
           >
-            底部对齐
+            Bottom alignment
           </Item>
         </List>
-        <List renderHeader={() => '带缩略图'}>
-          <Item thumb="https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png">thumb</Item>
+        <List renderHeader={() => 'With thumbnails'}>
+          <Item thumb='https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png'>thumb</Item>
           <Item
-            thumb="https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png"
-            arrow="horizontal"
+            thumb='https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png'
+            arrow='horizontal'
           >
             thumb
           </Item>
@@ -64,12 +64,12 @@ export default class BasicListExample extends React.Component {
               source={{ uri: 'https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png' }}
               style={{ width: 29, height: 29 }}
             />}
-            arrow="horizontal"
+            arrow='horizontal'
           >
-            extra为Image
+            extra with Image
           </Item>
         </List>
       </ScrollView>
-    );
+    )
   }
 }

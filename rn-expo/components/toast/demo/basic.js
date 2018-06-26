@@ -1,66 +1,61 @@
 /* tslint:disable:no-console */
-import React from 'react';
-import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile-rn';
-import { DeviceEventEmitter } from 'react-native';
-function showToast() {
-    Toast.info('这是一个 toast 提示!!!');
-}
-function successToast() {
-    Toast.success('加载成功!!!', 1);
-}
-function showToastNoMask() {
-    Toast.info('无 mask 的 toast !!!', 1, null, false);
-}
-function failToast() {
-    Toast.fail('加载失败!!!');
-}
-function offline() {
-    Toast.offline('网络连接失败!!!');
-}
-function loadingToast() {
-    Toast.loading('加载中...', 1, () => {
-        console.log('加载完成!!!');
-    });
-}
+import React from 'react'
+import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile-rn'
+import { DeviceEventEmitter } from 'react-native'
+
 export default class ToastExample extends React.Component {
-    constructor() {
-        super(...arguments);
-        this.alwaysShowToast = () => {
-            Toast.info('这是一个 duration 为 0 的 toast!!!', 0);
-            this.timer = setTimeout(() => {
-                Toast.hide();
-            }, 5000);
-        };
+  alwaysShowToast = () => {
+    Toast.info('This is a toast with a duration of 0!!!', 0)
+    this.timer = setTimeout(() => {
+      Toast.hide()
+    }, 5000)
+  }
+
+  showToast = () => Toast.info('This is a toast tip!!!')
+
+  successToast = () => Toast.success('Successful loading!!!', 1)
+
+  showToastNoMask = () => Toast.info('Toast without mask!!!', 1, null, false)
+
+  failToast = () => Toast.fail('Failed to load!!!')
+
+  offline = () => Toast.offline('Network connection failed!!!')
+
+  loadingToast = () => Toast.loading('Loading...', 1, () => console.log('Loading completed!!!'))
+
+  componentDidMount () {
+    DeviceEventEmitter.addListener('navigatorBack', () => {
+      Toast.hide()
+    })
+  }
+
+  componentWillUnmount () {
+    DeviceEventEmitter.removeAllListeners('navigatorBack')
+    if (this.timer) {
+      clearTimeout(this.timer)
+      this.timer = null
     }
-    componentDidMount() {
-        DeviceEventEmitter.addListener('navigatorBack', () => {
-            Toast.hide();
-        });
-    }
-    componentWillUnmount() {
-        DeviceEventEmitter.removeAllListeners('navigatorBack');
-        if (this.timer) {
-            clearTimeout(this.timer);
-            this.timer = null;
-        }
-    }
-    render() {
-        return (<WingBlank style={{ marginTop: 80 }}>
+  }
+
+  render () {
+    return (
+      <WingBlank style={{ marginTop: 80 }}>
         <WhiteSpace />
-        <Button onClick={showToastNoMask}>无 mask</Button>
+        <Button onClick={this.showToastNoMask}>No mask</Button>
         <WhiteSpace />
-        <Button onClick={showToast}>纯文字 toast</Button>
+        <Button onClick={this.showToast}>Plain text toast</Button>
         <WhiteSpace />
-        <Button onClick={successToast}>成功 toast</Button>
+        <Button onClick={this.successToast}>Success toast</Button>
         <WhiteSpace />
-        <Button onClick={failToast}>失败 toast</Button>
+        <Button onClick={this.failToast}>Fail toast</Button>
         <WhiteSpace />
-        <Button onClick={offline}>网络 toast</Button>
+        <Button onClick={this.offline}>Internet toast</Button>
         <WhiteSpace />
-        <Button onClick={loadingToast}>加载中 toast</Button>
+        <Button onClick={this.loadingToast}>Loading toast</Button>
         <WhiteSpace />
-        <Button onClick={this.alwaysShowToast}>duration 为 0 的 toast</Button>
+        <Button onClick={this.alwaysShowToast}>Toast with 0 duration</Button>
         <WhiteSpace />
-      </WingBlank>);
-    }
+      </WingBlank>
+    )
+  }
 }
