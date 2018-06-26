@@ -90,7 +90,7 @@ class Home extends React.Component {
           >React Native Components</List.Item>
         </List>
         <View style={styles.footer}>
-          <Text style={styles.version}>Demo Version: 2.0.0</Text>
+          <Text style={styles.version}>Demo Version: 2.2.1</Text>
         </View>
       </View>
     )
