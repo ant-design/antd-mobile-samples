@@ -6,15 +6,15 @@
     "babel-eslint": "^8.2.3",
     "babel-plugin-import": "^1.2.0",
     "babel-preset-expo": "^4.0.0",
-    "react-native-scripts": "^1.5.0",
+    "expo-cli": "^2.11.2",
     "standard": "^11.0.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios"
+    "start": "expo start",
+    "eject": "expo eject",
+    "android": "expo start --android",
+    "ios": "expo start --ios"
   },
   "dependencies": {
     "antd-mobile-demo-data": "^0.1.4",
