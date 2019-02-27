@@ -8,15 +8,15 @@
   },
   "dependencies": {
     "antd-mobile-rn": "^2.2.0",
-    "react": "16.3.1",
-    "react-native": "0.55.4"
+    "react": "16.8.3",
+    "react-native": "~0.58.5"
   },
   "devDependencies": {
-    "babel-jest": "23.0.0",
-    "babel-plugin-import": "^1.7.0",
-    "babel-preset-react-native": "4.0.0",
-    "jest": "23.0.0",
-    "react-test-renderer": "16.3.1"
+    "babel-jest": "24.1.0",
+    "babel-plugin-import": "~1.11.0",
+    "babel-preset-react-native": "4.0.1",
+    "jest": "^24.1.0",
+    "react-test-renderer": "^16.8.3"
   },
   "jest": {
     "preset": "react-native"
