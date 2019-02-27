@@ -1,5 +1,7 @@
 # antd-mobile Samples
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ant-design/antd-mobile-samples.svg)](https://greenkeeper.io/)
+
 Note: **The master branch is antd-mobile@2 samples**
 
 If you need antd-mobile@1.x samples, please see [1.x branch](https://github.com/ant-design/antd-mobile-samples/tree/1.x)
