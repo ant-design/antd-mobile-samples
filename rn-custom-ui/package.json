@@ -10,15 +10,15 @@
 	},
 	"dependencies": {
     "antd-mobile-rn": "next",
-    "react": "^15.6.1",
-		"react-native": "0.41.2"
+    "react": "16.8.3",
+		"react-native": "~0.58.5"
 	},
 	"devDependencies": {
-		"babel-jest": "19.0.0",
-    "babel-plugin-import": "^1.1.0",
-		"babel-preset-react-native": "1.9.1",
-		"jest": "19.0.0",
-		"react-test-renderer": "~15.4.0"
+		"babel-jest": "24.1.0",
+    "babel-plugin-import": "~1.11.0",
+		"babel-preset-react-native": "4.0.1",
+		"jest": "^24.1.0",
+		"react-test-renderer": "^16.8.3"
 	},
 	"jest": {
 		"preset": "react-native"
