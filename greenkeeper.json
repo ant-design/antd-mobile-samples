@@ -1,0 +1,21 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "create-react-app/package.json",
+        "create-react-native-app/package.json",
+        "react-native/package.json",
+        "rn-custom-ui/package.json",
+        "rn-expo/package.json",
+        "web-1.x-2.0/package.json",
+        "web-custom-ui-pro/package.json",
+        "web-performance/package.json",
+        "web-roadhog/package.json",
+        "web-ssr-ts/package.json",
+        "web-ssr/package.json",
+        "web-typescript/package.json",
+        "web-webpack3/package.json"
+      ]
+    }
+  }
+}
